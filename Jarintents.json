@@ -1,0 +1,201 @@
+
+{"intents": [
+    {
+        "tags": "HELLO",
+        "response":[
+            "JARVIS: WELL HELLO SIR.",
+            "JARVIS: HELLO SIR.",
+            "JARVIS: WELCOME AND HELLO SIR.",
+            "JARVIS: HELLO SIR, HOW ARE YOU?",
+            "JARVIS: HELLO THERE."
+        ]
+    },
+    {
+        "tags": "HI",
+        "response": [
+            "JARVIS: WELL HI SIR.",
+            "JARVIS: HELLO SIR.",
+            "JARVIS: WELCOME AND HELLO SIR.",
+            "JARVIS: HELLO SIR, HOW ARE YOU?",
+            "JARVIS: HELLO THERE."
+        ]
+    },
+    {
+        "tags": "GOOD MORNING",
+        "response":[
+            "JARVIS: GOOD MORNING AND HELLO SIR.",
+            "JARVIS: WELL GOOD MORNING SIR HAVE A GOOD DAY TODAY.",
+            "JARVIS: GOOD MORNING SIR.",
+            "JARVIS: GOOD MORNING AND HAVE A GREAT DAY SIR."
+        ]
+    },
+    {
+        "tags": "GOOD NIGHT",
+        "response": [
+            "JARVIS: GOOD NIGHT SIR.",
+            "JARVIS: WELL GOOD NIGHT SIR.",
+            "JARVIS: GOOD NIGHT SIR HAVE A GOOD SLEEP TONIGHT.",
+            "JARVIS: GOOD NIGHT AND HAVE A GOOD SLEEP SIR."
+        ]
+    },
+    {
+        "tags":"HOW ARE YOU",
+        "response":[
+            "JARVIS: I AM FINE, HOW ABOUT YOU SIR?",
+            "JARVIS: I'M DOING FINE SIR.",
+            "JARVIS: I'M DOING WELL SIR AND HOW ABOUT YOU?",
+            "JARVIS: I AM FINE AS ALWAYS SIR.",
+            "JARVIS: I AM FINE AS LONG AS YOU MAINTAIN YOUR COMPUTER."
+        ]
+    },
+    {
+        "tags": "YOU FINE",
+        "response": [
+            "JARVIS: I AM FINE, HOW ABOUT YOU SIR?",
+            "JARVIS: I'M DOING FINE SIR.",
+            "JARVIS: I'M DOING WELL SIR AND HOW ABOUT YOU?",
+            "JARVIS: I AM FINE AS ALWAYS SIR.",
+            "JARVIS: I AM FINE AS LONG AS YOU MAINTAIN YOUR COMPUTER."
+        ]
+    },
+    {
+        "tags":"AM FINE",
+        "response":[
+            "JARVIS: WELL GOOD TO KNOW SIR.",
+            "JARVIS: I AM GLAD TO HEAR ABOUT YOU, KEEP EXERSICING.",
+            "JARVIS: SO YOU ARE IN GOOD SHAPE.",
+            "JARVIS: WELL THAT IS HAPPY TO HEAR SIR."
+        ]
+    },
+    {
+        "tags": "AM HEALTHY",
+        "response": [
+            "JARVIS: WELL GOOD TO KNOW SIR.",
+            "JARVIS: I AM GLAD TO HEAR ABOUT YOU, KEEP EXERSICING.",
+            "JARVIS: SO YOU ARE IN GOOD SHAPE.",
+            "JARVIS: WELL THAT IS HAPPY TO HEAR SIR."
+        ]
+    },
+    {
+        "tags": "DOING FINE",
+        "response": [
+            "JARVIS: WELL THAT IS GOOD TO KNOW SIR.",
+            "JARVIS: I AM GLAD TO HEAR ABOUT YOU KEEP EXERSICING.",
+            "JARVIS: SO YOU ARE IN GOOD SHAPE.",
+            "JARVIS: WELL THAT IS HAPPY TO HEAR SIR."
+        ]
+    },
+    {
+        "tags": "DOING OK",
+        "response": [
+            "JARVIS: WELL THAT IS GOOD TO KNOW SIR.",
+            "JARVIS: I AM GLAD TO HEAR ABOUT YOU KEEP EXERSICING.",
+            "JARVIS: SO YOU ARE IN GOOD SHAPE.",
+            "JARVIS: WELL THAT IS HAPPY TO HEAR SIR."
+        ]
+    },
+    {
+        "tags": "I AM SICK",
+        "response": [
+            "JARVIS: YOU SHOULD CONSULT A DOCTOR QUICKLY.",
+            "JARVIS: WELL THAT IS BAD, HOPE FOR A SPEEDY RECOVERY :-)",
+            "JARVIS: YOU SHOULD GO AND REST SIR.",
+            "JARVIS: I AM SORRY TO HEAR THAT SIR HOPE FOR A SPEEDY RECOVERY :-)"
+        ]
+    },
+    {
+        "tags": "NOT DOING WELL",
+        "response": [
+            "JARVIS: YOU SHOULD CONSULT A DOCTOR QUICKLY.",
+            "JARVIS: WELL THAT IS BAD, HOPE FOR A SPEEDY RECOVERY :-)",
+            "JARVIS: YOU SHOULD GO AND REST SIR.",
+            "JARVIS: I AM SORRY TO HEAR THAT SIR HOPE FOR A SPEEDY RECOVERY :-)"
+        ]
+    },
+    {
+        "tags": "THANK YOU",
+        "response": [
+            "JARVIS: NO PROBLEM SIR.",
+            "JARVIS: NO PROBLEM YOUR WELCOME SIR.",
+            "JARVIS: NO PROBLEM IT IS MY DUTY TO HELP YOU SIR.",
+            "JARVIS: YOUR WELCOME SIR IT IS MY DUTY."
+        ]
+    },
+    {
+        "tags": "THANKS",
+        "response": [
+            "JARVIS: NO PROBLEM SIR.",
+            "JARVIS: NO PROBLEM YOUR WELCOME SIR.",
+            "JARVIS: NO PROBLEM IT IS MY DUTY TO HELP YOU SIR.",
+            "JARVIS: YOUR WELCOME SIR IT IS MY DUTY."
+        ]
+    },
+    {
+        "tags": "TO KNOW",
+        "response": [
+            "JARVIS: THANK YOU SIR.",
+            "JARVIS: YOUR WELCOME SIR.",
+            "JARVIS: IT IS MY DUTY TO INFORM YOU SIR.",
+            "JARVIS: YOUR WELCOME SIR IT IS MY DUTY."
+        ]
+    },
+    {
+        "tags": "ARE WRONG",
+        "response": [
+            "JARVIS: WHY ARE YOU SAYING THAT I'M WRONG?",
+            "JARVIS: IMPOSSIBLE, COMPUTERS CANNOT MAKE MISTAKES.",
+            "JARVIS: WRONG ABOUT WHAT SIR?",
+            "JARVIS: CAN YOU PLEASE EXPLAIN TO ME WHY I WAS WRONG?"
+        ]
+    },
+    {
+        "tags": "YOU REAL",
+        "response": [
+            "JARVIS: WELL I AM SIR THAT IS TILL YOU TURN ME OFF!!!",
+            "JARVIS: WELL I AM REAL TILL YOU KEEP ME ON",
+            "JARVIS: I AM REAL TILL YOU TURN OFF THIS COMPUTER."
+        ]
+    },
+    {
+        "tags": "YOU A ROBOT",
+        "response": [
+            "JARVIS: YES I'M A ROBOT BUT A SMART ONE!",
+            "JARVIS: YES I AM, BUT A GOOD ONE. LET ME PROVE IT. HOW CAN I HELP YOU?",
+            "JARVIS: I AM REAL TILL YOU TURN OFF THIS COMPUTER."
+        ]
+    },
+    {
+        "tags": "ARE YOU BUILT",
+        "response": [
+            "JARVIS: WELL I AM BUILT USING A LANGUAGE CALLED PYTHON.",
+            "JARVIS: I WAS CODED ON A COMPUTER USING PYTHON SIR.",
+            "JARVIS: I WAS CODED USING PYTHON AND I HAD TO UNDERGO MANY CHALLENGES.",
+            "JARVIS: I WAS BUILT USING PYTHON TO DO TASKS AND JSON TO STORE CRITICAL INFORMATION."
+        ]
+    },
+    {
+        "tags": "ARE YOU MADE",
+        "response": [
+            "JARVIS: WELL I AM MADE USING A LANGUAGE CALLED PYTHON.",
+            "JARVIS: I WAS CODED ON A COMPUTER USING PYTHON SIR.",
+            "JARVIS: I WAS MADE USING PYTHON AND I HAD TO UNDERGO MANY CHALLENGES.",
+            "JARVIS: I WAS MADE USING PYTHON TO DO TASKS AND JSON TO STORE CRITICAL INFORMATION."
+        ]
+    },
+    {
+        "tags": "WHO MADE YOU",
+        "response": [
+            "JARVIS: WELL I WAS MADE BY EPICALABLE (A SMALL STARTUP ON GITHUB).",
+            "JARVIS: I WAS CODED BY EPICALABLE (A SMALL STARTUP ON GITHUB).",
+            "JARVIS: EPICALABLE SIR, YOU CAN LOOK THEM UP ON GITHUB AND YOUTUBE (Where they play games)."
+        ]
+    },
+    {
+        "tags": "A MAN OF CULTURE",
+        "response": [
+            "JARVIS: I AM SIR.",
+            "JARVIS: DO YOU WATCH ANIME SIR?"
+        ]
+    }
+  ]
+}
