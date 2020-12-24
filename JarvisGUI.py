@@ -131,7 +131,7 @@ def Settings():
                   User, key='-User-', size=(33, 1))],
               [sg.T('NewsApiKey:', size=(13, 1)), sg.Input(
                   NewsApiKey, key='-NewsApi-', size=(33, 1))],
-              [sg.T('OpenWeatherKey:', size=(13, 1)), sg.Input(
+              [sg.T('OpenWeatherMap:', size=(13, 1)), sg.Input(
                   OpenWeatherKey, key='-OpenWeather-', size=(33, 1))],
               [sg.T('Current-Country:', size=(13, 1)), sg.Input(
                   Country, key='-Country-', size=(33, 1))],
@@ -216,6 +216,26 @@ def gmail():
         return event != 'OK'
 
 
+def Help():
+    sg.theme('Dark')
+    layout = [[sg.Text('Help', font='Default 14')],
+              [sg.Output(size=(60, 20), font=('Helvetica 10'))],
+              [sg.Button('GET HELP'), sg.Button('EXIT')]]
+    window = sg.Window('Help', layout)
+
+    while True:     # Event Loop
+        event, values = window.read()
+        if event in (sg.WIN_CLOSED, 'EXIT'):            # quit if exit button or X
+            break
+        if event == 'GET HELP':
+            with open ("Help.txt","r") as H:
+                print(H.read())
+            continue
+    window.close()
+    event = window.read()
+    return event != 'OK'
+
+
 
 
 
@@ -228,7 +248,7 @@ def gmail():
 sg.theme('DarkGrey8')  # gives window a spiffy set of colors
 sg.set_options(element_padding=(3,3))
 menu_def = [['&MENU ', ['&Settings', 'E&xit']],
-            ['&HELP', ['&Help centre','&Support us', '&About...']], ]
+            ['&HELP', ['&Help','&Support us', '&About...']], ]
 layout = [[sg.Menu(menu_def, tearoff=False)],
           [sg.Text('J.A.R.V.I.S  A.I', size=(98, 1)),
            sg.Text(('(C) Epicalable'), size=(20, 1))],
@@ -356,6 +376,9 @@ if __name__ == '__main__':
 
         elif event == 'Settings':
             Settings()
+
+        elif event == 'Help':
+            Help()
 
         elif event == 'Support us':
             sg.popup_no_frame("Subscribe and share our 'Epicalable' Youtube channel",

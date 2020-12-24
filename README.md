@@ -1,5 +1,9 @@
 # J.A.R.V.I.S-G.U.I
 
+Kindly please star this repository if you like the program's gui.
+
+![Bpic](https://user-images.githubusercontent.com/76218539/102739956-89142c00-4374-11eb-9e82-475004ec5a77.png)
+
 IMPORTANT NOTE: Any User who are willing to Use, Share or Re-Distribute the above 'Program' are kindly advised to:
 
 1. keep at least ONE "(C) Epicalable" text in the 'program'.
