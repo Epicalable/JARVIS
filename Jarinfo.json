@@ -1,8 +1,8 @@
 {
     "!CAUTION!": "PLEASE REFRAIN from TAMPERING with the BELOW DATA!!!",
     "User": "User",
-    "NewsApiKey": "Newsapi.com",
-    "OpenWeatherKey": "Openweatherapi.com",
+    "NewsApiKey": "@Newsapi.com",
+    "OpenWeatherKey": "@Openweatherapi.com",
     "Country": "Country",
     "City": "City"
 }

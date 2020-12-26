@@ -2,7 +2,7 @@
 
 Kindly please star this repository if you like the program's gui.
 
-![Bpic](https://user-images.githubusercontent.com/76218539/102739956-89142c00-4374-11eb-9e82-475004ec5a77.png)
+![Capture](https://user-images.githubusercontent.com/69076784/103149982-04bb1200-4795-11eb-8bc2-eb6f958ff09f.PNG)
 
 IMPORTANT NOTE: Any User who are willing to Use, Share or Re-Distribute the above 'Program' are kindly advised to:
 
