@@ -12,7 +12,7 @@ import wikipedia
 from random import choice
 
 
-def Weather(Timeing):
+def Weather(timeing):
     try:
         with open("Jarinfo.json") as f:
             contents = json.load(f)
@@ -29,13 +29,13 @@ def Weather(Timeing):
             current_humidiy = y["humidity"]
             z = x["weather"]
             weather_description = z[0]["description"]
-            print(Timeing + Place.upper() + ":")
+            print(timeing + Place + ":")
             print(" Temperature (Celsius) = " + str(current_temp) +
                   "\n Humidity (Percentage) = " + str(current_humidiy) + "\n Description = " + str(weather_description))
         else:
-            print("JARVIS: PLEASE CHANGE YOUR CITY IN THE SETTINGS AS THIS IS INVALID.")
+            print("JARVIS: Please check your city in the settings as this is invalid.")
     except:
-        print("JARVIS: I AM HAVING A PROBLEM IN GETTING LIVE WEATHER PLEASE CHECK YOUR INTERNET-CONNECTION.")
+        print("JARVIS: I am having a problem in getting live weather please check your internet-connection.")
 
 
 def Breifing(title, text):
@@ -73,8 +73,8 @@ def Breifing(title, text):
                         for i in range(len(results)):
                             print(i + 1, '.', results[i])
                 except:
-                    print("JARVIS: SOMETHING WENT WRONG!!!" +
-                          "\nPLEASE CHECK IF YOU HAVE A GOOD INTERNET CONNECTION AND HAVE GIVEN A VALID \nCATEGORY AND LOCATION.")
+                    print("JARVIS: Something went wrong!!!" +
+                          "\nPlease check if you have a good internet connection and have given a valid \ncategory and location.")
                     continue
         window.close()
         event = window.read()
@@ -109,8 +109,8 @@ def Breifing(title, text):
                         for i in range(len(results)):
                             print(i + 1, '.', results[i])
                 except:
-                    print("JARVIS: SOMETHING WENT WRONG!!!" +
-                          "\nJARVIS: PLEASE CHECK IF YOU HAVE A GOOD \nINTERNET CONNECTION AND HAVE GIVEN A VALID \nCATEGORY AND LOCATION.")
+                    print("JARVIS: Something went wrong!!!" +
+                          "\nJARVIS: Please check if you have a good \ninternet connection and have given a valid \ncategory and location.")
                     continue
         window.close()
         event = window.read()
@@ -181,7 +181,7 @@ def send_an_email(from_address, to_address, subject, message_text, password):
                    email_message)    # sending the email
         s.quit()    # terminating the session
     except:
-        sg.popup('PLEASE CHECK YOUR INTERNET-CONNECTION.')
+        sg.popup("Please check your internet connection and have turned 'on' Less secure app access in 'security' section in your Google Account Settings.")
 
 def gmail():
     sg.theme('Dark')
@@ -238,13 +238,6 @@ def Help():
 
 
 
-
-
-
-
-
-
-
 sg.theme('DarkGrey8')  # gives window a spiffy set of colors
 sg.set_options(element_padding=(3,3))
 menu_def = [['&MENU ', ['&Settings', 'E&xit']],
@@ -259,42 +252,37 @@ window = sg.Window('J.A.R.V.I.S GUI', layout, location=(0,0) ,icon=r'icon/Jarvis
     'Helvetica', ' 13'), default_button_element_size=(8, 2)).Finalize()
 window.maximize()
 
-print("JARVIS: WELCOME SIR")
+print("JARVIS: Welcome sir")
 hour = int(datetime.datetime.now().hour)
 if hour >= 0 and hour < 12:
-    Timeing = "JARVIS: GOOD MORNING, HERE IS THE CURRENT WEATHER IN "
-    Weather(Timeing)
+    timeing = "JARVIS: Good morning, here is the current weather in "
+    Weather(timeing)
     Breifing('Morning Briefing', 'Morning News Headlines')
 elif hour >= 12 and hour < 18:
-    Timeing = "JARVIS: GOOD AFTERNOON, HERE IS THE CURRENT WEATHER IN "
-    Weather(Timeing)
+    timeing = "JARVIS: Good afternoon, here is the current weather in "
+    Weather(timeing)
 else:
-    Timeing = "JARVIS: GOOD EVENING, HERE IS THE CURRENT WEATHER IN "
-    Weather(Timeing)
-
+    timeing = "JARVIS: Good evening, here is the current weather in "
+    Weather(timeing)
 
 if __name__ == '__main__':
     while True:     # The Infinity Event Loop
         event, value = window.read()
 
         if event in (sg.WIN_CLOSED, 'Exit'):   # quit if exit button or X
-
-            print(
-                "\nJARVIS: GOODBYE SIR HOPE YOU HAVE A NICE DAY :-)")
-            print(
-                "\nJ.A.R.V.I.S Copyright (C) 2020 Epicalable LLC. All Rights Reserved.")
+            print("\nJARVIS: Goodbye sir hope you have a nice day :-)")
+            print("\nJ.A.R.V.I.S Copyright (C) 2020 Epicalable LLC. All Rights Reserved.")
             time.sleep(4)
             break
 
         if event == 'ENTER':
-
             # THE START OF THE RENDER-WORD ENGINE (C) Epicalable
-            que = value['-QUERY-'].rstrip()
-            query = (que.upper()) # YOUR INPUT HERE
+            que = value['-QUERY-'].rstrip()  # Your input here
+            query = (que.upper())  
             with open("Jarinfo.json") as f:
                 contents = json.load(f)
                 User = contents["User"]
-                print("\n" + User + ": {}".format(query))
+                print("\n" + User + ": {}".format(que.capitalize()))
                 with open("Jarintents.json") as f:
                     data = json.load(f)
                     for word in data['intents']:
@@ -302,21 +290,20 @@ if __name__ == '__main__':
                             print(choice(word["response"]))
                             break
                     # THE END OF THE RENDER-WORD ENGINE (C) Epicalable
-
                     else:
                         if "DATE" in query or "TIME" in query:
                             x = datetime.datetime.now()
-                            print("JARVIS: THE DATE AND TIME IS ",
-                                  x,"RESPECTIVELY SIR")
+                            print("JARVIS: The Date and Time is ",x," respectively sir.")
                             continue
 
                         elif "WIKIPEDIA" in query or "WIKI" in query:
+                            query = query.replace('WIKI', "")
                             query = query.replace('WIKIPEDIA', "")
                             try:
                                 print(wikipedia.summary(query))
                             except:
                                 print(
-                                    "JARVIS: I AM HAVING A PROBLEM IN GETTING WIKIPEDIA PLEASE CHECK YOUR INTERNET-CONNECTION.")
+                                    "JARVIS: I am having a problem in getting wikipedia please check your internet-connection.")
                             continue
 
                         elif "WHAT IS" in query or "WHO IS" in query:
@@ -329,7 +316,7 @@ if __name__ == '__main__':
                                 print(wikipedia.summary(query))
                             except:
                                 print(
-                                    "JARVIS: I AM HAVING A PROBLEM IN GETTING WIKIPEDIA PLEASE CHECK YOUR INTERNET-CONNECTION")
+                                    "JARVIS: I am having a problem in getting wikipedia please check your internet-connection")
                             continue
 
                         elif "NEWS ABOUT" in query or "NEWS ON" in query:
@@ -353,7 +340,8 @@ if __name__ == '__main__':
                                 for i in range(len(results)):
                                     print(i + 1,'.', results[i])
                             except:
-                                print( "JARVIS: SOMETHING WENT WRONG PLEASE CHECK IF YOU HAVE A GOOD INTERNET CONNECTION.")
+                                print(
+                                    "JARVIS: Something went wrong please check if you have a good internet connection.")
                                 continue
 
                         elif "HEADLINES" in query:
@@ -363,15 +351,14 @@ if __name__ == '__main__':
                             gmail()
 
                         elif query == "GOODBYE":
-                            print(
-                                "JARVIS: GOODBYE SIR HOPE YOU HAVE A NICE DAY :-)")
-                            print(
-                                "\nJ.A.R.V.I.S Copyright (C) 2020 Epicalable LLC. All Rights Reserved.")
+                            print("JARVIS: Goodbye sir hope you have a nice day :-)")
+                            print("\nJ.A.R.V.I.S Copyright (C) 2020 Epicalable LLC. All Rights Reserved.")
                             time.sleep(4)
                             break
 
                         else:
-                            print("JARVIS: I DID NOT UNDERSTAND YOU, AS YOU CAN SEE I AM STILL EVOLVING :-)")
+                            print(
+                                "JARVIS: I did not understand you, as you can see i am still evolving :-)")
 
 
         elif event == 'Settings':
@@ -386,9 +373,7 @@ if __name__ == '__main__':
 
         elif event == 'About...':
             sg.popup_no_frame('---About J.A.R.V.I.S---',
-                              'Version: 0.8',
-                              'JUi: Version 0.3',
-                              'RenderWord: Version 0.2',
+                              'Version: 0.8.5',
                               'Copyright (C) 2020 Epicalable LLC')
 
 window.close()
