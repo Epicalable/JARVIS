@@ -52,7 +52,7 @@ def Breifing(title, text):
         layout = [[sg.Text(text)],
                   [sg.Output(size=(45, 20), font=('Helvetica 10'))],
                   [sg.Button('GET NEWS'), sg.Button('EXIT')]]
-        window = sg.Window('Morning Briefing', layout)
+        window = sg.Window(title, layout, no_titlebar=True, keep_on_top=True)
         while True:     # Event Loop
             event, value = window.read()
             if event in (sg.WIN_CLOSED, 'EXIT'):            # quit if exit button or X
@@ -87,7 +87,7 @@ def Breifing(title, text):
                             [sg.Output(size=(46, 20), font=('Helvetica 10'))],
                                [sg.Multiline(size=(28, 1), enter_submits=TRUE, key='-NEWS-', do_not_clear=False),
                                 sg.Button('GET NEWS', bind_return_key=True),
-                                sg.Button('EXIT')]])
+                                sg.Button('EXIT')]], no_titlebar=True, keep_on_top=True)
         while True:     # Event Loop
             event, value = window.read()
             if event in (sg.WIN_CLOSED, 'EXIT'):            # quit if exit button or X
@@ -138,7 +138,7 @@ def Settings():
               [sg.T('Current-City:', size=(13, 1)), sg.Input(
                   City, key='-City-', size=(33, 1))],
               [sg.Button('Save'), sg.Button('Exit')]]
-    window = sg.Window('Settings', layout)
+    window = sg.Window('Settings', layout, no_titlebar=True, keep_on_top=True)
 
     while True:  # Event Loop
         event, values = window.read()
@@ -218,10 +218,10 @@ def gmail():
 
 def Help():
     sg.theme('Dark')
-    layout = [[sg.Text('Help', font='Default 14')],
+    layout = [[sg.Text('Help Center', font='Default 14')],
               [sg.Output(size=(60, 20), font=('Helvetica 10'))],
               [sg.Button('GET HELP'), sg.Button('EXIT')]]
-    window = sg.Window('Help', layout)
+    window = sg.Window('Help Center', layout, no_titlebar=True, keep_on_top=True)
 
     while True:     # Event Loop
         event, values = window.read()
