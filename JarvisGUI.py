@@ -1,4 +1,4 @@
-#J.A.R.V.I.S Copyright (C) 2020 Epicalable LLC. All Rights Reserved.
+#J.A.R.V.I.S Copyright (C) 2021 Epicalable LLC. All Rights Reserved.
 #For Gui EXE: pyinstaller -wF my_program.py (Runs Without shell window)
 #If pyinstaller crashes add: --hidden-import tkinter
 import PySimpleGUI as sg
@@ -271,7 +271,7 @@ if __name__ == '__main__':
 
         if event in (sg.WIN_CLOSED, 'Exit'):   # quit if exit button or X
             print("\nJARVIS: Goodbye sir hope you have a nice day :-)")
-            print("\nJ.A.R.V.I.S Copyright (C) 2020 Epicalable LLC. All Rights Reserved.")
+            print("\nJ.A.R.V.I.S Copyright (C) 2021 Epicalable LLC. All Rights Reserved.")
             time.sleep(4)
             break
 
@@ -352,7 +352,7 @@ if __name__ == '__main__':
 
                         elif query == "GOODBYE":
                             print("JARVIS: Goodbye sir hope you have a nice day :-)")
-                            print("\nJ.A.R.V.I.S Copyright (C) 2020 Epicalable LLC. All Rights Reserved.")
+                            print("\nJ.A.R.V.I.S Copyright (C) 2021 Epicalable LLC. All Rights Reserved.")
                             time.sleep(4)
                             break
 
@@ -368,13 +368,14 @@ if __name__ == '__main__':
             Help()
 
         elif event == 'Support us':
-            sg.popup_no_frame("Subscribe and share our 'Epicalable' Youtube channel",
+            sg.popup_no_frame("Please star our 'JARVIS-GUI' github repository and also",
+                              "Subscribe and share our 'Epicalable' Youtube channel",
                               "so you can watch us play games :-)")
 
         elif event == 'About...':
             sg.popup_no_frame('---About J.A.R.V.I.S---',
-                              'Version: 0.8.5',
-                              'Copyright (C) 2020 Epicalable LLC')
+                              'Version: 0.8.7',
+                              'Copyright (C) 2021 Epicalable LLC')
 
 window.close()
 
