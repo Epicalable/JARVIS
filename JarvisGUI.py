@@ -8,6 +8,7 @@ import time
 import requests
 import json
 import smtplib
+import bs4
 import wikipedia
 from random import choice
 
@@ -36,6 +37,20 @@ def Weather(timeing):
             print("JARVIS: Please check your city in the settings as this is invalid.")
     except:
         print("JARVIS: I am having a problem in getting live weather please check your internet-connection.")
+
+
+def stocks(tickers):
+    # Apple, Microsoft and the S&P500 index.
+    # tickers = ['AAPL', 'MSFT', '^GSPC']
+    try:
+        link = 'https://finance.yahoo.com/quote/'+tickers+'?p='+tickers
+        url = requests.get(link)
+        soup = bs4.BeautifulSoup(url.text, features="html.parser")
+        price = soup.find_all("div", {'class': 'My(6px) Pos(r) smartphone_Mt(6px)'})[
+            0].find('span').text
+        print("Current pricing of Stock for "+tickers+" is: "+price)
+    except:
+        print("JARVIS: I am having a problem in getting Stock Prices please check your internet-connection")
 
 
 def Breifing(title, text):
@@ -79,7 +94,6 @@ def Breifing(title, text):
         window.close()
         event = window.read()
         return event != 'OK'
-
     else:
         sg.theme('DarkGreen3')
         window = sg.Window(title,
@@ -347,6 +361,14 @@ if __name__ == '__main__':
                         elif "HEADLINES" in query:
                             Breifing('News Headlines', 'Current Headlines(Enter country abbreviation in given field)')
                         
+                        elif "STOCKS" in query or "STOCK PRICE" in query:
+                            query = query.replace('GET ME ', "")
+                            query = query.replace('PRICE ', "")
+                            query = query.replace('STOCKS ', "")
+                            query = query.replace('FOR ', "")
+                            query = query.replace('ON ', "")
+                            stocks(tickers=query)
+
                         elif "SEND AN EMAIL" in query or "SEND A EMAIL" in query:
                             gmail()
 
