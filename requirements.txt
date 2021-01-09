@@ -1,3 +1,0 @@
-pip install PySimpleGUI==4.33.0
-pip install requests==2.25.1
-pip install wikipedia==1.4.0
