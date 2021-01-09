@@ -63,7 +63,7 @@ Here is a sample list of available Commands:
 12. Goodbye jarvis--
     NOTE: Command to quit JARVIS.
 
-## License [![Open Source Love png1](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/Epicalable/)
+## License [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/Epicalable/)
 IMPORTANT NOTE: Any User who are willing to Share or Re-Distribute the above 'Program' are kindly advised to:
 
 1. keep at least ONE "(C) Epicalable" text in the 'program'.
