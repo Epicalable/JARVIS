@@ -4,5 +4,7 @@
     "NewsApiKey": "Register@Newsapi.org",
     "OpenWeatherKey": "Register@Openweatherapi.org",
     "Country": "Your Country",
-    "City": "Your City"
+    "City": "Your City",
+    "Outputscreensize": "188",
+    "Inputbarsize": "134"
 }

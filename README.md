@@ -18,7 +18,7 @@ J.A.R.V.I.S is an chatbot written that is built and coded in Python whose aim is
 J.A.R.V.I.S was inspired by by Tony Stark's A.I "J.A.R.V.I.S" from the Iron Man movies from Marvel. Paving the way for my dream to create a bot which can help me in automation by keeping me informed, updated and productive.
 
 ## What python packages are needed to run J.A.R.V.I.S (Requirements)?
-In order for J.A.R.V.I.S to work at full capacity a few 3rd party python packages
+In order for J.A.R.V.I.S to work at full capacity a few 3rd party python packages will be required to be installed:
 1. pip install PySimpleGUI == 4.33.0
 2. pip install requests == 2.25.1
 3. pip install beautifulsoup4 == 4.9.3

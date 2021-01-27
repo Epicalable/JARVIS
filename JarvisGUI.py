@@ -140,17 +140,27 @@ def Settings():
         OpenWeatherKey = contents["OpenWeatherKey"]
         Country = contents["Country"]
         City = contents["City"]
+        Outputsc = contents["Outputscreensize"]
+        Inputbr = contents["Inputbarsize"]
     layout = [[sg.Text('Settings', font='Default 16')],
+              [sg.Text('Your-Details:--', font='Default 12')],
+              [sg.Text('Enter your information and Api-Keys.', font='Default 10')],
               [sg.T('User-Name:', size=(13, 1)), sg.Input(
-                  User, key='-User-', size=(33, 1))],
+                  User, key='-User-', size=(34, 1))],
               [sg.T('NewsApiKey:', size=(13, 1)), sg.Input(
-                  NewsApiKey, key='-NewsApi-', size=(33, 1))],
-              [sg.T('OpenWeatherMap:', size=(13, 1)), sg.Input(
+                  NewsApiKey, key='-NewsApi-', size=(34, 1))],
+              [sg.T('OpenWeatherMap:', size=(14, 1)), sg.Input(
                   OpenWeatherKey, key='-OpenWeather-', size=(33, 1))],
               [sg.T('Current-Country:', size=(13, 1)), sg.Input(
-                  Country, key='-Country-', size=(33, 1))],
+                  Country, key='-Country-', size=(34, 1))],
               [sg.T('Current-City:', size=(13, 1)), sg.Input(
-                  City, key='-City-', size=(33, 1))],
+                  City, key='-City-', size=(34, 1))],
+              [sg.Text('GUI-Customization:--', font='Default 12')],
+              [sg.Text('Enter only in Numbers to adjust the UI screen size.', font='Default 10')],
+              [sg.T('Output-Screen:', size=(13, 1)), sg.Input(
+                  Outputsc, key='-Outsc-', size=(34, 1))],
+              [sg.T('Input-bar:', size=(13, 1)), sg.Input(
+                  Inputbr, key='-Inbr-', size=(34, 1))],
               [sg.Button('Save'), sg.Button('Exit')]]
     window = sg.Window('Settings', layout, no_titlebar=True, keep_on_top=True)
 
@@ -164,13 +174,17 @@ def Settings():
             weatherkey = values['-OpenWeather-']
             Country = values['-Country-']
             City = values['-City-']
+            Outputsc = values['-Outsc-']
+            Inputbr = values['-Inbr-']
             dictionary = {
                 "!CAUTION!": "PLEASE REFRAIN from TAMPERING with the BELOW DATA!!!",
                 "User": User,
                 "NewsApiKey": newsapikey,
                 "OpenWeatherKey": weatherkey,
                 "Country": Country,
-                "City": City
+                "City": City,
+                "Outputscreensize": Outputsc,
+                "Inputbarsize": Inputbr
             }
             json_object = json.dumps(dictionary, indent=4)
             with open("Jarinfo.json", "w") as outfile:
@@ -250,17 +264,19 @@ def Help():
     return event != 'OK'
 
 
-
-
+with open("Jarinfo.json") as f:
+    contents = json.load(f)
+    LoadOutput = contents["Outputscreensize"]
+    LoadInput = contents["Inputbarsize"]
 sg.theme('DarkGrey8')  # gives window a spiffy set of colors
 sg.set_options(element_padding=(3,3))
 menu_def = [['&MENU ', ['&Settings', 'E&xit']],
             ['&HELP', ['&Help','&Support us', '&About...']], ]
 layout = [[sg.Menu(menu_def, tearoff=False)],
-          [sg.Text('J.A.R.V.I.S  A.I', size=(98, 1)),
+          [sg.Text('J.A.R.V.I.S  A.I', size=(135, 1)),
            sg.Text(('(C) Epicalable'), size=(20, 1))],
-          [sg.Output(size=(139, 38), font=('Helvetica 10'))],
-          [sg.Multiline(size=(96, 2), enter_submits=True, key='-QUERY-', do_not_clear=False),
+          [sg.Output(size=(LoadOutput, 38), font=('Helvetica 10'))],
+          [sg.Multiline(size=(LoadInput, 2), enter_submits=True, key='-QUERY-', do_not_clear=False),
            sg.Button('ENTER',size=(11,2), bind_return_key=True)]]
 window = sg.Window('J.A.R.V.I.S GUI', layout, location=(0,0) ,icon=r'icon/Jarvis.ico', font=(
     'Helvetica', ' 13'), default_button_element_size=(8, 2)).Finalize()
@@ -390,13 +406,13 @@ if __name__ == '__main__':
             Help()
 
         elif event == 'Support us':
-            sg.popup_no_frame("Please star our 'JARVIS-GUI' github repository and also",
+            sg.popup_no_titlebar("Please star our 'JARVIS-GUI' github repository and also",
                               "Subscribe and share our 'Epicalable' Youtube channel",
                               "so you can watch us play games :-)")
 
         elif event == 'About...':
-            sg.popup_no_frame('---About J.A.R.V.I.S---',
-                              'Version: 0.8.7',
+            sg.popup_no_titlebar('---About J.A.R.V.I.S---',
+                              'Version: 0.9.2',
                               'Copyright (C) 2021 Epicalable LLC')
 
 window.close()
