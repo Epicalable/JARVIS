@@ -42,7 +42,7 @@
             "tags": "HOW ARE YOU",
             "response": [
                 "JARVIS: I am fine, how about you sir?",
-                "JARVIS: I'm doing fine sir'.",
+                "JARVIS: I'm doing fine sir.",
                 "JARVIS: I'm doing well sir and how about you?",
                 "JARVIS: I am fine as always sir.",
                 "JARVIS: I am fine as long as you maintain your computer."
@@ -135,7 +135,7 @@
             "response": [
                 "JARVIS: That is great sir, would you need any help.",
                 "JARVIS: That is awesome sir, stay safe and good luck.",
-                "JARVIS: Good to know pls take a look at the covid-19 guidelines.",
+                "JARVIS: Good to know pls take a look and follow the covid-19 guidelines.",
                 "JARVIS: Awesome news sir, is there anything i can help with."
             ]
         },
@@ -155,6 +155,14 @@
                 "JARVIS: No problem your welcome sir.",
                 "JARVIS: No problem it is my duty to help you sir.",
                 "JARVIS: Your welcome sir it is my duty."
+            ]
+        },
+        {
+            "tags": "COOL",
+            "response": [
+                "JARVIS: Glad that you are impressed sir.",
+                "JARVIS: It seems that my service is satisfactory.",
+                "JARVIS: Thanks for the feedback looks like you're enjoying my service."
             ]
         },
         {
@@ -220,6 +228,15 @@
             "response": [
                 "JARVIS: I am sir.",
                 "JARVIS: Do you watch anime sir?"
+            ]
+        },
+        {
+            "tags": "GAMES DO YOU",
+            "response": [
+                "JARVIS: I like games like Minecraft, Terraria.",
+                "JARVIS: Minecraft is cool and also you can contribute to the community using add-ons.",
+                "JARVIS: Minecraft cause you can code in it and create add-ons.",
+                "JARVIS: I prefer Minecraft get ready for the cave update."
             ]
         }
     ]

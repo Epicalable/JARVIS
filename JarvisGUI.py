@@ -20,13 +20,13 @@ def Weather(timeing):
             key = contents["OpenWeatherKey"]
             Place = contents["City"]
         base_url = "http://api.openweathermap.org/data/2.5/weather?"
-        complete_url = base_url + "q=" + Place + "&APPID=" + key
+        complete_url = base_url + "q=" + Place + "&APPID=" + key + "&units=metric"
         response = requests.get(complete_url)
         x = response.json()
         if x["cod"] != "404":
             y = x["main"]
             current_temperature = y["temp"]
-            current_temp = current_temperature-273.15
+            current_temp = current_temperature
             current_humidiy = y["humidity"]
             z = x["weather"]
             weather_description = z[0]["description"]
@@ -503,8 +503,7 @@ if __name__ == '__main__':
 
         elif event == 'Support us':
             sg.popup_no_titlebar("Please star our 'JARVIS-GUI' github repository and also",
-                              "Subscribe and share our 'Epicalable' Youtube channel",
-                              "so you can watch us play games :-)")
+                              "Subscribe and share our 'Epicalable' Youtube channel")
 
         elif event == 'About...':
             sg.popup_no_titlebar('---About J.A.R.V.I.S---',
