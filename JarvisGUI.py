@@ -463,6 +463,9 @@ if __name__ == '__main__':
 
                         elif "HEADLINES" in query:
                             Breifing('News Headlines', 'Current Headlines(Enter country abbreviation in given field)')
+
+                        elif "THE NEWS" in query:
+                            Breifing('News Headlines', 'Current Headlines(Enter country abbreviation in given field)')
                         
                         elif "STOCKS" in query or "STOCK PRICE" in query:
                             query = query.replace('GET ME ', "")
