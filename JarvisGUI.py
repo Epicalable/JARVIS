@@ -10,6 +10,7 @@ import json
 import smtplib
 import bs4
 import wikipedia
+import webbrowser
 from random import choice
 
 
@@ -319,7 +320,8 @@ with open("Jarinfo.json") as f:
 sg.theme('DarkGrey8')  # gives window a spiffy set of colors
 sg.set_options(element_padding=(3,3))
 menu_def = [['&MENU ', ['&Settings', 'E&xit']],
-            ['&HELP', ['&Help','&Support us', '&About...']], ]
+            ['&HELP', ['&Help', '&Report Issue', '&Version']], 
+            ['&ABOUT US', ['&Support Us', '&Our Website']], ]
 layout = [[sg.Menu(menu_def, tearoff=False)],
           [sg.Text('J.A.R.V.I.S  A.I', size=(135, 1)),
            sg.Text(('(C) Epicalable'), size=(20, 1))],
@@ -501,14 +503,22 @@ if __name__ == '__main__':
         elif event == 'Settings':
             Settings()
 
-        elif event == 'Help':
-            Help()
+        
 
-        elif event == 'Support us':
+        elif event == 'Support Us':
             sg.popup_no_titlebar("Please star our 'JARVIS-GUI' github repository and also",
                               "Subscribe and share our 'Epicalable' Youtube channel")
 
-        elif event == 'About...':
+        elif event == 'Our Website':
+            webbrowser.open("https://epicalable.github.io/epicalable.html", new=1)
+
+        elif event == 'Help':
+            Help()
+
+        elif event == 'Report Issue':
+            webbrowser.open("https://github.com/Epicalable/JARVIS-GUI/issues", new=1)
+
+        elif event == 'Version':
             sg.popup_no_titlebar('---About J.A.R.V.I.S---',
                               'Version: 0.9.2',
                               'Copyright (C) 2021 Epicalable LLC')
