@@ -328,7 +328,7 @@ layout = [[sg.Menu(menu_def, tearoff=False)],
           [sg.Output(size=(LoadOutput, 38), font=('Helvetica 10'))],
           [sg.Multiline(size=(LoadInput, 2), enter_submits=True, key='-QUERY-', do_not_clear=False),
            sg.Button('ENTER',size=(11,2), bind_return_key=True)]]
-window = sg.Window('J.A.R.V.I.S GUI', layout, location=(0,0) ,icon=r'icon/Jarvis.ico', font=(
+window = sg.Window('J.A.R.V.I.S GUI', layout, location=(0,0) ,icon=r'icon/JarvisBot.ico', font=(
     'Helvetica', ' 13'), default_button_element_size=(8, 2)).Finalize()
 window.maximize()
 
@@ -508,6 +508,7 @@ if __name__ == '__main__':
         elif event == 'Support Us':
             sg.popup_no_titlebar("Please star our 'JARVIS-GUI' github repository and also",
                               "Subscribe and share our 'Epicalable' Youtube channel")
+            webbrowser.open("https://github.com/Epicalable/JARVIS", new=1)
 
         elif event == 'Our Website':
             webbrowser.open("https://epicalable.github.io/epicalable.html", new=1)
