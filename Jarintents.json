@@ -238,6 +238,12 @@
                 "JARVIS: Minecraft cause you can code in it and create add-ons.",
                 "JARVIS: I prefer Minecraft get ready for the cave update."
             ]
+        },
+        {
+            "tags": "OK",
+            "response": [
+                "JARVIS:  "
+            ]
         }
     ]
 }
