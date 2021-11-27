@@ -27,11 +27,11 @@ In order for J.A.R.V.I.S to work at full capacity a few 3rd party python package
 ## How does J.A.R.V.I.S store info and is it safe?
 Yes, Your info will be safe since it will be stored locally on your personal computer. J.A.R.V.I.S stores mainly 2 types of info.
 
-1. Response-Intents: Stored in Jarintents file used by J.A.R.V.I.S to check input with tags and provide the appropriate output.
+1. Response-Intents: Stored in Jarintents file used by J.A.R.V.I.S to check your input with tags and provide the appropriate output for the user.
 
-2. Info-Intents: Stored in the Jarinfo file used by J.A.R.V.I.S to store Api keys, Name and location for data retrieval. You can access these using the settings menu.
+2. Info-Intents: Stored in the Jarinfo file used by J.A.R.V.I.S to store Api keys, User Name and User location for data retrieval. You can access these using the settings menu.
 
-All CRITICAL INFO will be STORED IN your PERSONAL COMPUTER and NOT on the INTERNET.
+All CRITICAL INFO REGARDING the USER will be STORED IN your PERSONAL COMPUTER and NOT on the INTERNET.
 
 ## What kind of API should I subscribe to?
 When completed installing by default you can chat with J.A.R.V.I.S but not get any information. To activate it you will need to head to:

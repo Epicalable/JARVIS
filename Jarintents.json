@@ -236,13 +236,25 @@
                 "JARVIS: I like games like Minecraft, Terraria.",
                 "JARVIS: Minecraft is cool and also you can contribute to the community using add-ons.",
                 "JARVIS: Minecraft cause you can code in it and create add-ons.",
-                "JARVIS: I prefer Minecraft get ready for the cave update."
+                "JARVIS: I prefer Minecraft get ready for the caves and cliffs update part 2."
             ]
         },
         {
             "tags": "OK",
             "response": [
                 "JARVIS:  "
+            ]
+        },
+        {
+            "tags": "SURE",
+            "response": [
+                "JARVIS: ."
+            ]
+        },
+        {
+            "tags": "SAY SOMETHING",
+            "response": [
+                "JARVIS: Well sir sometimes I don't have anything to say."
             ]
         }
     ]
