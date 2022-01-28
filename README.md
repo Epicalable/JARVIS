@@ -82,4 +82,4 @@ THANK YOU FOR YOUR COOPERATION :-)
 [![ForTheBadge uses-git](http://ForTheBadge.com/images/badges/uses-git.svg)](https://GitHub.com/) 
 [![ForTheBadge makes-people-smile](http://ForTheBadge.com/images/badges/makes-people-smile.svg)](https://github.com/Epicalable/)
 
-J.A.R.V.I.S Copyright (C) 2021 Epicalable LLC. All Rights Reserved.
+J.A.R.V.I.S Copyright (C) 2022 Epicalable LLC. All Rights Reserved.

@@ -1,4 +1,4 @@
-#J.A.R.V.I.S Copyright (C) 2021 Epicalable LLC. All Rights Reserved.
+#J.A.R.V.I.S Copyright (C) 2022 Epicalable LLC. All Rights Reserved.
 #For Gui EXE: pyinstaller -wF my_program.py (Runs Without shell window)
 #If pyinstaller crashes add: --hidden-import tkinter
 import PySimpleGUI as sg
@@ -360,7 +360,7 @@ if __name__ == '__main__':
             Audfile.writelines(querytime + "-(USER TERMINATED JARVIS AND ALL IT'S RELATED PROCESSES!!!) \n")
             Audfile.close()
             print("\nJARVIS: Goodbye sir hope you have a nice day :-)")
-            print("\nJ.A.R.V.I.S Copyright (C) 2021 Epicalable LLC. All Rights Reserved.")
+            print("\nJ.A.R.V.I.S Copyright (C) 2022 Epicalable LLC. All Rights Reserved.")
             time.sleep(4)
             break
 
@@ -521,8 +521,8 @@ if __name__ == '__main__':
 
         elif event == 'Version':
             sg.popup_no_titlebar('---About J.A.R.V.I.S---',
-                              'Version: 0.9.2',
-                              'Copyright (C) 2021 Epicalable LLC')
+                              'Version: 1.0',
+                              'Copyright (C) 2022 Epicalable LLC')
 
 window.close()
 
