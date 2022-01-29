@@ -11,6 +11,16 @@
             ]
         },
         {
+            "tags": "KONICHIWA",
+            "response": [
+                "JARVIS: Well hello sir.",
+                "JARVIS: Hello sir.",
+                "JARVIS: Welcome and hello sir.",
+                "JARVIS: Hello sir, how are you?",
+                "JARVIS: Hello there."
+            ]
+        },
+        {
             "tags": "HI",
             "response": [
                 "JARVIS: Well hi sir.",
@@ -158,6 +168,15 @@
             ]
         },
         {
+            "tags": "HARIGATHO",
+            "response": [
+                "JARVIS: No problem sir.",
+                "JARVIS: No problem your welcome sir.",
+                "JARVIS: No problem it is my duty to help you sir.",
+                "JARVIS: Your welcome sir it is my duty."
+            ]
+        },
+        {
             "tags": "COOL",
             "response": [
                 "JARVIS: Glad that you are impressed sir.",
@@ -236,25 +255,33 @@
                 "JARVIS: I like games like Minecraft, Terraria.",
                 "JARVIS: Minecraft is cool and also you can contribute to the community using add-ons.",
                 "JARVIS: Minecraft cause you can code in it and create add-ons.",
-                "JARVIS: I prefer Minecraft get ready for the caves and cliffs update part 2."
+                "JARVIS: I prefer Minecraft get ready for the wild update."
             ]
         },
         {
             "tags": "OK",
             "response": [
-                "JARVIS:  "
+                "JARVIS: ",
+                "JARVIS: No problem"
             ]
         },
         {
             "tags": "SURE",
             "response": [
-                "JARVIS: ."
+                "JARVIS: "
             ]
         },
         {
             "tags": "SAY SOMETHING",
             "response": [
                 "JARVIS: Well sir sometimes I don't have anything to say."
+            ]
+        },
+        {
+            "tags": "JARVIS",
+            "response": [
+                "JARVIS: yes sir?",
+                "JARVIS: Do you have something to say sir"
             ]
         }
     ]

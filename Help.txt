@@ -44,4 +44,4 @@ Welcome to the Help Centre
    ---Goodbye
       NOTE: Command to quit JARVIS.
 
-J.A.R.V.I.S Copyright (C) 2021 Epicalable LLC. All Rights Reserved.
+J.A.R.V.I.S Copyright (C) 2022 Epicalable LLC. All Rights Reserved.

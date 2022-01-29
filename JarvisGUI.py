@@ -389,6 +389,11 @@ if __name__ == '__main__':
                             print("JARVIS: The Date and Time is ",x," respectively sir.")
                             continue
 
+                        if "DAY" in query or "YEAR" in query:
+                            x = datetime.datetime.now()
+                            print("JARVIS: The Date and Time is ",x," respectively sir.")
+                            continue
+
                         elif "WIKIPEDIA" in query or "WIKI" in query:
                             query = query.replace('WIKI', "")
                             query = query.replace('WIKIPEDIA', "")
@@ -488,7 +493,7 @@ if __name__ == '__main__':
                             Audfile.writelines(querytime + "-(USER TERMINATED JARVIS AND ALL IT'S RELATED PROCESSES!!!) \n")
                             Audfile.close()
                             print("JARVIS: Goodbye sir hope you have a nice day :-)")
-                            print("\nJ.A.R.V.I.S Copyright (C) 2021 Epicalable LLC. All Rights Reserved.")
+                            print("\nJ.A.R.V.I.S Copyright (C) 2022 Epicalable LLC. All Rights Reserved.")
                             time.sleep(4)
                             break
 
