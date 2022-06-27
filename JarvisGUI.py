@@ -78,7 +78,7 @@ def stocks(tickers):
         Audfile.close()
 
 
-def Breifing(title, text):
+def Breifing(title):
     str = 'general business science health technology entertainment sports'
     with open("Jarinfo.json") as f:
         contents = json.load(f)
@@ -88,92 +88,55 @@ def Breifing(title, text):
     top_headlines_url = 'https://newsapi.org/v2/top-headlines'
 
     if title == 'Morning Briefing':
-        sg.theme('DarkGreen3')
-        layout = [[sg.Text(text)],
-                  [sg.Output(size=(45, 20), font=('Helvetica 10'))],
-                  [sg.Button('GET NEWS'), sg.Button('EXIT')]]
-        window = sg.Window(title, layout, no_titlebar=True, keep_on_top=True)
-        while True:     # Event Loop
-            event, value = window.read()
-            if event in (sg.WIN_CLOSED, 'EXIT'):            # quit if exit button or X
-                break
-            if event == 'GET NEWS':
-                try:
-                    splits = str.split()
-                    for split in splits:
-                        print("\n" + split.upper() + ":--")
-                        headlines_payload = {
-                            'category': split, 'country': country}
-                        open_news_page = requests.get(
-                            url=top_headlines_url, headers=headers, params=headlines_payload).json()
-                        article = open_news_page["articles"]
-                        results = []
-                        Audfile = open("Jaraudit.txt", "a")
-                        querytime = (datetime.datetime.now().ctime())
-                        Audfile.writelines(
-                            querytime + "-(CONNECTION ESTABLISHED WITH NEWSAPI.ORG!!!) \n")
-                        Audfile.close()
-                        for ar in article:
-                            results.append(ar["title"])
-                        for i in range(len(results)):
-                            print(i + 1, '.', results[i])
-                except:
-                    print("JARVIS: Something went wrong!!!" +
-                          "\nPlease check if you have a good internet connection and have given a valid \ncategory and location.")
-                    Audfile = open("Jaraudit.txt", "a")
-                    querytime = (datetime.datetime.now().ctime())
-                    Audfile.writelines(
-                        querytime + "-(CONNECTION FAILED WITH NEWSAPI.ORG!!!) \n")
-                    Audfile.close()
-                    continue
-        window.close()
-        event = window.read()
-        return event != 'OK'
+        try:
+            headers = {'Authorization': JNews}
+            top_headlines_url = 'https://newsapi.org/v2/top-headlines'
+            splits = str.split()
+            for split in splits:
+                print("\n" + split.upper() + ":--")
+                headlines_payload = {'category': split, 'country': country}
+                open_news_page = requests.get(url=top_headlines_url, headers=headers, params=headlines_payload).json()
+                article = open_news_page["articles"]
+                results = []
+                querytime = (datetime.datetime.now().ctime())
+                for ar in article:
+                    results.append(ar["title"])
+                    for i in range(len(results)):
+                        print(i + 1, '.', results[i])
+        except:
+            print("JARVIS: Something went wrong!!!" +
+                  "\nJARVIS: Please check if you have a good \ninternet connection and have given a valid \ncategory and location.")
+            Audfile = open("Jaraudit.txt", "a")
+            querytime = (datetime.datetime.now().ctime())
+            Audfile.writelines(
+                querytime + "-(CONNECTION FAILED WITH NEWSAPI.ORG!!!) \n")
+            Audfile.close()
+    
     else:
-        sg.theme('DarkGreen3')
-        window = sg.Window(title,
-                           [[sg.Text(text)],
-                            [sg.Output(size=(46, 20), font=('Helvetica 10'))],
-                               [sg.Multiline(size=(28, 1), enter_submits=TRUE, key='-NEWS-', do_not_clear=False),
-                                sg.Button('GET NEWS', bind_return_key=True),
-                                sg.Button('EXIT')]], no_titlebar=True, keep_on_top=True)
-        while True:     # Event Loop
-            event, value = window.read()
-            if event in (sg.WIN_CLOSED, 'EXIT'):            # quit if exit button or X
-                break
-            if event == 'GET NEWS':
-                country = value['-NEWS-'].rstrip()
-                try:
-                    splits = str.split()
-                    for split in splits:
-                        print("\n" + split.upper() + ":--")
-                        headlines_payload = {
-                            'category': split, 'country': country}
-                        open_news_page = requests.get(
-                            url=top_headlines_url, headers=headers, params=headlines_payload).json()
-                        article = open_news_page["articles"]
-                        results = []
-                        Audfile = open("Jaraudit.txt", "a")
-                        querytime = (datetime.datetime.now().ctime())
-                        Audfile.writelines(
-                            querytime + "-(CONNECTION ESTABLISHED WITH NEWSAPI.ORG!!!) \n")
-                        Audfile.close()
-                        for ar in article:
-                            results.append(ar["title"])
-                        for i in range(len(results)):
-                            print(i + 1, '.', results[i])
-                except:
-                    print("JARVIS: Something went wrong!!!" +
-                          "\nJARVIS: Please check if you have a good \ninternet connection and have given a valid \ncategory and location.")
-                    Audfile = open("Jaraudit.txt", "a")
-                    querytime = (datetime.datetime.now().ctime())
-                    Audfile.writelines(
-                        querytime + "-(CONNECTION FAILED WITH NEWSAPI.ORG!!!) \n")
-                    Audfile.close()
-                    continue
-        window.close()
-        event = window.read()
-        return event != 'OK'
+        try:
+            headers = {'Authorization': JNews}
+            top_headlines_url = 'https://newsapi.org/v2/top-headlines'
+            splits = str.split()
+            for split in splits:
+                print("\n" + split.upper() + ":--")
+                headlines_payload = {'category': split, 'country': country}
+                open_news_page = requests.get(
+                    url=top_headlines_url, headers=headers, params=headlines_payload).json()
+                article = open_news_page["articles"]
+                results = []
+                querytime = (datetime.datetime.now().ctime())
+                for ar in article:
+                    results.append(ar["title"])
+                    for i in range(len(results)):
+                        print(i + 1, '.', results[i])
+        except:
+            print("JARVIS: Something went wrong!!!" +
+                  "\nJARVIS: Please check if you have a good \ninternet connection and have given a valid \ncategory and location.")
+            Audfile = open("Jaraudit.txt", "a")
+            querytime = (datetime.datetime.now().ctime())
+            Audfile.writelines(
+                querytime + "-(CONNECTION FAILED WITH NEWSAPI.ORG!!!) \n")
+            Audfile.close()
 
 
 def Settings():
@@ -517,12 +480,10 @@ if __name__ == '__main__':
                                 continue
 
                         elif "HEADLINES" in query:
-                            Breifing(
-                                'News Headlines', 'Current Headlines(Enter country abbreviation in given field)')
+                            Breifing('News Headlines')
 
                         elif "THE NEWS" in query:
-                            Breifing(
-                                'News Headlines', 'Current Headlines(Enter country abbreviation in given field)')
+                            Breifing('News Headlines')
 
                         elif "STOCKS" in query or "STOCK PRICE" in query:
                             query = query.replace('GET ME ', "")
