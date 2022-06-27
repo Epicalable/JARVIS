@@ -48,7 +48,8 @@ def Weather(timeing):
         print("JARVIS: I am having a problem in getting live weather please check your internet-connection.")
         Audfile = open("Jaraudit.txt", "a")
         querytime = (datetime.datetime.now().ctime())
-        Audfile.writelines(querytime + "-(CONNECTION FAILED WITH OPENWEATHERMAP.ORG!!!) \n")
+        Audfile.writelines(
+            querytime + "-(CONNECTION FAILED WITH OPENWEATHERMAP.ORG!!!) \n")
         Audfile.close()
 
 
@@ -65,13 +66,15 @@ def stocks(tickers):
         print("Current pricing of Stock for "+tickers+" is: "+price)
         Audfile = open("Jaraudit.txt", "a")
         querytime = (datetime.datetime.now().ctime())
-        Audfile.writelines(querytime + "-(USER GETS STOCK PRICES FOR "+ tickers +"!!!) \n")
+        Audfile.writelines(
+            querytime + "-(USER GETS STOCK PRICES FOR " + tickers + "!!!) \n")
         Audfile.close()
     except:
         print("JARVIS: I am having a problem in getting Stock Prices please check your internet-connection")
         Audfile = open("Jaraudit.txt", "a")
         querytime = (datetime.datetime.now().ctime())
-        Audfile.writelines(querytime + "-(CONNECTION FAILED TO GET STOCK PRICES!!!) \n")
+        Audfile.writelines(
+            querytime + "-(CONNECTION FAILED TO GET STOCK PRICES!!!) \n")
         Audfile.close()
 
 
@@ -107,7 +110,8 @@ def Breifing(title, text):
                         results = []
                         Audfile = open("Jaraudit.txt", "a")
                         querytime = (datetime.datetime.now().ctime())
-                        Audfile.writelines(querytime + "-(CONNECTION ESTABLISHED WITH NEWSAPI.ORG!!!) \n")
+                        Audfile.writelines(
+                            querytime + "-(CONNECTION ESTABLISHED WITH NEWSAPI.ORG!!!) \n")
                         Audfile.close()
                         for ar in article:
                             results.append(ar["title"])
@@ -151,7 +155,8 @@ def Breifing(title, text):
                         results = []
                         Audfile = open("Jaraudit.txt", "a")
                         querytime = (datetime.datetime.now().ctime())
-                        Audfile.writelines(querytime + "-(CONNECTION ESTABLISHED WITH NEWSAPI.ORG!!!) \n")
+                        Audfile.writelines(
+                            querytime + "-(CONNECTION ESTABLISHED WITH NEWSAPI.ORG!!!) \n")
                         Audfile.close()
                         for ar in article:
                             results.append(ar["title"])
@@ -196,7 +201,8 @@ def Settings():
               [sg.T('Current-City:', size=(13, 1)), sg.Input(
                   City, key='-City-', size=(34, 1))],
               [sg.Text('GUI-Customization:--', font='Default 12')],
-              [sg.Text('Enter only in Numbers to adjust the UI screen size.', font='Default 10')],
+              [sg.Text(
+                  'Enter only in Numbers to adjust the UI screen size.', font='Default 10')],
               [sg.T('Output-Screen:', size=(13, 1)), sg.Input(
                   Outputsc, key='-Outsc-', size=(34, 1))],
               [sg.T('Input-bar:', size=(13, 1)), sg.Input(
@@ -249,7 +255,8 @@ def send_an_email(from_address, to_address, subject, message_text, password):
                    email_message)    # sending the email
         Audfile = open("Jaraudit.txt", "a")
         querytime = (datetime.datetime.now().ctime())
-        Audfile.writelines(querytime + "-(USER SUCCESSFULLY SENT AN EMAIL!!!) \n")
+        Audfile.writelines(
+            querytime + "-(USER SUCCESSFULLY SENT AN EMAIL!!!) \n")
         Audfile.close()
         s.quit()    # terminating the session
     except:
@@ -259,6 +266,7 @@ def send_an_email(from_address, to_address, subject, message_text, password):
         Audfile.writelines(
             querytime + "-(USER FAILED TO SEND AN EMAIL!!!) \n")
         Audfile.close()
+
 
 def gmail():
     sg.theme('Dark')
@@ -294,23 +302,55 @@ def gmail():
 
 
 def Help():
-    sg.theme('Dark')
-    layout = [[sg.Text('Help Center', font='Default 14')],
-              [sg.Output(size=(60, 20), font=('Helvetica 10'))],
-              [sg.Button('GET HELP'), sg.Button('EXIT')]]
-    window = sg.Window('Help Center', layout, no_titlebar=True, keep_on_top=True)
+    sg.popup_scrolled("""Welcome to the Help Centre
+             1. Setting up JARVIS: -----------
+             JARVIS have the ability to chat once installed by default.
+             The User will then need to register at these following websites:
 
-    while True:     # Event Loop
-        event, values = window.read()
-        if event in (sg.WIN_CLOSED, 'EXIT'):            # quit if exit button or X
-            break
-        if event == 'GET HELP':
-            with open ("Help.txt","r") as H:
-                print(H.read())
-            continue
-    window.close()
-    event = window.read()
-    return event != 'OK'
+             1. https: // newsapi.org / : To integrate live news.
+
+             2. https: // openweathermap.org / : To integrate live weather.
+
+             Both websites once registered will provide you an API key.
+             Users should then copy the API key and paste it 
+             in the respective bars in the settings menu.
+             News will need your country location 
+             (only morning briefing)
+             so Please enter your country's abbreviation.
+             Example: au, cz, de, in , sg, us, uk
+             Weather will need your city location 
+             (when always entering JARVIS)
+             so please enter your city's name.
+             Example: Delhi, Dubai, New york, London, Singapore, Sydney
+
+             2. Commands to run JARVIS: ------------
+             To make JARVIS respond Users will need to enter a Command
+             in the input for which JARVIS will scan for keywords
+             and provide an answer or information
+
+             Here is a sample list of available Commands:
+             ---Hello
+             - --How are you
+             - --Are you fine
+             - --Are you real
+             - --What is the time
+             - --News about[your input]
+             EX. News about Github.
+             ---Get me news headlines
+             NOTE: Type in country's abbreviation in input bar in Newsui.
+             ---Send an email
+             - --Wikipedia[Query]
+             EX. Wikipedia github.
+             ---Who is [Query] / What is [Query]
+             NOTE: JARVIS will get answer from Wikipedia.
+             ---Get me stock price for [Query]
+             NOTE: Query of stock should be abbreviations.
+             EX. TSLA, AAPL, MSFT.
+             ---Goodbye
+             NOTE: Command to quit JARVIS.
+
+             J.A.R.V.I.S Copyright(C) 2021 Epicalable LLC. 
+             All Rights Reserved.""", title="Help Centre", size=(90, 30))
 
 
 with open("Jarinfo.json") as f:
@@ -318,24 +358,25 @@ with open("Jarinfo.json") as f:
     LoadOutput = contents["Outputscreensize"]
     LoadInput = contents["Inputbarsize"]
 sg.theme('DarkGrey8')  # gives window a spiffy set of colors
-sg.set_options(element_padding=(3,3))
+sg.set_options(element_padding=(3, 3))
 menu_def = [['&MENU ', ['&Settings', 'E&xit']],
-            ['&HELP', ['&Help', '&Report Issue', '&Version']], 
+            ['&HELP', ['&Help', '&Report Issue', '&Version']],
             ['&ABOUT US', ['&Support Us', '&Our Website']], ]
 layout = [[sg.Menu(menu_def, tearoff=False)],
           [sg.Text('J.A.R.V.I.S  A.I', size=(135, 1)),
            sg.Text(('(C) Epicalable'), size=(20, 1))],
           [sg.Output(size=(LoadOutput, 38), font=('Helvetica 10'))],
           [sg.Multiline(size=(LoadInput, 2), enter_submits=True, key='-QUERY-', do_not_clear=False),
-           sg.Button('ENTER',size=(11,2), bind_return_key=True)]]
-window = sg.Window('J.A.R.V.I.S GUI', layout, location=(0,0) ,icon=r'icon/JarvisBot.ico', font=(
+           sg.Button('ENTER', size=(11, 2), bind_return_key=True)]]
+window = sg.Window('J.A.R.V.I.S GUI', layout, location=(0, 0), icon=r'icon/JarvisBot.ico', font=(
     'Helvetica', ' 13'), default_button_element_size=(8, 2)).Finalize()
 window.maximize()
 
 print("JARVIS: Welcome sir")
 Audfile = open("Jaraudit.txt", "a")
 querytime = (datetime.datetime.now().ctime())
-Audfile.writelines(querytime + "-(USER ACTIVATED JARVIS AND INITIALIZED RELATED PROCESSES!!!) \n")
+Audfile.writelines(
+    querytime + "-(USER ACTIVATED JARVIS AND INITIALIZED RELATED PROCESSES!!!) \n")
 Audfile.close()
 
 hour = int(datetime.datetime.now().hour)
@@ -357,7 +398,8 @@ if __name__ == '__main__':
         if event in (sg.WIN_CLOSED, 'Exit'):   # quit if exit button or X
             Audfile = open("Jaraudit.txt", "a")
             querytime = (datetime.datetime.now().ctime())
-            Audfile.writelines(querytime + "-(USER TERMINATED JARVIS AND ALL IT'S RELATED PROCESSES!!!) \n")
+            Audfile.writelines(
+                querytime + "-(USER TERMINATED JARVIS AND ALL IT'S RELATED PROCESSES!!!) \n")
             Audfile.close()
             print("\nJARVIS: Goodbye sir hope you have a nice day :-)")
             print("\nJ.A.R.V.I.S Copyright (C) 2022 Epicalable LLC. All Rights Reserved.")
@@ -386,12 +428,14 @@ if __name__ == '__main__':
                     else:
                         if "DATE" in query or "TIME" in query:
                             x = datetime.datetime.now()
-                            print("JARVIS: The Date and Time is ",x," respectively sir.")
+                            print("JARVIS: The Date and Time is ",
+                                  x, " respectively sir.")
                             continue
 
                         if "DAY" in query or "YEAR" in query:
                             x = datetime.datetime.now()
-                            print("JARVIS: The Date and Time is ",x," respectively sir.")
+                            print("JARVIS: The Date and Time is ",
+                                  x, " respectively sir.")
                             continue
 
                         elif "WIKIPEDIA" in query or "WIKI" in query:
@@ -401,14 +445,16 @@ if __name__ == '__main__':
                                 print(wikipedia.summary(query))
                                 Audfile = open("Jaraudit.txt", "a")
                                 querytime = (datetime.datetime.now().ctime())
-                                Audfile.writelines(querytime + "-(CONNECTION ESTABLISHED WITH WIKIPEDIA!!!) \n")
+                                Audfile.writelines(
+                                    querytime + "-(CONNECTION ESTABLISHED WITH WIKIPEDIA!!!) \n")
                                 Audfile.close()
                             except:
                                 print(
                                     "JARVIS: I am having a problem in getting wikipedia please check your internet-connection.")
                                 Audfile = open("Jaraudit.txt", "a")
                                 querytime = (datetime.datetime.now().ctime())
-                                Audfile.writelines(querytime + "-(CONNECTION FAILED WITH WIKIPEDIA!!!) \n")
+                                Audfile.writelines(
+                                    querytime + "-(CONNECTION FAILED WITH WIKIPEDIA!!!) \n")
                                 Audfile.close()
                             continue
 
@@ -422,14 +468,16 @@ if __name__ == '__main__':
                                 print(wikipedia.summary(query))
                                 Audfile = open("Jaraudit.txt", "a")
                                 querytime = (datetime.datetime.now().ctime())
-                                Audfile.writelines(querytime + "-(CONNECTION ESTABLISHED WITH WIKIPEDIA!!!) \n")
+                                Audfile.writelines(
+                                    querytime + "-(CONNECTION ESTABLISHED WITH WIKIPEDIA!!!) \n")
                                 Audfile.close()
                             except:
                                 print(
                                     "JARVIS: I am having a problem in getting wikipedia please check your internet-connection")
                                 Audfile = open("Jaraudit.txt", "a")
                                 querytime = (datetime.datetime.now().ctime())
-                                Audfile.writelines(querytime + "-(CONNECTION FAILED WITH WIKIPEDIA!!!) \n")
+                                Audfile.writelines(
+                                    querytime + "-(CONNECTION FAILED WITH WIKIPEDIA!!!) \n")
                                 Audfile.close()
                             continue
 
@@ -457,7 +505,7 @@ if __name__ == '__main__':
                                 for ar in article:
                                     results.append(ar["title"])
                                 for i in range(len(results)):
-                                    print(i + 1,'.', results[i])
+                                    print(i + 1, '.', results[i])
                             except:
                                 print(
                                     "JARVIS: Something went wrong please check if you have a good internet connection.")
@@ -469,11 +517,13 @@ if __name__ == '__main__':
                                 continue
 
                         elif "HEADLINES" in query:
-                            Breifing('News Headlines', 'Current Headlines(Enter country abbreviation in given field)')
+                            Breifing(
+                                'News Headlines', 'Current Headlines(Enter country abbreviation in given field)')
 
                         elif "THE NEWS" in query:
-                            Breifing('News Headlines', 'Current Headlines(Enter country abbreviation in given field)')
-                        
+                            Breifing(
+                                'News Headlines', 'Current Headlines(Enter country abbreviation in given field)')
+
                         elif "STOCKS" in query or "STOCK PRICE" in query:
                             query = query.replace('GET ME ', "")
                             query = query.replace('PRICE ', "")
@@ -490,44 +540,44 @@ if __name__ == '__main__':
                         elif query == "GOODBYE":
                             Audfile = open("Jaraudit.txt", "a")
                             querytime = (datetime.datetime.now().ctime())
-                            Audfile.writelines(querytime + "-(USER TERMINATED JARVIS AND ALL IT'S RELATED PROCESSES!!!) \n")
+                            Audfile.writelines(
+                                querytime + "-(USER TERMINATED JARVIS AND ALL IT'S RELATED PROCESSES!!!) \n")
                             Audfile.close()
                             print("JARVIS: Goodbye sir hope you have a nice day :-)")
-                            print("\nJ.A.R.V.I.S Copyright (C) 2022 Epicalable LLC. All Rights Reserved.")
+                            print(
+                                "\nJ.A.R.V.I.S Copyright (C) 2022 Epicalable LLC. All Rights Reserved.")
                             time.sleep(4)
                             break
 
                         else:
                             print(
                                 "JARVIS: I did not understand you, as you can see i am still evolving :-)")
-                            Audfile = open("Jaraudit.txt", "a")  
+                            Audfile = open("Jaraudit.txt", "a")
                             Audfile.write("ERROR 404 (FALLBACK)!!! \n")
                             Audfile.close()
-
 
         elif event == 'Settings':
             Settings()
 
-        
-
         elif event == 'Support Us':
             sg.popup_no_titlebar("Please star our 'JARVIS-GUI' github repository and also",
-                              "Subscribe and share our 'Epicalable' Youtube channel")
+                                 "Subscribe and share our 'Epicalable' Youtube channel")
             webbrowser.open("https://github.com/Epicalable/JARVIS", new=1)
 
         elif event == 'Our Website':
-            webbrowser.open("https://epicalable.github.io/epicalable.html", new=1)
+            webbrowser.open(
+                "https://epicalable.github.io/epicalable.html", new=1)
 
         elif event == 'Help':
             Help()
 
         elif event == 'Report Issue':
-            webbrowser.open("https://github.com/Epicalable/JARVIS-GUI/issues", new=1)
+            webbrowser.open(
+                "https://github.com/Epicalable/JARVIS-GUI/issues", new=1)
 
         elif event == 'Version':
             sg.popup_no_titlebar('---About J.A.R.V.I.S---',
-                              'Version: 1.0',
-                              'Copyright (C) 2022 Epicalable LLC')
+                                 'Version: 1.0',
+                                 'Copyright (C) 2022 Epicalable LLC')
 
 window.close()
-
