@@ -2,7 +2,6 @@
 #For Gui EXE: pyinstaller -wF my_program.py (Runs Without shell window)
 #If pyinstaller crashes add: --hidden-import tkinter
 import PySimpleGUI as sg
-from tkinter.constants import TRUE
 import datetime
 import time
 import requests
@@ -101,8 +100,8 @@ def Breifing(title):
                 querytime = (datetime.datetime.now().ctime())
                 for ar in article:
                     results.append(ar["title"])
-                    for i in range(len(results)):
-                        print(i + 1, '.', results[i])
+                for i in range(len(results)):
+                    print(i + 1, '.', results[i])
         except:
             print("JARVIS: Something went wrong!!!" +
                   "\nJARVIS: Please check if you have a good \ninternet connection and have given a valid \ncategory and location.")
@@ -127,8 +126,8 @@ def Breifing(title):
                 querytime = (datetime.datetime.now().ctime())
                 for ar in article:
                     results.append(ar["title"])
-                    for i in range(len(results)):
-                        print(i + 1, '.', results[i])
+                for i in range(len(results)):
+                    print(i + 1, '.', results[i])
         except:
             print("JARVIS: Something went wrong!!!" +
                   "\nJARVIS: Please check if you have a good \ninternet connection and have given a valid \ncategory and location.")
@@ -312,7 +311,7 @@ def Help():
              ---Goodbye
              NOTE: Command to quit JARVIS.
 
-             J.A.R.V.I.S Copyright(C) 2021 Epicalable LLC. 
+             J.A.R.V.I.S Copyright(C) 2022 Epicalable LLC. 
              All Rights Reserved.""", title="Help Centre", size=(90, 30))
 
 
@@ -346,7 +345,7 @@ hour = int(datetime.datetime.now().hour)
 if hour >= 0 and hour < 12:
     timeing = "JARVIS: Good morning, here is the current weather in "
     Weather(timeing)
-    Breifing('Morning Briefing', 'Morning News Headlines')
+    Breifing('Morning Briefing')
 elif hour >= 12 and hour < 18:
     timeing = "JARVIS: Good afternoon, here is the current weather in "
     Weather(timeing)
