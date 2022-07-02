@@ -7,9 +7,10 @@ import time
 import requests
 import json
 import smtplib
-import bs4
 import wikipedia
 import webbrowser
+from geopy.geocoders import Nominatim
+import geocoder
 from random import choice
 
 
@@ -52,29 +53,16 @@ def Weather(timeing):
         Audfile.close()
 
 
-def stocks(tickers):
-    # Apple, Microsoft and the S&P500 index.
-    # tickers = ['AAPL', 'MSFT', '^GSPC']
-    try:
-        tickers = tickers.upper()
-        link = 'https://finance.yahoo.com/quote/'+tickers+'?p='+tickers
-        url = requests.get(link)
-        soup = bs4.BeautifulSoup(url.text, features="html.parser")
-        price = soup.find_all("div", {'class': 'My(6px) Pos(r) smartphone_Mt(6px)'})[
-            0].find('span').text
-        print("Current pricing of Stock for "+tickers+" is: "+price)
-        Audfile = open("Jaraudit.txt", "a")
-        querytime = (datetime.datetime.now().ctime())
-        Audfile.writelines(
-            querytime + "-(USER GETS STOCK PRICES FOR " + tickers + "!!!) \n")
-        Audfile.close()
-    except:
-        print("JARVIS: I am having a problem in getting Stock Prices please check your internet-connection")
-        Audfile = open("Jaraudit.txt", "a")
-        querytime = (datetime.datetime.now().ctime())
-        Audfile.writelines(
-            querytime + "-(CONNECTION FAILED TO GET STOCK PRICES!!!) \n")
-        Audfile.close()
+def location():
+    #initialize the object
+    Nomi_locator = Nominatim(user_agent="Jarvis")
+    my_location = geocoder.ip('me')
+    #latitude and longitude coordinates
+    latitude = my_location.geojson['features'][0]['properties']['lat']
+    longitude = my_location.geojson['features'][0]['properties']['lng']
+    #getting location
+    location = Nomi_locator.reverse(f"{latitude}, {longitude}")
+    print("Your Current IP location is", location)
 
 
 def Breifing(title):
@@ -110,7 +98,6 @@ def Breifing(title):
             Audfile.writelines(
                 querytime + "-(CONNECTION FAILED WITH NEWSAPI.ORG!!!) \n")
             Audfile.close()
-    
     else:
         try:
             headers = {'Authorization': JNews}
@@ -171,7 +158,6 @@ def Settings():
                   Inputbr, key='-Inbr-', size=(34, 1))],
               [sg.Button('Save'), sg.Button('Exit')]]
     window = sg.Window('Settings', layout, no_titlebar=True, keep_on_top=True)
-
     while True:  # Event Loop
         event, values = window.read()
         if event in (sg.WIN_CLOSED, 'Exit'):
@@ -229,7 +215,6 @@ def send_an_email(from_address, to_address, subject, message_text, password):
             querytime + "-(USER FAILED TO SEND AN EMAIL!!!) \n")
         Audfile.close()
 
-
 def gmail():
     sg.theme('Dark')
     layout = [[sg.Text('Send an Email', font='Default 15')],
@@ -265,54 +250,64 @@ def gmail():
 
 def Help():
     sg.popup_scrolled("""Welcome to the Help Centre
-             1. Setting up JARVIS: -----------
-             JARVIS have the ability to chat once installed by default.
-             The User will then need to register at these following websites:
+            1. Setting up JARVIS: -----------
+            JARVIS have the ability to chat once installed by default.
+            The User will then need to register at these following websites:
 
-             1. https: // newsapi.org / : To integrate live news.
+            1. https: // newsapi.org / : To integrate live news.
 
-             2. https: // openweathermap.org / : To integrate live weather.
+            2. https: // openweathermap.org / : To integrate live weather.
 
-             Both websites once registered will provide you an API key.
-             Users should then copy the API key and paste it 
-             in the respective bars in the settings menu.
-             News will need your country location 
-             (only morning briefing)
-             so Please enter your country's abbreviation.
-             Example: au, cz, de, in , sg, us, uk
-             Weather will need your city location 
-             (when always entering JARVIS)
-             so please enter your city's name.
-             Example: Delhi, Dubai, New york, London, Singapore, Sydney
+            Both websites once registered will provide you an API key.
+            Users should then copy the API key and paste it 
+            in the respective bars in the settings menu.
+            News will need your country location 
+            (only morning briefing)
+            so Please enter your country's abbreviation.
+            Example: au, cz, de, in , sg, us, uk
+            Weather will need your city location 
+            (when always entering JARVIS)
+            so please enter your city's name.
+            Example: Delhi, Dubai, New york, London, Singapore, Sydney
 
-             2. Commands to run JARVIS: ------------
-             To make JARVIS respond Users will need to enter a Command
-             in the input for which JARVIS will scan for keywords
-             and provide an answer or information
+            2. Commands to run JARVIS: ------------
+            To make JARVIS respond Users will need to enter a Command
+            in the input for which JARVIS will scan for keywords
+            and provide an answer or information
 
-             Here is a sample list of available Commands:
-             ---Hello
-             - --How are you
-             - --Are you fine
-             - --Are you real
-             - --What is the time
-             - --News about[your input]
-             EX. News about Github.
-             ---Get me news headlines
-             NOTE: Type in country's abbreviation in input bar in Newsui.
-             ---Send an email
-             - --Wikipedia[Query]
-             EX. Wikipedia github.
-             ---Who is [Query] / What is [Query]
-             NOTE: JARVIS will get answer from Wikipedia.
-             ---Get me stock price for [Query]
-             NOTE: Query of stock should be abbreviations.
-             EX. TSLA, AAPL, MSFT.
-             ---Goodbye
-             NOTE: Command to quit JARVIS.
+            Here is a sample list of available Commands:
+                ---Hello
+                ---How are you
+                ---Are you fine
+                ---Are you real
+                ---What is the time
+                ---News about[your input]
+                    EX. News about Github.
+                ---Get me news headlines
+                    NOTE: Type in country's abbreviation in input bar in Newsui.
+                ---Send an email
+                ---Wikipedia[Query]
+                    EX. Wikipedia github.
+                ---Who is [Query] / What is [Query]
+                    NOTE: JARVIS will get answer from Wikipedia.
+                ---Get me stock price for [Query]
+                    NOTE: Query of stock should be abbreviations.
+                    EX. TSLA, AAPL, MSFT.
+                ---Goodbye
+                    NOTE: Command to quit JARVIS.
 
-             J.A.R.V.I.S Copyright(C) 2022 Epicalable LLC. 
-             All Rights Reserved.""", title="Help Centre", size=(90, 30))
+            J.A.R.V.I.S Copyright(C) 2022 Epicalable LLC. 
+            All Rights Reserved.""", title="Help Centre", size=(90, 30))
+
+
+
+
+
+
+
+
+
+
 
 
 with open("Jarinfo.json") as f:
@@ -334,6 +329,7 @@ window = sg.Window('J.A.R.V.I.S GUI', layout, location=(0, 0), icon=r'icon/Jarvi
     'Helvetica', ' 13'), default_button_element_size=(8, 2)).Finalize()
 window.maximize()
 
+
 print("JARVIS: Welcome sir")
 Audfile = open("Jaraudit.txt", "a")
 querytime = (datetime.datetime.now().ctime())
@@ -344,13 +340,16 @@ Audfile.close()
 hour = int(datetime.datetime.now().hour)
 if hour >= 0 and hour < 12:
     timeing = "JARVIS: Good morning, here is the current weather in "
+    location()
     Weather(timeing)
     Breifing('Morning Briefing')
 elif hour >= 12 and hour < 18:
     timeing = "JARVIS: Good afternoon, here is the current weather in "
+    location()
     Weather(timeing)
 else:
     timeing = "JARVIS: Good evening, here is the current weather in "
+    location()
     Weather(timeing)
 
 if __name__ == '__main__':
@@ -483,16 +482,6 @@ if __name__ == '__main__':
 
                         elif "THE NEWS" in query:
                             Breifing('News Headlines')
-
-                        elif "STOCKS" in query or "STOCK PRICE" in query:
-                            query = query.replace('GET ME ', "")
-                            query = query.replace('PRICE ', "")
-                            query = query.replace('PRICES ', "")
-                            query = query.replace('STOCK ', "")
-                            query = query.replace('STOCKS ', "")
-                            query = query.replace('FOR ', "")
-                            query = query.replace('ON ', "")
-                            stocks(tickers=query.upper())
 
                         elif "SEND AN EMAIL" in query or "SEND A EMAIL" in query:
                             gmail()
