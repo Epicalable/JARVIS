@@ -1,9 +1,5 @@
 # J.A.R.V.I.S
 
-<p align="center">
-  <a href="https://epicalable.github.io/epicalable.html"><img src="https://user-images.githubusercontent.com/69076784/151650293-09314e36-358d-4b6f-ad88-75ae1742c124.jpg" alt="Haystack"></a>
-</p>
-
 Kindly consider starring this repository if you like the program :-)
 
 [![ForTheBadge powered-by-electricity](http://ForTheBadge.com/images/badges/powered-by-electricity.svg)](https://github.com/Epicalable/JARVIS-GUI)
@@ -16,17 +12,18 @@ Kindly consider starring this repository if you like the program :-)
 
 
 ## What/Who is J.A.R.V.I.S?
-J.A.R.V.I.S is an chatbot written that is built and coded in Python whose aim is to be capable of chatting and retrieving any information and daily news from the internet for it's user.
+J.A.R.V.I.S is an chatbot written that is built and coded in Python whose aim is to be capable of chatting and retrieving any information and on-going news from the internet for it's user.
 
 ## Backstory of J.A.R.V.I.S
 J.A.R.V.I.S was inspired by by Tony Stark's A.I "J.A.R.V.I.S" from the Iron Man movies from Marvel. Paving the way for my dream to create a bot which can help me in automation by keeping me informed, updated and productive.
 
 ## What python packages are needed to run J.A.R.V.I.S (Requirements)?
 In order for J.A.R.V.I.S to work at full capacity a few 3rd party python packages will be required to be installed:
-1. pip install PySimpleGUI == 4.33.0
-2. pip install requests == 2.25.1
-3. pip install beautifulsoup4 == 4.9.3
-4. pip install wikipedia == 1.4.0
+1. pip install PySimpleGUI
+2. pip install requests
+3. pip install beautifulsoup4
+4. pip install wikipedia
+5. pip install geocoder
 
 ## How does J.A.R.V.I.S store info and is it safe?
 Yes, Your info will be safe since it will be stored locally on your personal computer. J.A.R.V.I.S stores mainly 2 types of info.

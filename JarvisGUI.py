@@ -36,20 +36,20 @@ def Weather(timeing):
                   "\n Humidity (Percentage) = " + str(current_humidiy) + "\n Description = " + str(weather_description))
             Audfile = open("Jaraudit.txt", "a")
             querytime = (datetime.datetime.now().ctime())
-            Audfile.writelines(querytime + "-(USER GETS WEATHER REPORT!!!) \n")
+            Audfile.writelines(querytime + "-(User Successfully Recieved Weather Report Using OpenWeatherMap.) \n")
             Audfile.close()
         else:
             print("JARVIS: Please check your city in the settings as this is invalid.")
             Audfile = open("Jaraudit.txt", "a")
             querytime = (datetime.datetime.now().ctime())
-            Audfile.writelines(querytime + "-(USER'S CITY IS INVALID!!!) \n")
+            Audfile.writelines(querytime + "-(ERROR:801, User's City Is Invalid. Please Try Again.) \n")
             Audfile.close()
     except:
         print("JARVIS: I am having a problem in getting live weather please check your internet-connection.")
         Audfile = open("Jaraudit.txt", "a")
         querytime = (datetime.datetime.now().ctime())
         Audfile.writelines(
-            querytime + "-(CONNECTION FAILED WITH OPENWEATHERMAP.ORG!!!) \n")
+            querytime + "-(ERROR:805, Connection Failed with OpenWeatherMap. Please Check your Connection.) \n")
         Audfile.close()
 
 
@@ -62,7 +62,11 @@ def location():
     longitude = my_location.geojson['features'][0]['properties']['lng']
     #getting location
     location = Nomi_locator.reverse(f"{latitude}, {longitude}")
-    print("Your Current IP location is", location)
+    print("Your Current location is", location)
+    Audfile = open("Jaraudit.txt", "a")
+    querytime = (datetime.datetime.now().ctime())
+    Audfile.writelines(querytime + "-(User Recieved His Current Location Using GeoCoder.) \n")
+    Audfile.close()
 
 
 def Breifing(title):
@@ -90,13 +94,17 @@ def Breifing(title):
                     results.append(ar["title"])
                 for i in range(len(results)):
                     print(i + 1, '.', results[i])
+            Audfile = open("Jaraudit.txt", "a")
+            querytime = (datetime.datetime.now().ctime())
+            Audfile.writelines(querytime + "-(User Recieved Morning Briefing From NewsAPI.) \n")
+            Audfile.close()
         except:
             print("JARVIS: Something went wrong!!!" +
                   "\nJARVIS: Please check if you have a good \ninternet connection and have given a valid \ncategory and location.")
             Audfile = open("Jaraudit.txt", "a")
             querytime = (datetime.datetime.now().ctime())
             Audfile.writelines(
-                querytime + "-(CONNECTION FAILED WITH NEWSAPI.ORG!!!) \n")
+                querytime + "-(ERROR:755, Connection Failed with NewsAPI. Please Check Your Connection.) \n")
             Audfile.close()
     else:
         try:
@@ -115,13 +123,17 @@ def Breifing(title):
                     results.append(ar["title"])
                 for i in range(len(results)):
                     print(i + 1, '.', results[i])
+            Audfile = open("Jaraudit.txt", "a")
+            querytime = (datetime.datetime.now().ctime())
+            Audfile.writelines(querytime + "-(User Recieved News Headlines From NewsAPI.) \n")
+            Audfile.close()
         except:
             print("JARVIS: Something went wrong!!!" +
                   "\nJARVIS: Please check if you have a good \ninternet connection and have given a valid \ncategory and location.")
             Audfile = open("Jaraudit.txt", "a")
             querytime = (datetime.datetime.now().ctime())
             Audfile.writelines(
-                querytime + "-(CONNECTION FAILED WITH NEWSAPI.ORG!!!) \n")
+                querytime + "-(ERROR:765, Connection Failed With NewsAPI. Please Check Your Connection.) \n")
             Audfile.close()
 
 
@@ -204,7 +216,7 @@ def send_an_email(from_address, to_address, subject, message_text, password):
         Audfile = open("Jaraudit.txt", "a")
         querytime = (datetime.datetime.now().ctime())
         Audfile.writelines(
-            querytime + "-(USER SUCCESSFULLY SENT AN EMAIL!!!) \n")
+            querytime + "-(User Successfully sent An Email To It's Destination.) \n")
         Audfile.close()
         s.quit()    # terminating the session
     except:
@@ -212,7 +224,7 @@ def send_an_email(from_address, to_address, subject, message_text, password):
         Audfile = open("Jaraudit.txt", "a")
         querytime = (datetime.datetime.now().ctime())
         Audfile.writelines(
-            querytime + "-(USER FAILED TO SEND AN EMAIL!!!) \n")
+            querytime + "-(ERROR:300, User Failed To Send An Email To It's Destination.) \n")
         Audfile.close()
 
 def gmail():
@@ -309,6 +321,10 @@ def Help():
 
 
 
+Audfile = open("Jaraudit.txt", "a")
+querytime = (datetime.datetime.now().ctime())
+Audfile.writelines(querytime + "-(USER ACTIVATED JARVIS AND INITIALIZED RELATED PROCESSES!!!) \n")
+Audfile.close()
 
 with open("Jarinfo.json") as f:
     contents = json.load(f)
@@ -331,12 +347,6 @@ window.maximize()
 
 
 print("JARVIS: Welcome sir")
-Audfile = open("Jaraudit.txt", "a")
-querytime = (datetime.datetime.now().ctime())
-Audfile.writelines(
-    querytime + "-(USER ACTIVATED JARVIS AND INITIALIZED RELATED PROCESSES!!!) \n")
-Audfile.close()
-
 hour = int(datetime.datetime.now().hour)
 if hour >= 0 and hour < 12:
     timeing = "JARVIS: Good morning, here is the current weather in "
@@ -407,7 +417,7 @@ if __name__ == '__main__':
                                 Audfile = open("Jaraudit.txt", "a")
                                 querytime = (datetime.datetime.now().ctime())
                                 Audfile.writelines(
-                                    querytime + "-(CONNECTION ESTABLISHED WITH WIKIPEDIA!!!) \n")
+                                    querytime + "-(User Established Connection With Wikipedia.) \n")
                                 Audfile.close()
                             except:
                                 print(
@@ -415,7 +425,7 @@ if __name__ == '__main__':
                                 Audfile = open("Jaraudit.txt", "a")
                                 querytime = (datetime.datetime.now().ctime())
                                 Audfile.writelines(
-                                    querytime + "-(CONNECTION FAILED WITH WIKIPEDIA!!!) \n")
+                                    querytime + "-(ERROR:500, Failed To Establish Connection With Wikipedia.) \n")
                                 Audfile.close()
                             continue
 
@@ -461,7 +471,7 @@ if __name__ == '__main__':
                                 Audfile = open("Jaraudit.txt", "a")
                                 querytime = (datetime.datetime.now().ctime())
                                 Audfile.writelines(
-                                    querytime + "-(CONNECTION ESTABLISHED WITH NEWSAPI.ORG!!!) \n")
+                                    querytime + "-(User Recieved News From NewsAPI.) \n")
                                 Audfile.close()
                                 for ar in article:
                                     results.append(ar["title"])
@@ -473,7 +483,7 @@ if __name__ == '__main__':
                                 Audfile = open("Jaraudit.txt", "a")
                                 querytime = (datetime.datetime.now().ctime())
                                 Audfile.writelines(
-                                    querytime + "-(CONNECTION FAILED WITH NEWSAPI.ORG!!!) \n")
+                                    querytime + "-(ERROR:776, Connection Failed With NewsAPI. Please Check Your Connection.) \n")
                                 Audfile.close()
                                 continue
 
