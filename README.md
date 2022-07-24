@@ -8,7 +8,7 @@ Kindly consider starring this repository if you like the program :-)
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Epicalable/JARVIS-GUI) [![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](https://github.com/Epicalable/JARVIS-GUI) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Epicalable/JARVIS-GUI/issues)
 
-![Ui-screen](https://user-images.githubusercontent.com/69076784/103637012-d5648c00-4f70-11eb-950b-972397b43302.PNG)
+![jaruiv1.0](https://user-images.githubusercontent.com/69076784/180637424-8d2737c9-ead7-4d65-a8e8-a2c36d9474e8.png)
 
 
 ## What/Who is J.A.R.V.I.S?
@@ -35,11 +35,13 @@ Yes, Your info will be safe since it will be stored locally on your personal com
 All CRITICAL INFO REGARDING the USER will be STORED IN your PERSONAL COMPUTER and NOT on the INTERNET.
 
 ## What kind of API should I subscribe to?
-When completed installing by default you can chat with J.A.R.V.I.S but not get any information. To activate it you will need to head to:
+When completed installing, by default you can chat with J.A.R.V.I.S but not get any information. To activate it you will need to head to:
 
 1. https://newsapi.org/ : For Live News, Morning Briefings and News Headlines.
 
 2. https://openweathermap.org/ : For current Weather information.
+
+Both websites once registered will provide you an API key, Users should then copy the API key and paste it in the respective bars in the settings menu.
 
 ## Some examples of J.A.R.V.I.S commands
 To make JARVIS respond Users will need to enter a Command in the input for which JARVIS will scan for keywords and provide an answer or information.
