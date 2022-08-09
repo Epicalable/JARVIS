@@ -9,6 +9,7 @@ import json
 import smtplib
 import wikipedia
 import webbrowser
+from bs4 import BeautifulSoup
 from geopy.geocoders import Nominatim
 import geocoder
 from random import choice
@@ -495,6 +496,23 @@ if __name__ == '__main__':
 
                         elif "SEND AN EMAIL" in query or "SEND A EMAIL" in query:
                             gmail()
+
+                        elif "STOCKS" in query or "STOCK PRICE" in query:
+                            query = query.replace('GET ME ', "")
+                            query = query.replace('PRICE ', "")
+                            query = query.replace('PRICES ', "")
+                            query = query.replace('STOCK ', "")
+                            query = query.replace('STOCKS ', "")
+                            query = query.replace('FOR ', "")
+                            query = query.replace('ON ', "")
+                            symbol=query.upper()
+                            url = f"https://finance.yahoo.com/quote/{symbol}/"
+                            response = requests.get(url)
+                            soup = BeautifulSoup(response.text, "html.parser")
+                            class_ = "My(6px) Pos(r) smartphone_Mt(6px) W(100%)"
+                            stock = soup.find("div", class_=class_).find("span").text
+                            print(stock)
+                            continue
 
                         elif query == "GOODBYE":
                             Audfile = open("Jaraudit.txt", "a")
