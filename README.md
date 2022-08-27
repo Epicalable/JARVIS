@@ -14,8 +14,9 @@ Kindly consider starring this repository if you like the program :-)
 ## What/Who is J.A.R.V.I.S?
 J.A.R.V.I.S is an chatbot written that is built and coded in Python whose aim is to be capable of chatting and retrieving any information and on-going news from the internet for it's user.
 
-## Backstory of J.A.R.V.I.S
-J.A.R.V.I.S was inspired by by Tony Stark's A.I "J.A.R.V.I.S" from the Iron Man movies from Marvel. Paving the way for my dream to create a bot which can help me in automation by keeping me informed, updated and productive.
+## How To Run J.A.R.V.I.S?
+To run J.A.R.V.I.S the user is required to open up the JarvisGUI.py file and run it so as to successfully open the GUI and start chatting with J.A.R.V.I.S.
+Users facing any issues can open up an issue at the Issues section of JARVIS Github Page and can expext us to rectify it ASAP.
 
 ## What python packages are needed to run J.A.R.V.I.S (Requirements)?
 In order for J.A.R.V.I.S to work at full capacity a few 3rd party python packages will be required to be installed:
@@ -32,7 +33,7 @@ Yes, Your info will be safe since it will be stored locally on your personal com
 
 2. Info-Intents: Stored in the Jarinfo file used by J.A.R.V.I.S to store Api keys, User Name and User location for data retrieval. You can access these using the settings menu.
 
-3. Audit-Indents: Stored in the Jaraudit file used by J.A.R.V.I.S to store user input/output logs, system retrival logs and fallback errors in your computer.
+3. Audit-Indents: Stored in the Jaraudit file used by J.A.R.V.I.S to store user input/output logs, system retrival logs and fallback errors in your computer. You can access them by heaading to ChatLogs on the menu.
 
 All CRITICAL INFO REGARDING the USER will be STORED IN your PERSONAL COMPUTER and NOT on the INTERNET.
 
@@ -53,9 +54,9 @@ Here is a sample list of available Commands:
 2. How are you
 3. Are you fine
 4. Are you real
-5. What is the time
-6. News about [your input]--
-   Ex. News about Github.
+5. Tell me the time
+6. News on [your input]--
+   Ex. News on Github.
 7. Get me news headlines--
    NOTE: Type in country's abbreviation in input bar in Newsui. EX. Us, Sg, Uk, Au.
 8. Send an email

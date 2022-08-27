@@ -94,7 +94,10 @@ def Breifing(title):
                 for ar in article:
                     results.append(ar["title"])
                 for i in range(len(results)):
+                    e = i + 1 <= 9
                     print(i + 1, '.', results[i])
+                    if e == False:
+                        break
             Audfile = open("Jaraudit.txt", "a")
             querytime = (datetime.datetime.now().ctime())
             Audfile.writelines(querytime + "-(User Recieved Morning Briefing From NewsAPI.) \n")
@@ -261,6 +264,13 @@ def gmail():
         return event != 'OK'
 
 
+def ChatLog():
+    with open('Jaraudit.txt') as file:
+        h = file.read()
+        file.close()
+    sg.popup_scrolled(h, title="ChatLogs", size=(90, 30))
+    
+    
 def Help():
     sg.popup_scrolled("""Welcome to the Help Centre
             1. Setting up JARVIS: -----------
@@ -333,7 +343,7 @@ with open("Jarinfo.json") as f:
     LoadInput = contents["Inputbarsize"]
 sg.theme('DarkGrey8')  # gives window a spiffy set of colors
 sg.set_options(element_padding=(3, 3))
-menu_def = [['&MENU ', ['&Settings', 'E&xit']],
+menu_def = [['&MENU ', ['&Settings', '&ChatLogs', 'E&xit']],
             ['&HELP', ['&Help', '&Report Issue', '&Version']],
             ['&ABOUT US', ['&Support Us', '&Our Website']], ]
 layout = [[sg.Menu(menu_def, tearoff=False)],
@@ -535,6 +545,9 @@ if __name__ == '__main__':
 
         elif event == 'Settings':
             Settings()
+
+        elif event == 'ChatLogs':
+            ChatLog()
 
         elif event == 'Support Us':
             sg.popup_no_titlebar("Please star our 'JARVIS-GUI' github repository and also",
