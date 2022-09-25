@@ -520,7 +520,7 @@ if __name__ == '__main__':
                             response = requests.get(url)
                             soup = BeautifulSoup(response.text, "html.parser")
                             class_ = "My(6px) Pos(r) smartphone_Mt(6px) W(100%)"
-                            stock = soup.find("div", class_=class_).find("span").text
+                            stock = soup.find("div", class_=class_).find("fin-streamer").text
                             print(stock)
                             continue
 
