@@ -1,6 +1,26 @@
 {
     "intents": [
         {
+            "tags": "AM BORED",
+            "response": [
+                "JARVIS: Well you can try to learn something new sir.",
+                "JARVIS: Maybe you can binge watch some new series.",
+                "JARVIS: Mind watching some cool anime/series.",
+                "JARVIS: Maybe try learning something new sir",
+                "JARVIS: Theres always stuff to learn about."
+            ]
+        },
+        {
+            "tags": "IS BORING",
+            "response": [
+                "JARVIS: Well you can try to learn something new sir.",
+                "JARVIS: Maybe you can binge watch some new series.",
+                "JARVIS: Mind watching some cool anime/series.",
+                "JARVIS: Maybe try learning something new sir",
+                "JARVIS: Theres always stuff to learn about."
+            ]
+        },
+        {
             "tags": "HELLO",
             "response": [
                 "JARVIS: Well hello sir.",
@@ -268,7 +288,13 @@
         {
             "tags": "SURE",
             "response": [
-                "JARVIS: "
+                "JARVIS: Roger that you understood sir"
+            ]
+        },
+        {
+            "tags": "WAKATTA",
+            "response": [
+                "JARVIS: Roger that you understood sir"
             ]
         },
         {

@@ -269,6 +269,43 @@ def ChatLog():
         h = file.read()
         file.close()
     sg.popup_scrolled(h, title="ChatLogs", size=(90, 30))
+
+
+def Tasks():
+    sg.theme('Dark')
+    try:
+        with open('task.txt') as f:
+            mylist = []
+            for line in f:
+                words = line.split()
+                mylist += words
+    except FileNotFoundError:
+        with open('task.txt', 'w') as f:
+            first = "Enter tasks here"
+            f.writelines(first)
+
+    layout = [[sg.Text('TASKS (Use commas to seperate tasks):', font='Default 16')],
+              [sg.T('Tasks:', size=(10, 5)),
+               sg.Input(mylist, key='-User-', size=(50, 10))],
+              [sg.Button('Save'), sg.Button('Exit')]]
+    window = sg.Window('tasks', layout, no_titlebar=True, keep_on_top=True)
+
+    while True:  # Event Loop
+        event, values = window.read()
+        if event in (sg.WIN_CLOSED, 'Exit'):
+            break
+        if event == 'Save':
+            tasks = values['-User-']
+            tasks = tasks.replace('{', "")
+            tasks = tasks.replace('}', "")
+            tasks = tasks.replace("\n", "")
+            with open('task.txt', 'w') as f:
+                f.writelines(tasks)
+            break
+    window.close()
+    event = window.read()
+    return event != 'OK'
+
     
     
 def Help():
@@ -343,7 +380,7 @@ with open("Jarinfo.json") as f:
     LoadInput = contents["Inputbarsize"]
 sg.theme('DarkGrey8')  # gives window a spiffy set of colors
 sg.set_options(element_padding=(3, 3))
-menu_def = [['&MENU ', ['&Settings', '&ChatLogs', 'E&xit']],
+menu_def = [['&MENU ', ['&Settings', '&ChatLogs', '&Your Tasks','E&xit']],
             ['&HELP', ['&Help', '&Report Issue', '&Version']],
             ['&ABOUT US', ['&Support Us', '&Our Website']], ]
 layout = [[sg.Menu(menu_def, tearoff=False)],
@@ -548,6 +585,9 @@ if __name__ == '__main__':
 
         elif event == 'ChatLogs':
             ChatLog()
+
+        elif event == 'Your Tasks':
+            Tasks()
 
         elif event == 'Support Us':
             sg.popup_no_titlebar("Please star our 'JARVIS-GUI' github repository and also",
