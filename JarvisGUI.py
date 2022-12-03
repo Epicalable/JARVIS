@@ -314,9 +314,9 @@ def Help():
             JARVIS have the ability to chat once installed by default.
             The User will then need to register at these following websites:
 
-            1. https: // newsapi.org / : To integrate live news.
+            1. https://newsapi.org/: To integrate live news.
 
-            2. https: // openweathermap.org / : To integrate live weather.
+            2. https://openweathermap.org/ : To integrate live weather.
 
             Both websites once registered will provide you an API key.
             Users should then copy the API key and paste it 
