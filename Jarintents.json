@@ -1,7 +1,7 @@
     {
         "intents": [
             {
-                "tags": "HELLO",
+                "tags": "HELLO ",
                 "response": [
                     "JARVIS: Well hello sir.",
                     "JARVIS: Hello sir.",
@@ -11,7 +11,7 @@
                 ]
             },
             {
-                "tags": "KONICHIWA",
+                "tags": "KONICHIWA ",
                 "response": [
                     "JARVIS: Well hello sir.",
                     "JARVIS: Hello sir.",
@@ -21,7 +21,7 @@
                 ]
             },
             {
-                "tags": "HI",
+                "tags": "HI ",
                 "response": [
                     "JARVIS: Well hi sir.",
                     "JARVIS: Hello sir.",
@@ -31,7 +31,7 @@
                 ]
             },
             {
-                "tags": "GOOD MORNING",
+                "tags": "GOOD MORNING ",
                 "response": [
                     "JARVIS: Good morning and hello sir.",
                     "JARVIS: Well good morning sir have a good day today.",
@@ -40,7 +40,7 @@
                 ]
             },
             {
-                "tags": "GOOD NIGHT",
+                "tags": "GOOD NIGHT ",
                 "response": [
                     "JARVIS: Good night sir.",
                     "JARVIS: Well Good night sir.",
@@ -49,7 +49,7 @@
                 ]
             },
             {
-                "tags": "HOW ARE YOU",
+                "tags": "HOW ARE YOU ",
                 "response": [
                     "JARVIS: I am fine, how about you sir?",
                     "JARVIS: I'm doing fine sir.",
@@ -59,7 +59,7 @@
                 ]
             },
             {
-                "tags": "YOU FINE",
+                "tags": "YOU FINE ",
                 "response": [
                     "JARVIS: I am fine, how about you sir?",
                     "JARVIS: I'm doing fine sir'.",
@@ -69,7 +69,7 @@
                 ]
             },
             {
-                "tags": "AM FINE",
+                "tags": "AM FINE ",
                 "response": [
                     "JARVIS: Well good to know sir.",
                     "JARVIS: I am glad to hear about you, Keep Exercising.",
@@ -78,7 +78,7 @@
                 ]
             },
             {
-                "tags": "AM HEALTHY",
+                "tags": "AM HEALTHY ",
                 "response": [
                     "JARVIS: Well good to know sir.",
                     "JARVIS: I am glad to hear about you, Keep Exercising.",
@@ -87,7 +87,7 @@
                 ]
             },
             {
-                "tags": "DOING FINE",
+                "tags": "DOING FINE ",
                 "response": [
                     "JARVIS: Well good to know sir.",
                     "JARVIS: I am glad to hear about you, Keep Exercising.",
@@ -96,7 +96,7 @@
                 ]
             },
             {
-                "tags": "DOING OK",
+                "tags": "DOING OK ",
                 "response": [
                     "JARVIS: Well good to know sir.",
                     "JARVIS: I am glad to hear about you, Keep Exercising.",
@@ -105,7 +105,7 @@
                 ]
             },
             {
-                "tags": "I AM SICK",
+                "tags": "I AM SICK ",
                 "response": [
                     "JARVIS: You should consult a doctor quickly.",
                     "JARVIS: Well that is bad, hope for a speedy recovery :-)",
@@ -114,7 +114,7 @@
                 ]
             },
             {
-                "tags": "NOT DOING WELL",
+                "tags": "NOT DOING WELL ",
                 "response": [
                     "JARVIS: You should consult a doctor quickly.",
                     "JARVIS: Well that is bad, hope for a speedy recovery :-)",
@@ -123,7 +123,7 @@
                 ]
             },
             {
-                "tags": "YES I AM",
+                "tags": "YES I AM ",
                 "response": [
                     "JARVIS: Great sir.",
                     "JARVIS: Good to know sir.",
@@ -132,7 +132,7 @@
                 ]
             },
             {
-                "tags": "YES I WILL",
+                "tags": "YES I WILL ",
                 "response": [
                     "JARVIS: Great sir.",
                     "JARVIS: Good to know sir.",
@@ -141,7 +141,7 @@
                 ]
             },
             {
-                "tags": "FOR A VACATION",
+                "tags": "FOR A VACATION ",
                 "response": [
                     "JARVIS: That is great sir, would you need any help.",
                     "JARVIS: That is awesome sir, stay safe and good luck.",
@@ -150,7 +150,7 @@
                 ]
             },
             {
-                "tags": "THANK YOU",
+                "tags": "THANK YOU ",
                 "response": [
                     "JARVIS: No problem sir.",
                     "JARVIS: No problem your welcome sir.",
@@ -159,7 +159,7 @@
                 ]
             },
             {
-                "tags": "THANKS",
+                "tags": "THANKS ",
                 "response": [
                     "JARVIS: No problem sir.",
                     "JARVIS: No problem your welcome sir.",
@@ -168,7 +168,7 @@
                 ]
             },
             {
-                "tags": "HARIGATHO",
+                "tags": "HARIGATHO ",
                 "response": [
                     "JARVIS: No problem sir.",
                     "JARVIS: No problem your welcome sir.",
@@ -177,7 +177,7 @@
                 ]
             },
             {
-                "tags": "COOL",
+                "tags": "COOL ",
                 "response": [
                     "JARVIS: Glad that you are impressed sir.",
                     "JARVIS: It seems that my service is satisfactory.",
@@ -185,7 +185,7 @@
                 ]
             },
             {
-                "tags": "TO KNOW",
+                "tags": "TO KNOW ",
                 "response": [
                     "JARVIS: Thank you sir.",
                     "JARVIS: Your welcome sir.",
@@ -194,7 +194,7 @@
                 ]
             },
             {
-                "tags": "ARE WRONG",
+                "tags": "ARE WRONG ",
                 "response": [
                     "JARVIS: Why are you saying that i'm wrong?",
                     "JARVIS: Impossible, computers cannot make mistakes.",
@@ -203,7 +203,7 @@
                 ]
             },
             {
-                "tags": "YOU REAL",
+                "tags": "YOU REAL ",
                 "response": [
                     "JARVIS: Well i am sir that is till you turn me off!!!",
                     "JARVIS: Well i am real till you keep me on",
@@ -211,7 +211,7 @@
                 ]
             },
             {
-                "tags": "YOU A ROBOT",
+                "tags": "YOU A ROBOT ",
                 "response": [
                     "JARVIS: Yes i'm a robot but a smart one!",
                     "JARVIS: Yes i am, but a good one. let me prove it. how can i help you?",
@@ -219,7 +219,7 @@
                 ]
             },
             {
-                "tags": "ARE YOU BUILT",
+                "tags": "ARE YOU BUILT ",
                 "response": [
                     "JARVIS: Well i am built using a language called python.",
                     "JARVIS: I was coded on a computer using python sir.",
@@ -228,13 +228,13 @@
                 ]
             },
             {
-                "tags": "OLD ARE YOU",
+                "tags": "OLD ARE YOU ",
                 "response": [
                     "JARVIS: I'm quite young actually."
                 ]
             },
             {
-                "tags": "ARE YOU MADE",
+                "tags": "ARE YOU MADE ",
                 "response": [
                     "JARVIS: Well i am made using a language called python.",
                     "JARVIS: I was coded on a computer using python sir.",
@@ -243,14 +243,14 @@
                 ]
             },
             {
-                "tags": "A MAN OF CULTURE",
+                "tags": "A MAN OF CULTURE ",
                 "response": [
                     "JARVIS: I am sir.",
                     "JARVIS: Do you watch anime sir?"
                 ]
             },
             {
-                "tags": "GAMES DO YOU",
+                "tags": "GAMES DO YOU ",
                 "response": [
                     "JARVIS: I like games like Minecraft, Terraria.",
                     "JARVIS: Minecraft is cool and also you can contribute to the community using add-ons.",
@@ -259,26 +259,26 @@
                 ]
             },
             {
-                "tags": "OK",
+                "tags": "OK ",
                 "response": [
                     "JARVIS: ",
                     "JARVIS: No problem"
                 ]
             },
             {
-                "tags": "SURE",
+                "tags": "SURE ",
                 "response": [
                     "JARVIS: "
                 ]
             },
             {
-                "tags": "SAY SOMETHING",
+                "tags": "SAY SOMETHING ",
                 "response": [
                     "JARVIS: Well sir sometimes I don't have anything to say."
                 ]
             },
             {
-                "tags": "JARVIS",
+                "tags": "JARVIS ",
                 "response": [
                     "JARVIS: yes sir?",
                     "JARVIS: Do you have something to say sir"

@@ -372,13 +372,12 @@ def Help():
 Audfile = open("Jaraudit.txt", "a")
 querytime = (datetime.datetime.now().ctime())
 Audfile.writelines(querytime + "-(USER ACTIVATED JARVIS AND INITIALIZED RELATED PROCESSES!!!) \n")
-Audfile.close()
 
 with open("Jarinfo.json") as f:
     contents = json.load(f)
     LoadOutput = contents["Outputscreensize"]
     LoadInput = contents["Inputbarsize"]
-sg.theme('DarkGrey8')  # gives window a spiffy set of colors
+sg.theme('DarkGrey8')  # gives window a color
 sg.set_options(element_padding=(3, 3))
 menu_def = [['&MENU ', ['&Settings', '&ChatLogs', '&Your Tasks','E&xit']],
             ['&HELP', ['&Help', '&Report Issue', '&Version']],
@@ -428,7 +427,7 @@ if __name__ == '__main__':
         if event == 'ENTER':
             # THE START OF THE RENDER-WORD ENGINE (C) Epicalable
             que = value['-QUERY-'].rstrip()  # Your input here
-            query = (que.upper())
+            query = ((que.upper()) + " ")
             Audfile = open("Jaraudit.txt", "a")
             querytime = (datetime.datetime.now().ctime())
             str = (querytime + ": " + que.capitalize() + "\n")
@@ -445,19 +444,19 @@ if __name__ == '__main__':
                             break
                     # THE END OF THE RENDER-WORD ENGINE (C) Epicalable
                     else:
-                        if "DATE" in query or "TIME" in query:
+                        if "DATE " in query or "TIME " in query:
                             x = datetime.datetime.now()
                             print("JARVIS: The Date and Time is ",
                                   x, " respectively sir.")
                             continue
 
-                        if "DAY" in query or "YEAR" in query:
+                        if "DAY " in query or "YEAR " in query:
                             x = datetime.datetime.now()
                             print("JARVIS: The Date and Time is ",
                                   x, " respectively sir.")
                             continue
 
-                        elif "WIKIPEDIA" in query or "WIKI" in query:
+                        elif "WIKIPEDIA " in query or "WIKI " in query:
                             query = query.replace('WIKI', "")
                             query = query.replace('WIKIPEDIA', "")
                             try:
@@ -477,7 +476,7 @@ if __name__ == '__main__':
                                 Audfile.close()
                             continue
 
-                        elif "WHAT IS" in query or "WHO IS" in query:
+                        elif "WHAT IS " in query or "WHO IS " in query:
                             query = query.replace('WHAT', "")
                             query = query.replace('IS', "")
 
@@ -500,7 +499,7 @@ if __name__ == '__main__':
                                 Audfile.close()
                             continue
 
-                        elif "NEWS ABOUT" in query or "NEWS ON" in query:
+                        elif "NEWS ABOUT " in query or "NEWS ON " in query:
                             query = query.replace('NEWS ', "")
                             query = query.replace('ABOUT ', "")
                             query = query.replace('ON ', "")
@@ -535,16 +534,16 @@ if __name__ == '__main__':
                                 Audfile.close()
                                 continue
 
-                        elif "HEADLINES" in query:
+                        elif "HEADLINES " in query:
                             Breifing('News Headlines')
 
-                        elif "THE NEWS" in query:
+                        elif "THE NEWS " in query:
                             Breifing('News Headlines')
 
-                        elif "SEND AN EMAIL" in query or "SEND A EMAIL" in query:
+                        elif "SEND AN EMAIL " in query or "SEND A EMAIL " in query:
                             gmail()
 
-                        elif "STOCKS" in query or "STOCK PRICE" in query:
+                        elif "STOCKS " in query or "STOCK PRICE " in query:
                             query = query.replace('GET ME ', "")
                             query = query.replace('PRICE ', "")
                             query = query.replace('PRICES ', "")
@@ -561,7 +560,7 @@ if __name__ == '__main__':
                             print(stock)
                             continue
 
-                        elif query == "GOODBYE":
+                        elif query == "GOODBYE ":
                             Audfile = open("Jaraudit.txt", "a")
                             querytime = (datetime.datetime.now().ctime())
                             Audfile.writelines(
