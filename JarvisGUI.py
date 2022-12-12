@@ -9,6 +9,7 @@ import json
 import smtplib
 import wikipedia
 import webbrowser
+from bs4 import BeautifulSoup
 from geopy.geocoders import Nominatim
 import geocoder
 from random import choice
@@ -67,6 +68,14 @@ def location():
     querytime = (datetime.datetime.now().ctime())
     Audfile.writelines(querytime + "-(User Recieved His Current Location Using GeoCoder.) \n")
     Audfile.close()
+
+
+def stock_price(symbol: str = "AAPL") -> str:
+    url = f"https://finance.yahoo.com/quote/{symbol}/"
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, "html.parser")
+    class_ = "My(6px) Pos(r) smartphone_Mt(6px) W(100%)"
+    return soup.find("div", class_=class_).find("fin-streamer").text
 
 
 def Breifing(title):
@@ -149,6 +158,7 @@ def Settings():
         OpenWeatherKey = contents["OpenWeatherKey"]
         Country = contents["Country"]
         City = contents["City"]
+        StockPrice = contents["StockPrice"]
         Outputsc = contents["Outputscreensize"]
         Inputbr = contents["Inputbarsize"]
     layout = [[sg.Text('Settings', font='Default 16')],
@@ -164,6 +174,8 @@ def Settings():
                   Country, key='-Country-', size=(34, 1))],
               [sg.T('Current-City:', size=(13, 1)), sg.Input(
                   City, key='-City-', size=(34, 1))],
+              [sg.T('Stock-Price:', size=(13, 1)), sg.Input(
+                  StockPrice, key='-Stock-', size=(34, 1))],
               [sg.Text('GUI-Customization:--', font='Default 12')],
               [sg.Text(
                   'Enter only in Numbers to adjust the UI screen size.', font='Default 10')],
@@ -183,6 +195,7 @@ def Settings():
             weatherkey = values['-OpenWeather-']
             Country = values['-Country-']
             City = values['-City-']
+            StockPrice = values['-Stock-']
             Outputsc = values['-Outsc-']
             Inputbr = values['-Inbr-']
             dictionary = {
@@ -192,6 +205,7 @@ def Settings():
                 "OpenWeatherKey": weatherkey,
                 "Country": Country,
                 "City": City,
+                "StockPrice": StockPrice,
                 "Outputscreensize": Outputsc,
                 "Inputbarsize": Inputbr
             }
@@ -349,9 +363,10 @@ def Help():
                     EX. Wikipedia github.
                 ---Who is [Query] / What is [Query]
                     NOTE: JARVIS will get answer from Wikipedia.
-                ---Get me stock price for [Query]
+                ---Get me stock price
                     NOTE: Query of stock should be abbreviations.
-                    EX. TSLA, AAPL, MSFT.
+                    NOTE: Stock abbrevatiion should be placed in Settings.
+                    EX. TSLA AAPL MSFT IBM GOOG (Place under "StockPrice").
                 ---Goodbye
                     NOTE: Command to quit JARVIS.
 
@@ -441,8 +456,22 @@ if __name__ == '__main__':
                             print(choice(word["response"]))
                             break
                     # THE END OF THE RENDER-WORD ENGINE (C) Epicalable
+
                     else:
-                        if "DATE " in query or "TIME " in query:
+                        if "STOCK " in query or "STOCK PRICE" in query:
+                            with open("Jarinfo.json") as f:
+                                contents = json.load(f)
+                                Stocks = contents["StockPrice"]
+                            for symbol in Stocks.split():
+                                print(f"Current {symbol:<4} stock price is {stock_price(symbol):>8}")
+                            Audfile = open("Jaraudit.txt", "a")
+                            querytime = (datetime.datetime.now().ctime())
+                            Audfile.writelines(
+                                querytime + "-(User Have Recieved Stock-Price.) \n")
+                            Audfile.close()
+                            continue
+
+                        elif "DATE " in query or "TIME " in query:
                             x = datetime.datetime.now()
                             print("JARVIS: The Date and Time is ",
                                   x, " respectively sir.")

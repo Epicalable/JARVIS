@@ -5,6 +5,7 @@
     "OpenWeatherKey": "b190a0605344cc4f3af08d0dd473dd25",
     "Country": "sg",
     "City": "Singapore",
+    "StockPrice": "AAPL AMZN IBM GOOG MSFT ORCL",
     "Outputscreensize": "188",
     "Inputbarsize": "134"
 }

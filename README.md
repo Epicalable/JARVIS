@@ -62,8 +62,8 @@ Here is a sample list of available Commands:
    Ex. Wikipedia github.
 * Who is [Query] / What is [Query]--  
     NOTE: JARVIS will get answer from Wikipedia.
-* Get me stock price for [Query]--  
-    NOTE: Query of stock should be abbreviations. EX. TSLA, AAPL, MSFT.
+* Get me stock price--  
+    NOTE: Stock abbreviations EX."TSLA AAPL MSFT" will be in Setting under "StockPrice".
 * Goodbye --  
     NOTE: Command to quit JARVIS.
     
