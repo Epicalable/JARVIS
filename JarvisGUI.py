@@ -9,7 +9,6 @@ import json
 import smtplib
 import wikipedia
 import webbrowser
-from bs4 import BeautifulSoup
 from geopy.geocoders import Nominatim
 import geocoder
 from random import choice
@@ -393,19 +392,18 @@ window = sg.Window('J.A.R.V.I.S GUI', layout, location=(0, 0), icon=r'icon/Jarvi
 window.maximize()
 
 
-print("JARVIS: Welcome sir")
 hour = int(datetime.datetime.now().hour)
 if hour >= 0 and hour < 12:
-    timeing = "JARVIS: Good morning, here is the current weather in "
+    timeing = "JARVIS: Good Morning Sir, here is the current weather in "
     location()
     Weather(timeing)
     Breifing('Morning Briefing')
 elif hour >= 12 and hour < 18:
-    timeing = "JARVIS: Good afternoon, here is the current weather in "
+    timeing = "JARVIS: Good Afternoon Sir, here is the current weather in "
     location()
     Weather(timeing)
 else:
-    timeing = "JARVIS: Good evening, here is the current weather in "
+    timeing = "JARVIS: Good Evening Sir, here is the current weather in "
     location()
     Weather(timeing)
 
@@ -450,7 +448,7 @@ if __name__ == '__main__':
                                   x, " respectively sir.")
                             continue
 
-                        if "DAY " in query or "YEAR " in query:
+                        elif "DAY " in query or "YEAR " in query:
                             x = datetime.datetime.now()
                             print("JARVIS: The Date and Time is ",
                                   x, " respectively sir.")
@@ -542,23 +540,6 @@ if __name__ == '__main__':
 
                         elif "SEND AN EMAIL " in query or "SEND A EMAIL " in query:
                             gmail()
-
-                        elif "STOCKS " in query or "STOCK PRICE " in query:
-                            query = query.replace('GET ME ', "")
-                            query = query.replace('PRICE ', "")
-                            query = query.replace('PRICES ', "")
-                            query = query.replace('STOCK ', "")
-                            query = query.replace('STOCKS ', "")
-                            query = query.replace('FOR ', "")
-                            query = query.replace('ON ', "")
-                            symbol=query.upper()
-                            url = f"https://finance.yahoo.com/quote/{symbol}/"
-                            response = requests.get(url)
-                            soup = BeautifulSoup(response.text, "html.parser")
-                            class_ = "My(6px) Pos(r) smartphone_Mt(6px) W(100%)"
-                            stock = soup.find("div", class_=class_).find("fin-streamer").text
-                            print(stock)
-                            continue
 
                         elif query == "GOODBYE ":
                             Audfile = open("Jaraudit.txt", "a")
