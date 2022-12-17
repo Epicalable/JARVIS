@@ -378,11 +378,6 @@ def Help():
 
 
 
-
-
-
-
-
 Audfile = open("Jaraudit.txt", "a")
 querytime = (datetime.datetime.now().ctime())
 Audfile.writelines(querytime + "-(USER ACTIVATED JARVIS AND INITIALIZED RELATED PROCESSES!!!) \n")
