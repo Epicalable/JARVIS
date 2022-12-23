@@ -466,6 +466,21 @@ if __name__ == '__main__':
                             Audfile.close()
                             continue
 
+                        elif "FLIGHT TRACK " in query or "FLIGHT TRACKER " in query:
+                            date = date.today().strftime('%Y-%m-%d')
+                            query = query.replace('FLIGHT TRACKER', "")
+                            query = query.replace('FLIGHT TRACK', "")
+                            flight_num = query
+
+                            url = f"https://aerodatabox.p.rapidapi.com/flights/number/{flight_num}/{date}"
+
+                            headers = { "X-RapidAPI-Key": "17f75df5efmsh9b4ae3bc52aebc4p120b7cjsn63e5ff22f6da",
+	                                    "X-RapidAPI-Host": "aerodatabox.p.rapidapi.com"
+                                      }
+                            response = requests.request("GET", url, headers=headers)
+                            print(response.json())
+
+
                         elif "DATE " in query or "TIME " in query:
                             x = datetime.datetime.now()
                             print("JARVIS: The Date and Time is ",
