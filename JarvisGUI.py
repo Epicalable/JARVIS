@@ -13,6 +13,7 @@ import webbrowser
 from bs4 import BeautifulSoup
 from geopy.geocoders import Nominatim
 import geocoder
+import pprint
 from random import choice
 
 
@@ -479,8 +480,7 @@ if __name__ == '__main__':
 	                                        "X-RapidAPI-Host": "aerodatabox.p.rapidapi.com"
                                           }
                                 response = requests.request("GET", url, headers=headers)
-                                format = json.dumps(response.json(), indent=4)
-                                print(format)
+                                pprint.pprint(response.json(), indent=2)
                             except:
                                 print("ERROR: Please Type flight number also")
                                 print("Example: Track flight SQ 242")
