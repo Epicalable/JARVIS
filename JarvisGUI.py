@@ -3,6 +3,7 @@
 #If pyinstaller crashes add: --hidden-import tkinter
 import PySimpleGUI as sg
 import datetime
+from datetime import date
 import time
 import requests
 import json
@@ -466,19 +467,23 @@ if __name__ == '__main__':
                             Audfile.close()
                             continue
 
-                        elif "FLIGHT TRACK " in query or "FLIGHT TRACKER " in query:
-                            date = date.today().strftime('%Y-%m-%d')
-                            query = query.replace('FLIGHT TRACKER', "")
-                            query = query.replace('FLIGHT TRACK', "")
-                            flight_num = query
+                        elif "FLIGHT TRACK" in query or "TRACK FLIGHT " in query:
+                            try:
+                                query = query.replace('FLIGHT TRACK', "")
+                                query = query.replace('TRACK FLIGHT ', "")
+                                flight_num = query
+                                date = date.today().strftime('%Y-%m-%d')
+                                url = f"https://aerodatabox.p.rapidapi.com/flights/number/{flight_num}/{date}"
 
-                            url = f"https://aerodatabox.p.rapidapi.com/flights/number/{flight_num}/{date}"
-
-                            headers = { "X-RapidAPI-Key": "17f75df5efmsh9b4ae3bc52aebc4p120b7cjsn63e5ff22f6da",
-	                                    "X-RapidAPI-Host": "aerodatabox.p.rapidapi.com"
-                                      }
-                            response = requests.request("GET", url, headers=headers)
-                            print(response.json())
+                                headers = { "X-RapidAPI-Key": "17f75df5efmsh9b4ae3bc52aebc4p120b7cjsn63e5ff22f6da",
+	                                        "X-RapidAPI-Host": "aerodatabox.p.rapidapi.com"
+                                          }
+                                response = requests.request("GET", url, headers=headers)
+                                format = json.dumps(response.json(), indent=4)
+                                print(format)
+                            except:
+                                print("ERROR: Please Type flight number also")
+                                print("Example: Track flight SQ 242")
 
 
                         elif "DATE " in query or "TIME " in query:
