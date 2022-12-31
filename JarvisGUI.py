@@ -1,4 +1,4 @@
-#J.A.R.V.I.S Copyright (C) 2022 Epicalable LLC. All Rights Reserved.
+#J.A.R.V.I.S Copyright (C) 2023 Epicalable LLC. All Rights Reserved.
 #For Gui EXE: pyinstaller -wF my_program.py (Runs Without shell window)
 #If pyinstaller crashes add: --hidden-import tkinter
 import PySimpleGUI as sg
@@ -369,10 +369,13 @@ def Help():
                     NOTE: Query of stock should be abbreviations.
                     NOTE: Stock abbrevatiion should be placed in Settings.
                     EX. TSLA AAPL MSFT IBM GOOG (Place under "StockPrice").
+                ---Track flight <Flight Number>
+                    NOTE: Number of Flight like SQ 11, SQ 305, SQ 335, SQ 23
+                    Ex. Track flight SQ 242
                 ---Goodbye
                     NOTE: Command to quit JARVIS.
 
-            J.A.R.V.I.S Copyright(C) 2022 Epicalable LLC. 
+            J.A.R.V.I.S Copyright(C) 2023 Epicalable LLC. 
             All Rights Reserved.""", title="Help Centre", size=(90, 30))
 
 
@@ -430,7 +433,7 @@ if __name__ == '__main__':
                 querytime + "-(USER TERMINATED JARVIS AND ALL IT'S RELATED PROCESSES!!!) \n")
             Audfile.close()
             print("\nJARVIS: Goodbye sir hope you have a nice day :-)")
-            print("\nJ.A.R.V.I.S Copyright (C) 2022 Epicalable LLC. All Rights Reserved.")
+            print("\nJ.A.R.V.I.S Copyright (C) 2023 Epicalable LLC. All Rights Reserved.")
             time.sleep(4)
             break
 
@@ -456,17 +459,24 @@ if __name__ == '__main__':
 
                     else:
                         if "STOCK " in query or "STOCK PRICE" in query:
-                            with open("Jarinfo.json") as f:
-                                contents = json.load(f)
-                                Stocks = contents["StockPrice"]
-                            for symbol in Stocks.split():
-                                print(f"Current {symbol:<4} stock price is {stock_price(symbol):>8}")
-                            Audfile = open("Jaraudit.txt", "a")
-                            querytime = (datetime.datetime.now().ctime())
-                            Audfile.writelines(
-                                querytime + "-(User Have Recieved Stock-Price.) \n")
-                            Audfile.close()
-                            continue
+                            try:
+                                with open("Jarinfo.json") as f:
+                                    contents = json.load(f)
+                                    Stocks = contents["StockPrice"]
+                                for symbol in Stocks.split():
+                                    print(f"Current {symbol:<4} stock price is {stock_price(symbol):>8}")
+                                Audfile = open("Jaraudit.txt", "a")
+                                querytime = (datetime.datetime.now().ctime())
+                                Audfile.writelines(
+                                    querytime + "-(User Have Recieved Stock-Price.) \n")
+                                Audfile.close()
+                            except:
+                                Audfile = open("Jaraudit.txt", "a")
+                                querytime = (datetime.datetime.now().ctime())
+                                Audfile.writelines(
+                                    querytime + "-(ERROR:892, Failed To Get Stock-price.) \n")
+                                Audfile.close()
+                                continue
 
                         elif "FLIGHT TRACK" in query or "TRACK FLIGHT " in query:
                             try:
@@ -481,9 +491,20 @@ if __name__ == '__main__':
                                           }
                                 response = requests.request("GET", url, headers=headers)
                                 pprint.pprint(response.json(), indent=2)
+                                Audfile = open("Jaraudit.txt", "a")
+                                querytime = (datetime.datetime.now().ctime())
+                                Audfile.writelines(
+                                    querytime + "-(User Have Recieved Flight-Tracker Data.) \n")
+                                Audfile.close()
                             except:
                                 print("ERROR: Please Type flight number also")
                                 print("Example: Track flight SQ 242")
+                                Audfile = open("Jaraudit.txt", "a")
+                                querytime = (datetime.datetime.now().ctime())
+                                Audfile.writelines(
+                                    querytime + "-(ERROR:325, Failed To Get Flight-Tracker Data.) \n")
+                                Audfile.close()
+                                continue
 
 
                         elif "DATE " in query or "TIME " in query:
@@ -593,7 +614,7 @@ if __name__ == '__main__':
                             Audfile.close()
                             print("JARVIS: Goodbye sir hope you have a nice day :-)")
                             print(
-                                "\nJ.A.R.V.I.S Copyright (C) 2022 Epicalable LLC. All Rights Reserved.")
+                                "\nJ.A.R.V.I.S Copyright (C) 2023 Epicalable LLC. All Rights Reserved.")
                             time.sleep(4)
                             break
 
@@ -631,7 +652,7 @@ if __name__ == '__main__':
 
         elif event == 'Version':
             sg.popup_no_titlebar('---About J.A.R.V.I.S---',
-                                 'Version: 1.0',
-                                 'Copyright (C) 2022 Epicalable LLC')
+                                 'Version: 1.1',
+                                 'Copyright (C) 2023 Epicalable LLC')
 
 window.close()

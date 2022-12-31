@@ -55,15 +55,18 @@ Here is a sample list of available Commands:
 * Are you real
 * Tell me the time
 * News on [your input]--  
-   Ex. News on Github.
+    Ex. News on Github.
 * Get me news headlines
 * Send an email
 * Wikipedia [Query]--  
-   Ex. Wikipedia github.
+    Ex. Wikipedia github.
 * Who is [Query] / What is [Query]--  
     NOTE: JARVIS will get answer from Wikipedia.
 * Get me stock price--  
     NOTE: Stock abbreviations EX."TSLA AAPL MSFT" will be in Setting under "StockPrice".
+* Track flight <Flight Number>  
+    NOTE: Number of Flight like SQ 11, SQ 305, SQ 335, SQ 23   
+    Ex. Track flight SQ 242
 * Goodbye --  
     NOTE: Command to quit JARVIS.
     
@@ -88,4 +91,4 @@ THANK YOU FOR YOUR COOPERATION :-)
 [![ForTheBadge uses-git](http://ForTheBadge.com/images/badges/uses-git.svg)](https://GitHub.com/) 
 [![ForTheBadge makes-people-smile](http://ForTheBadge.com/images/badges/makes-people-smile.svg)](https://github.com/Epicalable/)
 
-J.A.R.V.I.S Copyright (C) 2022 Epicalable LLC. All Rights Reserved.
+J.A.R.V.I.S Copyright (C) 2023 Epicalable LLC. All Rights Reserved.
