@@ -11,7 +11,7 @@ Kindly consider starring this repository if you like the program :-)
 
 
 ## What is J.A.R.V.I.S?
-J.A.R.V.I.S is a chatbot built and coded in Python whose aim is to be capable of chatting and retrieving any information and on-going events from the internet for it's users.
+J.A.R.V.I.S is a chatbot built and coded in Python whose aim is to be capable of chatting and retrieving any information or on-going events from the internet for it's users.
 
 ## How To Run J.A.R.V.I.S?
 To run J.A.R.V.I.S the user is required to open up the JarvisGUI.py file and run it so as to successfully open the GUI and start chatting with J.A.R.V.I.S.
@@ -32,7 +32,7 @@ Yes, Your info will be safe since it will be stored locally on your personal com
 
 2. Info-Intents: Stored in the Jarinfo file used by J.A.R.V.I.S to store Api keys, User Name and User location for data retrieval. You can access these using the settings menu.
 
-3. Audit-Indents: Stored in the Jaraudit file used by J.A.R.V.I.S to store user input/output logs, system retrival logs and fallback errors in your computer. You can access them by heaading to ChatLogs on the menu.
+3. Audit-Indents: Stored in the Jaraudit file used by J.A.R.V.I.S to store user input/output logs, system retrival logs and fallback errors in your computer. You can access them by heading to ChatLogs on the menu.
 
 All CRITICAL INFO REGARDING the USER will be STORED IN your PERSONAL COMPUTER and NOT on the INTERNET.
 

@@ -393,8 +393,8 @@ with open("Jarinfo.json") as f:
     LoadInput = contents["Inputbarsize"]
 sg.theme('DarkGrey8')  # gives window a color
 sg.set_options(element_padding=(3, 3))
-menu_def = [['&MENU ', ['&Settings', '&ChatLogs', '&Your Tasks','E&xit']],
-            ['&HELP', ['&Help', '&Report Issue', '&Version']],
+menu_def = [['&MENU ', ['&Settings', '&ChatLogs', '&Your Tasks', 'E&xit']],
+            ['&HELP', ['&Help', '&Error Analysis', '&Report Issue', '&Version']],
             ['&ABOUT US', ['&Support Us', '&Our Website']], ]
 layout = [[sg.Menu(menu_def, tearoff=False)],
           [sg.Text('J.A.R.V.I.S  A.I', size=(135, 1)),
