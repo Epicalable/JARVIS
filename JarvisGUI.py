@@ -239,7 +239,7 @@ def send_an_email(from_address, to_address, subject, message_text, password):
         Audfile.close()
         s.quit()    # terminating the session
     except:
-        sg.popup("Please check your internet connection and have turned 'on' Less secure app access in 'security' section in your Google Account Settings.")
+        sg.popup("Please check your internet connection and turn 'on' Less secure app access in 'security' section in your Google Account Settings.")
         Audfile = open("Jaraudit.txt", "a")
         querytime = (datetime.datetime.now().ctime())
         Audfile.writelines(
@@ -377,6 +377,26 @@ def Help():
 
             J.A.R.V.I.S Copyright(C) 2023 Epicalable LLC. 
             All Rights Reserved.""", title="Help Centre", size=(90, 30))
+    
+
+
+def Error():
+    sg.popup("""
+Whenever Jarvis runs into some unforseen or unexpected problems or circumstances an error code will be written down
+on Jaraudit.txt so that users or developers testing would know what went wrong.
+Here are the list of Error Codes:
+1. Error 404: Fallback, It occurs when the user's input isn't valid.
+2. Error 801: When User's city isn't valid to get weather data. Please verify and change City name.
+3. Error 805: When Jarvis couldn't connect to OpenWeatherMap Please check your Internet connection.
+4. Error 755: Failed to get Morning Briefing. Please check your Internet connection.
+5. Error 765: Failed to get Breifing News. Please check your Internet connection.
+6. Error 776: Failed to get News. Please check your Internet connection.
+7. Error 300: Failed to send Gmail. Please check your Internet connection and turn 'on' Less secure app access in 
+'security' section in your Google Account Settings.
+8. Error 892: Failed to get stock price. Check stock ticker and your internet connection.
+9. Error 325: Failed to get flight info. Check flight number and your internet connection.
+10. Error 500: Failed to connect to wikipedia. Please check your internet connection.""")
+    
 
 
 
@@ -394,7 +414,7 @@ with open("Jarinfo.json") as f:
 sg.theme('DarkGrey8')  # gives window a color
 sg.set_options(element_padding=(3, 3))
 menu_def = [['&MENU ', ['&Settings', '&ChatLogs', '&Your Tasks', 'E&xit']],
-            ['&HELP', ['&Help', '&Error Analysis', '&Report Issue', '&Version']],
+            ['&HELP', ['&Help', '&Error Codes', '&Report Issue', '&Version']],
             ['&ABOUT US', ['&Support Us', '&Our Website']], ]
 layout = [[sg.Menu(menu_def, tearoff=False)],
           [sg.Text('J.A.R.V.I.S  A.I', size=(135, 1)),
@@ -558,7 +578,7 @@ if __name__ == '__main__':
                                 Audfile = open("Jaraudit.txt", "a")
                                 querytime = (datetime.datetime.now().ctime())
                                 Audfile.writelines(
-                                    querytime + "-(CONNECTION FAILED WITH WIKIPEDIA!!!) \n")
+                                    querytime + "-(ERROR:500, Failed To Establish Connection With Wikipedia.) \n")
                                 Audfile.close()
                             continue
 
@@ -645,6 +665,9 @@ if __name__ == '__main__':
 
         elif event == 'Help':
             Help()
+
+        elif event == 'Error Codes':
+            Error()
 
         elif event == 'Report Issue':
             webbrowser.open(
