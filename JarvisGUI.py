@@ -17,6 +17,7 @@ import pprint
 from random import choice
 
 
+#Function to get weather when starting jarvis
 def Weather(timeing):
     try:
         with open("Jarinfo.json") as f:
@@ -56,6 +57,7 @@ def Weather(timeing):
         Audfile.close()
 
 
+#Function to get location when starting jarvis
 def location():
     #initialize the object
     Nomi_locator = Nominatim(user_agent="Jarvis")
@@ -72,6 +74,7 @@ def location():
     Audfile.close()
 
 
+#Function to get stock price
 def stock_price(symbol: str = "AAPL") -> str:
     url = f"https://finance.yahoo.com/quote/{symbol}/"
     response = requests.get(url)
@@ -80,6 +83,7 @@ def stock_price(symbol: str = "AAPL") -> str:
     return soup.find("div", class_=class_).find("fin-streamer").text
 
 
+#Functions to get news
 def Breifing(title):
     str = 'general business science health technology entertainment sports'
     with open("Jarinfo.json") as f:
@@ -151,6 +155,7 @@ def Breifing(title):
             Audfile.close()
 
 
+#Function to open and change settings
 def Settings():
     sg.theme('Dark')
     with open("Jarinfo.json") as f:
@@ -220,6 +225,7 @@ def Settings():
     return event != 'OK'
 
 
+#Function to send an email
 def send_an_email(from_address, to_address, subject, message_text, password):
     try:
         jarvis_mail = '\n \n \n \n                                                        ---This message was sent to you by JARVIS  :-)'
@@ -279,6 +285,7 @@ def gmail():
         return event != 'OK'
 
 
+#Function to view chatlogs
 def ChatLog():
     with open('Jaraudit.txt') as file:
         h = file.read()
@@ -286,6 +293,7 @@ def ChatLog():
     sg.popup_scrolled(h, title="ChatLogs", size=(90, 30))
 
 
+#Funtion to store user's upcoming tasks
 def Tasks():
     sg.theme('Dark')
     try:
@@ -322,7 +330,7 @@ def Tasks():
     return event != 'OK'
 
     
-    
+#Help popup for clueless users
 def Help():
     sg.popup_scrolled("""Welcome to the Help Centre
             1. Setting up JARVIS: -----------
@@ -379,7 +387,7 @@ def Help():
             All Rights Reserved.""", title="Help Centre", size=(90, 30))
     
 
-
+#For Devs to do error analysis
 def Error():
     sg.popup("""
 Whenever Jarvis runs into some unforseen or unexpected problems or circumstances an error code will be written down
@@ -402,7 +410,7 @@ Here are the list of Error Codes:
 
 
 
-
+#Start of main code
 Audfile = open("Jaraudit.txt", "a")
 querytime = (datetime.datetime.now().ctime())
 Audfile.writelines(querytime + "-(USER ACTIVATED JARVIS AND INITIALIZED RELATED PROCESSES!!!) \n")
@@ -645,6 +653,7 @@ if __name__ == '__main__':
                             Audfile.write("ERROR 404 (FALLBACK)!!! \n")
                             Audfile.close()
 
+        #Following functions is on the taskbar/menu panel on top
         elif event == 'Settings':
             Settings()
 
@@ -675,7 +684,7 @@ if __name__ == '__main__':
 
         elif event == 'Version':
             sg.popup_no_titlebar('---About J.A.R.V.I.S---',
-                                 'Version: 1.1',
+                                 'Version: 1.2',
                                  'Copyright (C) 2023 Epicalable LLC')
 
 window.close()
