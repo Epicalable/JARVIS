@@ -28,11 +28,11 @@ In order for J.A.R.V.I.S to work at full capacity a few 3rd party python package
 ## How does J.A.R.V.I.S store info and is it safe?
 Yes, Your info will be safe since it will be stored locally on your personal computer. J.A.R.V.I.S stores these info into 3 main sources.
 
-1. Response-Intents: Stored in Jarintents file used by J.A.R.V.I.S to check your input with tags and provide the appropriate output for the user.
+1. Response-Intents: Stored in Jarintents file used by J.A.R.V.I.S to check your input with tags and provide the appropriate output for the user. Head to Jarindent.json to take a look.
 
-2. Info-Intents: Stored in the Jarinfo file used by J.A.R.V.I.S to store Api keys, User Name and User location for data retrieval. You can access these using the settings menu.
+2. Info-Intents: Stored in the Jarinfo file used by J.A.R.V.I.S to store Api keys, User Name and User location for data retrieval. You can access these using the settings menu. Head to Jarinfo.json to take a look.
 
-3. Audit-Indents: Stored in the Jaraudit file used by J.A.R.V.I.S to store user input/output logs, system retrival logs and fallback errors in your computer. You can access them by heading to ChatLogs on the menu.
+3. Audit-Indents: Stored in the Jaraudit file used by J.A.R.V.I.S to store user input/output logs, system retrival logs and fallback errors in your computer. You can access them by heading to ChatLogs on the menu. Head to Jaraudit.txt to take a look.
 
 All CRITICAL INFO REGARDING the USER will be STORED IN your PERSONAL COMPUTER and NOT on the INTERNET.
 
@@ -81,7 +81,7 @@ IMPORTANT NOTE: Any User who are willing to Share or Re-Distribute the above 'Pr
 2. a link to this repository from the user's 'Modified program' README file. 
 
 It will be helpful for us as users will know it's original source and about our startup.
-
+Please also refer to LICENSE file for clarifications. 
 THANK YOU FOR YOUR COOPERATION :-)
 
 

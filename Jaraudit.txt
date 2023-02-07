@@ -1,0 +1,55 @@
+=========================================================================================================
+This file is where JARVIS stores only user inputs and error messages for developers to do error analysis.
+=========================================================================================================
+
+Mon Dec 12 11:54:05 2022-(User Recieved His Current Location Using GeoCoder.) 
+Mon Dec 12 11:54:05 2022-(User Successfully Recieved Weather Report Using OpenWeatherMap.) 
+Mon Dec 12 11:54:15 2022-(User Recieved Morning Briefing From NewsAPI.) 
+Mon Dec 12 11:54:03 2022-(USER ACTIVATED JARVIS AND INITIALIZED RELATED PROCESSES!!!) 
+Mon Dec 12 12:03:52 2022: Hi
+Mon Dec 12 12:04:12 2022: What is mammal
+Mon Dec 12 12:04:13 2022-(CONNECTION ESTABLISHED WITH WIKIPEDIA!!!) 
+Mon Dec 12 12:04:19 2022: Good to know
+Mon Dec 12 12:04:24 2022: Thank you
+Mon Dec 12 12:04:40 2022: Goodbye
+Mon Dec 12 12:04:40 2022-(USER TERMINATED JARVIS AND ALL IT'S RELATED PROCESSES!!!) 
+Sun Dec 25 15:40:24 2022-(User Recieved His Current Location Using GeoCoder.) 
+Sun Dec 25 15:40:24 2022-(User Successfully Recieved Weather Report Using OpenWeatherMap.) 
+Sun Dec 25 15:40:17 2022-(USER ACTIVATED JARVIS AND INITIALIZED RELATED PROCESSES!!!) 
+Sun Dec 25 15:40:40 2022: Track flight sq 242
+Sat Dec 31 15:39:17 2022-(User Have Recieved Flight-Tracker Data.) 
+Sat Dec 31 15:41:19 2022: News on singapore
+Sat Dec 31 15:41:20 2022-(User Recieved News From NewsAPI.) 
+Sat Dec 31 15:41:40 2022: Wiki singapore airlines
+Sat Dec 31 15:41:41 2022-(User Established Connection With Wikipedia.) 
+Sat Dec 31 15:41:52 2022: Goodbye
+Sat Dec 31 15:41:52 2022-(USER TERMINATED JARVIS AND ALL IT'S RELATED PROCESSES!!!) 
+Fri Jan 20 16:12:27 2023-(User Recieved His Current Location Using GeoCoder.)
+Fri Jan 20 16:13:51 2023-(User Successfully Recieved Weather Report Using OpenWeatherMap.) 
+Fri Jan 20 16:13:49 2023-(USER ACTIVATED JARVIS AND INITIALIZED RELATED PROCESSES!!!) 
+Fri Jan 20 16:14:24 2023: Hi
+Fri Jan 20 16:15:12 2023-(USER TERMINATED JARVIS AND ALL IT'S RELATED PROCESSES!!!) 
+Tue Jan 31 21:24:28 2023-(User Recieved His Current Location Using GeoCoder.) 
+Tue Jan 31 21:24:29 2023-(User Successfully Recieved Weather Report Using OpenWeatherMap.) 
+Tue Jan 31 21:24:23 2023-(USER ACTIVATED JARVIS AND INITIALIZED RELATED PROCESSES!!!) 
+Tue Jan 31 21:24:43 2023: Hello
+Tue Jan 31 21:24:53 2023: Get me news on singapore
+Tue Jan 31 21:24:55 2023-(User Recieved News From NewsAPI.) 
+Tue Jan 31 21:25:30 2023: Track flight sq 12
+Tue Jan 31 21:25:31 2023-(User Have Recieved Flight-Tracker Data.) 
+Tue Jan 31 21:26:22 2023: Thank you
+Tue Jan 31 21:26:26 2023: Ok
+Tue Jan 31 21:26:43 2023-(USER TERMINATED JARVIS AND ALL IT'S RELATED PROCESSES!!!) 
+Thu Feb  2 11:32:44 2023-(User Recieved His Current Location Using GeoCoder.) 
+Thu Feb  2 11:32:44 2023-(User Successfully Recieved Weather Report Using OpenWeatherMap.) 
+Thu Feb  2 11:32:54 2023-(User Recieved Morning Briefing From NewsAPI.) 
+Thu Feb  2 11:32:41 2023-(USER ACTIVATED JARVIS AND INITIALIZED RELATED PROCESSES!!!) 
+Thu Feb  2 11:33:50 2023: Wiki singapore
+Thu Feb  2 11:33:52 2023-(User Established Connection With Wikipedia.) 
+Thu Feb  2 12:21:58 2023: How are you
+Thu Feb  2 12:22:03 2023: I am fine
+Thu Feb  2 12:22:10 2023: Yes i am
+Thu Feb  2 12:33:02 2023: Nice
+Thu Feb  2 12:33:05 2023: Ok
+Thu Feb  2 12:33:10 2023: Goodbye
+Thu Feb  2 12:33:10 2023-(USER TERMINATED JARVIS AND ALL IT'S RELATED PROCESSES!!!) 

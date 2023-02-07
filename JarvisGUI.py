@@ -411,9 +411,6 @@ Here are the list of Error Codes:
 
 
 #Start of main code
-Audfile = open("Jaraudit.txt", "a")
-querytime = (datetime.datetime.now().ctime())
-Audfile.writelines(querytime + "-(USER ACTIVATED JARVIS AND INITIALIZED RELATED PROCESSES!!!) \n")
 
 with open("Jarinfo.json") as f:
     contents = json.load(f)
@@ -436,6 +433,9 @@ window.maximize()
 
 
 hour = int(datetime.datetime.now().hour)
+Audfile = open("Jaraudit.txt", "a")
+querytime = (datetime.datetime.now().ctime())
+Audfile.writelines(querytime + "-(USER ACTIVATED JARVIS AND INITIALIZED RELATED PROCESSES!!!) \n")
 if hour >= 0 and hour < 12:
     timeing = "JARVIS: Good Morning Sir, here is the current weather in "
     location()
