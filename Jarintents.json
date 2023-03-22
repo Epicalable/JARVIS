@@ -59,6 +59,16 @@
                 ]
             },
             {
+                "tags": "HOW YOU FEELING ",
+                "response": [
+                    "JARVIS: I am fine, how about you sir?",
+                    "JARVIS: I'm doing fine sir.",
+                    "JARVIS: I'm doing well sir and how about you?",
+                    "JARVIS: I am fine as always sir.",
+                    "JARVIS: I am fine as long as you maintain your computer."
+                ]
+            },
+            {
                 "tags": "YOU FINE ",
                 "response": [
                     "JARVIS: I am fine, how about you sir?",
@@ -145,7 +155,7 @@
                 "response": [
                     "JARVIS: That is great sir, would you need any help.",
                     "JARVIS: That is awesome sir, stay safe and good luck.",
-                    "JARVIS: Good to know pls take a look and follow the covid-19 guidelines.",
+                    "JARVIS: Good to know pls take a look at the country's policies.",
                     "JARVIS: Awesome news sir, is there anything i can help with."
                 ]
             },
@@ -272,6 +282,30 @@
                 ]
             },
             {
+                "tags": "WOW ",
+                "response": [
+                    "JARVIS: Good to know you're happy.",
+                    "JARVIS: Glad to help you."
+                ]
+            },
+            {
+                "tags": "NICE ",
+                "response": [
+                    "JARVIS: Noice sir.",
+                    "JARVIS: It is nice.",
+                    "JARVIS: Good to know."
+                ]
+            },
+            {
+                "tags": "SHOULD I DO TODAY ",
+                "response": [
+                    "JARVIS: Well you can go outside and take a walk sir.",
+                    "JARVIS: Maybe you can try out a new movie or anime.",
+                    "JARVIS: You can go gym and exercise.",
+                    "JARVIS: You can surf the net, there is a lot of info out there."
+                ]
+            },
+            {
                 "tags": "SAY SOMETHING ",
                 "response": [
                     "JARVIS: Well sir sometimes I don't have anything to say."
@@ -282,6 +316,13 @@
                 "response": [
                     "JARVIS: yes sir?",
                     "JARVIS: Do you have something to say sir"
+                ]
+            },
+            {
+                "tags": "CHATGPT ",
+                "response": [
+                    "JARVIS: He is extrodinary am I right.",
+                    "JARVIS: He is smart and I look up to him"
                 ]
             }
         ]

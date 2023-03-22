@@ -628,6 +628,12 @@ if __name__ == '__main__':
                         elif "HEADLINES " in query:
                             Breifing('News Headlines')
 
+                        elif "LATEST NEWS " in query:
+                            Breifing('News Headlines')
+
+                        elif "WHATS GOING ON " in query:
+                            Breifing('News Headlines')
+
                         elif "THE NEWS " in query:
                             Breifing('News Headlines')
 
@@ -647,8 +653,10 @@ if __name__ == '__main__':
                             break
 
                         else:
-                            print(
-                                "JARVIS: I did not understand you, as you can see i am still evolving :-)")
+                            print("JARVIS: Sorry sir unfortunately I couldn't process what you were trying to say.")
+                            print("Please look up 'Help' on the menu for more info regarding questions and inputs.")
+                            print("If you think the question / input is important and might help others:")
+                            print("Feel free to head to Epicalable's Github page and create an issue in JARVIS Repository")
                             Audfile = open("Jaraudit.txt", "a")
                             Audfile.write("ERROR 404 (FALLBACK)!!! \n")
                             Audfile.close()
