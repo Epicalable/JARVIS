@@ -640,11 +640,42 @@ if __name__ == '__main__':
                         elif "SEND AN EMAIL " in query or "SEND A EMAIL " in query:
                             gmail()
 
+                        elif "PLANET TRACKER " in query or "TRACK PLANET " in query:
+                            print("JARVIS: Taking you to NASA's Eyes Planet tracker.")
+                            querytime = (datetime.datetime.now().ctime())
+                            Audfile.writelines(querytime + "-(USER went to a NASA website.) \n")
+                            Audfile.close()
+                            time.sleep(3)
+                            webbrowser.open("https://eyes.nasa.gov/apps/solar-system/#/home", new=1)
+
+                        elif "ASTEROID TRACKER " in query or "TRACK ASTEROID " in query:
+                            print("JARVIS: Taking you to NASA's Eyes Asteroid tracker.")
+                            querytime = (datetime.datetime.now().ctime())
+                            Audfile.writelines( querytime + "-(USER went to a NASA website.) \n")
+                            Audfile.close()
+                            time.sleep(3)
+                            webbrowser.open("https://eyes.nasa.gov/apps/asteroids/#/asteroids", new=1)
+
+                        elif "SOLAR SYSTEM TRACKER " in query or "TRACK SOLAR SYSTEM " in query:
+                            print("JARVIS: Taking you to NASA's Eyes Solar System.")
+                            querytime = (datetime.datetime.now().ctime())
+                            Audfile.writelines(querytime + "-(USER went to a NASA website.) \n")
+                            Audfile.close()
+                            time.sleep(3)
+                            webbrowser.open("https://eyes.nasa.gov/apps/orrery/#/home", new=1)
+
+                        elif "EXOPLANET TRACKER " in query or "TRACK EXOPLANETS " in query:
+                            print("JARVIS: Taking you to NASA's Eyes Exoplanets.")
+                            querytime = (datetime.datetime.now().ctime())
+                            Audfile.writelines(querytime + "-(USER went to a NASA website.) \n")
+                            Audfile.close()
+                            time.sleep(3)
+                            webbrowser.open("https://eyes.nasa.gov/apps/exo/#/", new=1)
+
                         elif query == "GOODBYE ":
                             Audfile = open("Jaraudit.txt", "a")
                             querytime = (datetime.datetime.now().ctime())
-                            Audfile.writelines(
-                                querytime + "-(USER TERMINATED JARVIS AND ALL IT'S RELATED PROCESSES!!!) \n")
+                            Audfile.writelines(querytime + "-(USER TERMINATED JARVIS AND ALL IT'S RELATED PROCESSES!!!) \n")
                             Audfile.close()
                             print("JARVIS: Goodbye sir hope you have a nice day :-)")
                             print(
@@ -677,8 +708,7 @@ if __name__ == '__main__':
             webbrowser.open("https://github.com/Epicalable/JARVIS", new=1)
 
         elif event == 'Our Website':
-            webbrowser.open(
-                "https://epicalable.github.io/epicalable.html", new=1)
+            webbrowser.open("https://epicalable.github.io/epicalable.html", new=1)
 
         elif event == 'Help':
             Help()
