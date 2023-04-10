@@ -166,8 +166,6 @@ def Settings():
         Country = contents["Country"]
         City = contents["City"]
         StockPrice = contents["StockPrice"]
-        Outputsc = contents["Outputscreensize"]
-        Inputbr = contents["Inputbarsize"]
     layout = [[sg.Text('Settings', font='Default 16')],
               [sg.Text('Your-Details:--', font='Default 12')],
               [sg.Text('Enter your information and Api-Keys.', font='Default 10')],
@@ -183,13 +181,6 @@ def Settings():
                   City, key='-City-', size=(34, 1))],
               [sg.T('Stock-Price:', size=(13, 1)), sg.Input(
                   StockPrice, key='-Stock-', size=(34, 1))],
-              [sg.Text('GUI-Customization:--', font='Default 12')],
-              [sg.Text(
-                  'Enter only in Numbers to adjust the UI screen size.', font='Default 10')],
-              [sg.T('Output-Screen:', size=(13, 1)), sg.Input(
-                  Outputsc, key='-Outsc-', size=(34, 1))],
-              [sg.T('Input-bar:', size=(13, 1)), sg.Input(
-                  Inputbr, key='-Inbr-', size=(34, 1))],
               [sg.Button('Save'), sg.Button('Exit')]]
     window = sg.Window('Settings', layout, no_titlebar=True, keep_on_top=True)
     while True:  # Event Loop
@@ -203,8 +194,6 @@ def Settings():
             Country = values['-Country-']
             City = values['-City-']
             StockPrice = values['-Stock-']
-            Outputsc = values['-Outsc-']
-            Inputbr = values['-Inbr-']
             dictionary = {
                 "!CAUTION!": "PLEASE REFRAIN from TAMPERING with the BELOW DATA!!!",
                 "User": User,
@@ -212,12 +201,63 @@ def Settings():
                 "OpenWeatherKey": weatherkey,
                 "Country": Country,
                 "City": City,
-                "StockPrice": StockPrice,
-                "Outputscreensize": Outputsc,
-                "Inputbarsize": Inputbr
+                "StockPrice": StockPrice
             }
             json_object = json.dumps(dictionary, indent=4)
             with open("Jarinfo.json", "w") as outfile:
+                outfile.write(json_object)
+            break
+    window.close()
+    event = window.read()
+    return event != 'OK'
+
+
+#Function to change app layout
+def Layout():
+    sg.theme('Dark')
+    with open("Jarsettings.json") as f:
+        contents = json.load(f)
+        Outputlngt = contents["Outputlengthsize"]
+        Outputbrth = contents["Outputbreadthsize"]
+        Inputln = contents["Inputbarlength"]
+        Inputbr = contents["Inputbarbreadth"]
+        Titledi = contents["Titledistance"]
+    layout = [[sg.Text('Layout', font='Default 16')],
+              [sg.Text('GUI-Customization:--', font='Default 12')],
+              [sg.Text('Enter only in Numbers to adjust the UI screen size.', font='Default 10')],
+              [sg.T('Output-length:', size=(13, 1)), sg.Input(
+                  Outputlngt, key='-Outle-', size=(34, 1))],
+              [sg.T('Output-breadth:', size=(13, 1)), sg.Input(
+                  Outputbrth, key='-Outbr-', size=(34, 1))],
+              [sg.T('Input-length:', size=(13, 1)), sg.Input(
+                  Inputln, key='-Inln-', size=(34, 1))],
+              [sg.T('Input-breadth:', size=(13, 1)), sg.Input(
+                  Inputbr, key='-Inbr-', size=(34, 1))],
+              [sg.Text('Adjust the distance between J.A.R.V.I.S and (c).', font='Default 10')],
+              [sg.T('Title-Distance:', size=(13, 1)), sg.Input(
+                  Titledi, key='-Outle-', size=(34, 1))],
+              [sg.Button('Save'), sg.Button('Exit')]]
+    window = sg.Window('Settings', layout, no_titlebar=True, keep_on_top=True)
+    while True:  # Event Loop
+        event, values = window.read()
+        if event in (sg.WIN_CLOSED, 'Exit'):
+            break
+        if event == 'Save':
+            Outputlngt = values['-Outle-']
+            Outputbrth = values['-Outbr-']
+            Inputln = values['-Inln-']
+            Inputbr = values['-Inbr-']
+            Titledi = values['-Tidi-']
+            dictionary = {
+                "!CAUTION!": "PLEASE REFRAIN from TAMPERING with the BELOW DATA!!!",
+                "Outputlengthsize": Outputlngt,
+                "Outputbreadthsize": Outputbrth,
+                "Inputbarlength": Inputln,
+                "Inputbarbreadth": Inputbr,
+                "Titledistance": Titledi
+            }
+            json_object = json.dumps(dictionary, indent=4)
+            with open("Jarsettings.json", "w") as outfile:
                 outfile.write(json_object)
             break
     window.close()
@@ -410,22 +450,25 @@ Here are the list of Error Codes:
 
 
 
-#Start of main code
+#Start of main code funtions
 
-with open("Jarinfo.json") as f:
+with open("Jarsettings.json") as f:
     contents = json.load(f)
-    LoadOutput = contents["Outputscreensize"]
-    LoadInput = contents["Inputbarsize"]
+    Outputlngt = contents["Outputlengthsize"]
+    Outputbrth = contents["Outputbreadthsize"]
+    Inputln = contents["Inputbarlength"]
+    Inputbr = contents["Inputbarbreadth"]
+    Titledi = contents["Titledistance"]
 sg.theme('DarkGrey8')  # gives window a color
 sg.set_options(element_padding=(3, 3))
-menu_def = [['&MENU ', ['&Settings', '&ChatLogs', '&Your Tasks', 'E&xit']],
+menu_def = [['&MENU ', ['&Settings', '&Layout', '&ChatLogs', '&Your Tasks', 'E&xit']],
             ['&HELP', ['&Help', '&Error Codes', '&Report Issue', '&Version']],
             ['&ABOUT US', ['&Support Us', '&Our Website']], ]
 layout = [[sg.Menu(menu_def, tearoff=False)],
-          [sg.Text('J.A.R.V.I.S  A.I', size=(135, 1)),
+          [sg.Text('J.A.R.V.I.S  A.I', size=(Titledi, 1)),
            sg.Text(('(C) Epicalable'), size=(20, 1))],
-          [sg.Output(size=(LoadOutput, 38), font=('Helvetica 10'))],
-          [sg.Multiline(size=(LoadInput, 2), enter_submits=True, key='-QUERY-', do_not_clear=False),
+          [sg.Output(size=(Outputlngt, Outputbrth), font=('Helvetica 10'))],
+          [sg.Multiline(size=(Inputln, Inputbr), enter_submits=True, key='-QUERY-', do_not_clear=False),
            sg.Button('ENTER', size=(11, 2), bind_return_key=True)]]
 window = sg.Window('J.A.R.V.I.S GUI', layout, location=(0, 0), icon=r'icon/JarvisBot.ico', font=(
     'Helvetica', ' 13'), default_button_element_size=(8, 2)).Finalize()
@@ -695,6 +738,9 @@ if __name__ == '__main__':
         #Following functions is on the taskbar/menu panel on top
         elif event == 'Settings':
             Settings()
+
+        elif event == 'Layout':
+            Layout()
 
         elif event == 'ChatLogs':
             ChatLog()
