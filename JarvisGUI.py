@@ -768,7 +768,7 @@ if __name__ == '__main__':
 
         elif event == 'Version':
             sg.popup_no_titlebar('---About J.A.R.V.I.S---',
-                                 'Version: 1.2',
+                                 'Version: 1.3',
                                  'Copyright (C) 2023 Epicalable LLC')
 
 window.close()

@@ -12,38 +12,41 @@ Kindly consider starring this repository if you like the program :-)
 
 ## Table Of Contents
 - [WHAT'S NEW?](#whats-new)
+- [Screenshots of J.A.R.V.I.S](#screenshots-of-jarvis)
 - [Introduction to J.A.R.V.I.S](#introduction-to-jarvis)
 - [How to run J.A.R.V.I.S](#how-to-run-jarvis)
 - [How does J.A.R.V.I.S store info](#how-does-jarvis-store-info-and-is-it-safe)
-- [What kind of API should I subscribe to?](#what-kind-of-api-should-i-subscribe-to)
+- [What Are The APIs should I subscribe to?](#what-are-the-apis-should-i-subscribe-to)
 - [Examples of J.A.R.V.I.S commands](#some-examples-of-jarvis-commands)
-- [Screenshots of J.A.R.V.I.S](#screenshots-of-jarvis)
-- [License](#license-open-source-love-svg1)
+- [License](#license)
 
 
 ## WHAT'S NEW?
-Starting our Monday with a new update!!! In order to keep J.A.R.V.I.S up-to-date and keep it up with the growing tech industries and solutions this new commit includes,
+Here at Epicalable we are committed in keeping J.A.R.V.I.S up-to-date and up-to-speed with the growing tech solutions and algorithms. Hence this new commit includes,
 ```
-1. We have moved the ability to edit output and input screen sizes to the new Jarsettings.json file from Jarinfo.json for easier segregation of tasks.  
-   1a. To access Jarsettings.json head to 'Menu' and click on 'Layout' and start adjusting to your screen size.
-2. We have added a Table-Of-Contents to our README.md for users to navigate out repository easier.
-   2a. README.md now has a new section to check what's new.
-3. Minor Bugs and Issues Fixes.  
+1. Minor Bugs and Issues Fixes.
+2. Updated README.md  
 
-Last Updated: 10-April-2023
+Last Updated: 12-April-2023
 Publisher:  Epicalable
 ```
-Keep updated on what's happening to this repository by clicking the 'Star' and 'Watch' button on the top right corner of this webpage.
+Keep updated to what's happening on this repository by clicking the 'Star' and 'Watch' button on the top right corner of this webpage.
+
+
+
+## Screenshots of J.A.R.V.I.S
+<img src="https://user-images.githubusercontent.com/69076784/180637424-8d2737c9-ead7-4d65-a8e8-a2c36d9474e8.png" width="100" height="60"> <img src="https://user-images.githubusercontent.com/69076784/206891927-da7d86b8-e3df-4922-a887-7be46cc94070.png" width="100" height="60"> <img src="https://user-images.githubusercontent.com/69076784/210161820-44109b56-a2bf-4410-a90d-a3ded829dfb2.png" width="100" height="60">
 
 
 
 ## Introduction to J.A.R.V.I.S?
-J.A.R.V.I.S is a chatbot integrated into a GUI built and coded in Python by Epicalable whose aim is to be capable of chatting and retrieving any information or on-going events from the internet for it's users upon requested. Jarvis is also made to help test our organisation's potential and problem-solving techniques.
+J.A.R.V.I.S was started in 2019 as an Command-Line Interface Application in C++ and then after careful consideration was shifted to Python during 2020 due to some limitation. J.A.R.V.I.S has been constantly evolved over the years to where it is now, integrated with a GUI and new features being added every month. While our staffs in Epicalable are constantly fixing bugs and closing issues behind the scenes.  
+So what does JARVIS do? Well JARVIS is known as a chatbot it also can get news, weather, get location, send emails, flight info, stock prices, wikipedia and some more cool features sprinkled in by our programmers.
 
 
 
 ## How to run J.A.R.V.I.S?
-To run J.A.R.V.I.S the user is required to open up the JarvisGUI.py file and run it so as to successfully open the GUI and start chatting with J.A.R.V.I.S.
+To run J.A.R.V.I.S, user are to open up the JarvisGUI.py file and 'pip' download the 3rd party packages so users can run Jarvis successfully without any problems.  
 Users facing any issues can open up an issue at the Issues section of JARVIS Github Page and can expext us to rectify it ASAP.  
 
 In order for J.A.R.V.I.S to work at full capacity a few 3rd party python packages will be required to be installed:
@@ -69,7 +72,7 @@ All CRITICAL INFO REGARDING the USER will be STORED IN your PERSONAL COMPUTER an
 
 
 
-## What kind of API should I subscribe to?
+## What Are The APIs should I subscribe to?
 When completed installing, by default you can chat with J.A.R.V.I.S using temporary APIs provided to you. But if you want it to be personalised then it is best to activate the API. To do that you will need to head to:
 
 1. https://newsapi.org/ : For Live News, Morning Briefings and News Headlines.
@@ -107,21 +110,18 @@ Here is a sample list of available Commands:
 
 
 
-## Screenshots of J.A.R.V.I.S
-<img src="https://user-images.githubusercontent.com/69076784/180637424-8d2737c9-ead7-4d65-a8e8-a2c36d9474e8.png" width="100" height="60"> <img src="https://user-images.githubusercontent.com/69076784/206891927-da7d86b8-e3df-4922-a887-7be46cc94070.png" width="100" height="60"> <img src="https://user-images.githubusercontent.com/69076784/210161820-44109b56-a2bf-4410-a90d-a3ded829dfb2.png" width="100" height="60">
+## License  
+[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/Epicalable/)  
 
+IMPORTANT NOTE: Any User who are willing to Share or Re-Distribute JARVIS are kindly advised to:
 
-
-## License [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/Epicalable/)
-IMPORTANT NOTE: Any User who are willing to Share or Re-Distribute the above 'Program' are kindly advised to:
-
-1. keep at least ONE "(C) Epicalable" text in the 'program'.
+1. A reference to us by keeping a "(C) Epicalable" text in the 'Modified program' such as keeping it in the settings menu, about or help page.
 
 2. a link to this repository from the user's 'Modified program' README file. 
 
 It will be helpful for us as users will know it's original source and about our startup.
-Please also refer to LICENSE file for clarifications. 
-THANK YOU FOR YOUR COOPERATION :-)
+Please also refer to LICENSE file for clarifications.  
+Thank you for your kind cooperation :-)
 
 [![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://github.com/Epicalable/)
 [![ForTheBadge built-by-developers](http://ForTheBadge.com/images/badges/built-by-developers.svg)](https://github.com/MahaMohan/)
@@ -129,4 +129,6 @@ THANK YOU FOR YOUR COOPERATION :-)
 [![ForTheBadge uses-git](http://ForTheBadge.com/images/badges/uses-git.svg)](https://GitHub.com/) 
 [![ForTheBadge makes-people-smile](http://ForTheBadge.com/images/badges/makes-people-smile.svg)](https://github.com/Epicalable/)
 
-J.A.R.V.I.S Copyright (C) 2023 Epicalable LLC. All Rights Reserved.
+Version 1.3  
+J.A.R.V.I.S Copyright (C) Epicalable 2023.  
+All Rights Reserved.
