@@ -1,6 +1,6 @@
-=========================================================================================================
+===============================================================================
 This file is where JARVIS stores only user inputs and error messages for developers to do error analysis.
-=========================================================================================================
+===============================================================================
 
 Mon Dec 12 11:54:05 2022-(User Recieved His Current Location Using GeoCoder.) 
 Mon Dec 12 11:54:05 2022-(User Successfully Recieved Weather Report Using OpenWeatherMap.) 

@@ -27,7 +27,7 @@ Here at Epicalable we are committed in keeping J.A.R.V.I.S up-to-date and up-to-
 1. Minor Bugs and Issues Fixes.
 2. Updated README.md  
 
-Last Updated: 12-April-2023
+Last Updated: 14-April-2023
 Publisher:  Epicalable
 ```
 Keep updated to what's happening on this repository by clicking the 'Star' and 'Watch' button on the top right corner of this webpage.
@@ -40,7 +40,8 @@ Keep updated to what's happening on this repository by clicking the 'Star' and '
 
 
 ## Introduction to J.A.R.V.I.S?
-J.A.R.V.I.S was started in 2019 as an Command-Line Interface Application in C++ and then after careful consideration was shifted to Python during 2020 due to some limitation. J.A.R.V.I.S has been constantly evolved over the years to where it is now, integrated with a GUI and new features being added every month. While our staffs in Epicalable are constantly fixing bugs and closing issues behind the scenes.  
+J.A.R.V.I.S was started in 2019 as an Command-Line Interface Application in C++ and after careful consideration was shifted to Python during 2020 due to some limitations.  
+J.A.R.V.I.S has been constantly evolved over the years to where it is now, integrated with a GUI and new features being added every month. While our staffs in Epicalable are constantly fixing bugs and closing issues behind the scenes.  
 So what does JARVIS do? Well JARVIS is known as a chatbot it also can get news, weather, get location, send emails, flight info, stock prices, wikipedia and some more cool features sprinkled in by our programmers.
 
 

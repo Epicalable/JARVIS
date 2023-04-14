@@ -547,7 +547,7 @@ if __name__ == '__main__':
                                 Audfile.writelines(
                                     querytime + "-(ERROR:892, Failed To Get Stock-price.) \n")
                                 Audfile.close()
-                                continue
+                            continue
 
                         elif "FLIGHT TRACK" in query or "TRACK FLIGHT " in query:
                             try:
@@ -575,7 +575,7 @@ if __name__ == '__main__':
                                 Audfile.writelines(
                                     querytime + "-(ERROR:325, Failed To Get Flight-Tracker Data.) \n")
                                 Audfile.close()
-                                continue
+                            continue
 
 
                         elif "DATE " in query or "TIME " in query:
@@ -666,7 +666,7 @@ if __name__ == '__main__':
                                 Audfile.writelines(
                                     querytime + "-(ERROR:776, Connection Failed With NewsAPI. Please Check Your Connection.) \n")
                                 Audfile.close()
-                                continue
+                            continue
 
                         elif "HEADLINES " in query:
                             Breifing('News Headlines')
@@ -690,6 +690,7 @@ if __name__ == '__main__':
                             Audfile.close()
                             time.sleep(3)
                             webbrowser.open("https://eyes.nasa.gov/apps/solar-system/#/home", new=1)
+                            continue
 
                         elif "ASTEROID TRACKER " in query or "TRACK ASTEROID " in query:
                             print("JARVIS: Taking you to NASA's Eyes Asteroid tracker.")
@@ -698,6 +699,7 @@ if __name__ == '__main__':
                             Audfile.close()
                             time.sleep(3)
                             webbrowser.open("https://eyes.nasa.gov/apps/asteroids/#/asteroids", new=1)
+                            continue
 
                         elif "SOLAR SYSTEM TRACKER " in query or "TRACK SOLAR SYSTEM " in query:
                             print("JARVIS: Taking you to NASA's Eyes Solar System.")
@@ -706,6 +708,7 @@ if __name__ == '__main__':
                             Audfile.close()
                             time.sleep(3)
                             webbrowser.open("https://eyes.nasa.gov/apps/orrery/#/home", new=1)
+                            continue
 
                         elif "EXOPLANET TRACKER " in query or "TRACK EXOPLANETS " in query:
                             print("JARVIS: Taking you to NASA's Eyes Exoplanets.")
@@ -714,6 +717,7 @@ if __name__ == '__main__':
                             Audfile.close()
                             time.sleep(3)
                             webbrowser.open("https://eyes.nasa.gov/apps/exo/#/", new=1)
+                            continue
 
                         elif query == "GOODBYE ":
                             Audfile = open("Jaraudit.txt", "a")
@@ -721,10 +725,9 @@ if __name__ == '__main__':
                             Audfile.writelines(querytime + "-(USER TERMINATED JARVIS AND ALL IT'S RELATED PROCESSES!!!) \n")
                             Audfile.close()
                             print("JARVIS: Goodbye sir hope you have a nice day :-)")
-                            print(
-                                "\nJ.A.R.V.I.S Copyright (C) 2023 Epicalable LLC. All Rights Reserved.")
+                            print("\nJ.A.R.V.I.S Copyright (C) 2023 Epicalable LLC. All Rights Reserved.")
                             time.sleep(4)
-                            break
+                            window.close()
 
                         else:
                             print("JARVIS: Sorry sir unfortunately I couldn't process what you were trying to say.")
