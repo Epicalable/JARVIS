@@ -24,10 +24,11 @@ Kindly consider starring this repository if you like the program :-)
 ## WHAT'S NEW?
 Here at Epicalable we are committed in keeping J.A.R.V.I.S up-to-date and up-to-speed with the growing tech solutions and algorithms. Hence this new commit includes,
 ```
-1. Minor Bugs and Issues Fixes.
-2. Updated README.md  
+1. Updated README.md  
+2. Keep a look out for developer tools in the coming days!!!
+3. Weekly Code checks and Maintanence to support python 3.11.3. 
 
-Last Updated: 14-April-2023
+Last Updated: 17-April-2023
 Publisher:  Epicalable
 ```
 Keep updated to what's happening on this repository by clicking the 'Star' and 'Watch' button on the top right corner of this webpage.
@@ -35,7 +36,11 @@ Keep updated to what's happening on this repository by clicking the 'Star' and '
 
 
 ## Screenshots of J.A.R.V.I.S
-<img src="https://user-images.githubusercontent.com/69076784/180637424-8d2737c9-ead7-4d65-a8e8-a2c36d9474e8.png" width="100" height="60"> <img src="https://user-images.githubusercontent.com/69076784/206891927-da7d86b8-e3df-4922-a887-7be46cc94070.png" width="100" height="60"> <img src="https://user-images.githubusercontent.com/69076784/210161820-44109b56-a2bf-4410-a90d-a3ded829dfb2.png" width="100" height="60">
+<img src="https://user-images.githubusercontent.com/69076784/180637424-8d2737c9-ead7-4d65-a8e8-a2c36d9474e8.png" width="100" height="60">  <img src="https://user-images.githubusercontent.com/69076784/232394556-eff71901-0926-42e3-9161-7469759c3c7c.png" width="100" height="60">
+
+<img src="https://user-images.githubusercontent.com/69076784/206891927-da7d86b8-e3df-4922-a887-7be46cc94070.png" width="100" height="60">  
+
+<img src="https://user-images.githubusercontent.com/69076784/210161820-44109b56-a2bf-4410-a90d-a3ded829dfb2.png" width="100" height="60">
 
 
 

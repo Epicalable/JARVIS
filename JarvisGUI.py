@@ -17,6 +17,13 @@ import pprint
 from random import choice
 
 
+#Centralised Function to write Jaraudit (To be connected to main code soon)
+def Audfile(Text_message):
+    Audfile = open("Jaraudit.txt", "a")
+    querytime = (datetime.datetime.now().ctime())
+    Audfile.writelines( querytime + Text_message + "\n")
+    Audfile.close()
+
 #Function to get weather when starting jarvis
 def Weather(timeing):
     try:
@@ -461,7 +468,7 @@ with open("Jarsettings.json") as f:
     Titledi = contents["Titledistance"]
 sg.theme('DarkGrey8')  # gives window a color
 sg.set_options(element_padding=(3, 3))
-menu_def = [['&MENU ', ['&Settings', '&Layout', '&ChatLogs', '&Your Tasks', 'E&xit']],
+menu_def = [['&MENU ', ['&Settings', '&Layout', '&ChatLogs', '&Your Tasks', '&Developer Tools' ,'E&xit']],
             ['&HELP', ['&Help', '&Error Codes', '&Report Issue', '&Version']],
             ['&ABOUT US', ['&Support Us', '&Our Website']], ]
 layout = [[sg.Menu(menu_def, tearoff=False)],
@@ -750,6 +757,9 @@ if __name__ == '__main__':
 
         elif event == 'Your Tasks':
             Tasks()
+
+        elif event == 'Developer Tools':
+            sg.popup_no_titlebar('Keep a look out for developer tools soon!!!')
 
         elif event == 'Support Us':
             sg.popup_no_titlebar("Please star our 'JARVIS-GUI' github repository and also",
