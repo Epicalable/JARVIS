@@ -24,12 +24,24 @@ Kindly consider starring this repository if you like the program :-)
 ## WHAT'S NEW?
 Here at Epicalable we are committed in keeping J.A.R.V.I.S up-to-date and up-to-speed with the growing tech solutions and algorithms. Hence this new commit includes,
 ```
-1. Updated README.md  
-2. Keep a look out for developer tools in the coming days!!!
-3. Weekly Code checks and Maintanence to support python 3.11.3. 
+Highlights:-
+1. Before, each functions had their own Audit uploading code but now, We have a new centralised Audit function to remove redundant code.  
+   1a. Using the centralised function we can control audits more effectively and will be integrated into the developer tools soon. 
+2. While Jarsetting was introduced in the recent commits, in this commit after careful consideration to remove redundant code we will be Merging Jarinfo into Jarsettings (Rip Jarinfo file (2020-2023)).
+3. Keep a look out for the new upcoming developer tools in the coming days!!!
+   We are currently slowly adding Developer tools in the code which are currently unaccessable.
 
-Last Updated: 17-April-2023
-Publisher:  Epicalable
+Weekly Maintanance:-
+1. Updated README.md
+2. Weekly Code checks, updates and Maintanence to continue supporting python 3.11.3.
+
+Code Checks:-
+Code Integrity Checks: ✅
+GUI Stability Checks: ✅
+
+Last Updated: 18-April-2023 16:40 HRS
+Publisher: Epicalable
+All Checks Status: ✅
 ```
 Keep updated to what's happening on this repository by clicking the 'Star' and 'Watch' button on the top right corner of this webpage.
 
@@ -69,10 +81,9 @@ Yes, Your info will be safe since it will be stored locally on your personal com
 
 1. Response-Intents: Stored in Jarintents file used by J.A.R.V.I.S to check your input with tags and provide the appropriate output for the user. Head to Jarindent.json to take a look.
 
-2. Info-Intents: Stored in the Jarinfo file used by J.A.R.V.I.S to store Api keys, User Name and User location for data retrieval. You can access these using the settings menu.  
-You can access the Layout menu to help adjust the output and input screen sizes.
+2. Info-Intents: Stored in Jarsettings file used by J.A.R.V.I.S to access Api keys, User Name and location for data retrieval and also to adjust the output and input screen sizes. You can access these by heading to settings in the menu.  
 
-3. Audit-Indents: Stored in the Jaraudit file used by J.A.R.V.I.S to store user input/output logs, system retrival logs and fallback errors in your computer. You can access them by heading to ChatLogs on the menu.
+3. Audit-Indents: Stored in the Jaraudit file used by J.A.R.V.I.S to store user input/output logs, system retrival logs and fallback errors in your computer. You can access them by heading to ChatLogs in the menu.
 
 All CRITICAL INFO REGARDING the USER will be STORED IN your PERSONAL COMPUTER and NOT on the INTERNET.
 

@@ -18,16 +18,16 @@ from random import choice
 
 
 #Centralised Function to write Jaraudit (To be connected to main code soon)
-def Audfile(Text_message):
+def Audit(Text_message):
     Audfile = open("Jaraudit.txt", "a")
     querytime = (datetime.datetime.now().ctime())
-    Audfile.writelines( querytime + Text_message + "\n")
+    Audfile.writelines(querytime + Text_message + "\n")
     Audfile.close()
 
 #Function to get weather when starting jarvis
 def Weather(timeing):
     try:
-        with open("Jarinfo.json") as f:
+        with open("Jarsettings.json") as f:
             contents = json.load(f)
             key = contents["OpenWeatherKey"]
             Place = contents["City"]
@@ -45,23 +45,13 @@ def Weather(timeing):
             print(timeing + Place + ":")
             print(" Temperature (Celsius) = " + str(current_temp) +
                   "\n Humidity (Percentage) = " + str(current_humidiy) + "\n Description = " + str(weather_description))
-            Audfile = open("Jaraudit.txt", "a")
-            querytime = (datetime.datetime.now().ctime())
-            Audfile.writelines(querytime + "-(User Successfully Recieved Weather Report Using OpenWeatherMap.) \n")
-            Audfile.close()
+            Audit("-(User Successfully Recieved Weather Report Using OpenWeatherMap.)")
         else:
             print("JARVIS: Please check your city in the settings as this is invalid.")
-            Audfile = open("Jaraudit.txt", "a")
-            querytime = (datetime.datetime.now().ctime())
-            Audfile.writelines(querytime + "-(ERROR:801, User's City Is Invalid. Please Try Again.) \n")
-            Audfile.close()
+            Audit("-(ERROR:801, User's City Is Invalid. Please Try Again.)")
     except:
         print("JARVIS: I am having a problem in getting live weather please check your internet-connection.")
-        Audfile = open("Jaraudit.txt", "a")
-        querytime = (datetime.datetime.now().ctime())
-        Audfile.writelines(
-            querytime + "-(ERROR:805, Connection Failed with OpenWeatherMap. Please Check your Connection.) \n")
-        Audfile.close()
+        Audit("-(ERROR:805, Connection Failed with OpenWeatherMap. Please Check your Connection.)")
 
 
 #Function to get location when starting jarvis
@@ -75,10 +65,7 @@ def location():
     #getting location
     location = Nomi_locator.reverse(f"{latitude}, {longitude}")
     print("Your Current location is", location)
-    Audfile = open("Jaraudit.txt", "a")
-    querytime = (datetime.datetime.now().ctime())
-    Audfile.writelines(querytime + "-(User Recieved His Current Location Using GeoCoder.) \n")
-    Audfile.close()
+    Audit("-(User Recieved His Current Location Using GeoCoder.)")
 
 
 #Function to get stock price
@@ -90,10 +77,10 @@ def stock_price(symbol: str = "AAPL") -> str:
     return soup.find("div", class_=class_).find("fin-streamer").text
 
 
-#Functions to get news
+#Function to get news
 def Breifing(title):
     str = 'general business science health technology entertainment sports'
-    with open("Jarinfo.json") as f:
+    with open("Jarsettings.json") as f:
         contents = json.load(f)
         JNews = contents["NewsApiKey"]
         country = contents["Country"]
@@ -111,7 +98,6 @@ def Breifing(title):
                 open_news_page = requests.get(url=top_headlines_url, headers=headers, params=headlines_payload).json()
                 article = open_news_page["articles"]
                 results = []
-                querytime = (datetime.datetime.now().ctime())
                 for ar in article:
                     results.append(ar["title"])
                 for i in range(len(results)):
@@ -119,18 +105,11 @@ def Breifing(title):
                     print(i + 1, '.', results[i])
                     if e == False:
                         break
-            Audfile = open("Jaraudit.txt", "a")
-            querytime = (datetime.datetime.now().ctime())
-            Audfile.writelines(querytime + "-(User Recieved Morning Briefing From NewsAPI.) \n")
-            Audfile.close()
+            Audit("-(User Recieved Morning Briefing From NewsAPI.)")
         except:
             print("JARVIS: Something went wrong!!!" +
                   "\nJARVIS: Please check if you have a good \ninternet connection and have given a valid \ncategory and location.")
-            Audfile = open("Jaraudit.txt", "a")
-            querytime = (datetime.datetime.now().ctime())
-            Audfile.writelines(
-                querytime + "-(ERROR:755, Connection Failed with NewsAPI. Please Check Your Connection.) \n")
-            Audfile.close()
+            Audit("-(ERROR:755, Connection Failed with NewsAPI. Please Check Your Connection.) \n")
     else:
         try:
             headers = {'Authorization': JNews}
@@ -143,29 +122,21 @@ def Breifing(title):
                     url=top_headlines_url, headers=headers, params=headlines_payload).json()
                 article = open_news_page["articles"]
                 results = []
-                querytime = (datetime.datetime.now().ctime())
                 for ar in article:
                     results.append(ar["title"])
                 for i in range(len(results)):
                     print(i + 1, '.', results[i])
-            Audfile = open("Jaraudit.txt", "a")
-            querytime = (datetime.datetime.now().ctime())
-            Audfile.writelines(querytime + "-(User Recieved News Headlines From NewsAPI.) \n")
-            Audfile.close()
+            Audit("-(User Recieved News Headlines From NewsAPI.)")
         except:
             print("JARVIS: Something went wrong!!!" +
                   "\nJARVIS: Please check if you have a good \ninternet connection and have given a valid \ncategory and location.")
-            Audfile = open("Jaraudit.txt", "a")
-            querytime = (datetime.datetime.now().ctime())
-            Audfile.writelines(
-                querytime + "-(ERROR:765, Connection Failed With NewsAPI. Please Check Your Connection.) \n")
-            Audfile.close()
+            Audit( "-(ERROR:765, Connection Failed With NewsAPI. Please Check Your Connection.)")
 
 
-#Function to open and change settings
+#Function to change GUI layout and User settings
 def Settings():
     sg.theme('Dark')
-    with open("Jarinfo.json") as f:
+    with open("Jarsettings.json") as f:
         contents = json.load(f)
         User = contents["User"]
         NewsApiKey = contents["NewsApiKey"]
@@ -173,6 +144,11 @@ def Settings():
         Country = contents["Country"]
         City = contents["City"]
         StockPrice = contents["StockPrice"]
+        Outputlngt = contents["Outputlengthsize"]
+        Outputbrth = contents["Outputbreadthsize"]
+        Inputln = contents["Inputbarlength"]
+        Inputbr = contents["Inputbarbreadth"]
+        Titledi = contents["Titledistance"]
     layout = [[sg.Text('Settings', font='Default 16')],
               [sg.Text('Your-Details:--', font='Default 12')],
               [sg.Text('Enter your information and Api-Keys.', font='Default 10')],
@@ -188,6 +164,20 @@ def Settings():
                   City, key='-City-', size=(34, 1))],
               [sg.T('Stock-Price:', size=(13, 1)), sg.Input(
                   StockPrice, key='-Stock-', size=(34, 1))],
+              [sg.Text('GUI-Customization:--', font='Default 12')],
+              [sg.Text( 'Enter only in Numbers to adjust the UI screen size.', font='Default 10')],
+              [sg.T('Output-length:', size=(13, 1)), sg.Input(
+                  Outputlngt, key='-Outle-', size=(34, 1))],
+              [sg.T('Output-breadth:', size=(13, 1)), sg.Input(
+                  Outputbrth, key='-Outbr-', size=(34, 1))],
+              [sg.T('Input-length:', size=(13, 1)), sg.Input(
+                  Inputln, key='-Inln-', size=(34, 1))],
+              [sg.T('Input-breadth:', size=(13, 1)), sg.Input(
+                  Inputbr, key='-Inbr-', size=(34, 1))],
+              [sg.Text('Adjust the distance between J.A.R.V.I.S and (c)Epicalable.', font='Default 10')],
+              [sg.T('Title-Distance:', size=(13, 1)), sg.Input(
+                  Titledi, key='-Tidi-', size=(34, 1))],
+              [sg.Text('Saving will close Jarvis For the Data To Refresh.', font='Default 10')],
               [sg.Button('Save'), sg.Button('Exit')]]
     window = sg.Window('Settings', layout, no_titlebar=True, keep_on_top=True)
     while True:  # Event Loop
@@ -201,55 +191,6 @@ def Settings():
             Country = values['-Country-']
             City = values['-City-']
             StockPrice = values['-Stock-']
-            dictionary = {
-                "!CAUTION!": "PLEASE REFRAIN from TAMPERING with the BELOW DATA!!!",
-                "User": User,
-                "NewsApiKey": newsapikey,
-                "OpenWeatherKey": weatherkey,
-                "Country": Country,
-                "City": City,
-                "StockPrice": StockPrice
-            }
-            json_object = json.dumps(dictionary, indent=4)
-            with open("Jarinfo.json", "w") as outfile:
-                outfile.write(json_object)
-            break
-    window.close()
-    event = window.read()
-    return event != 'OK'
-
-
-#Function to change app layout
-def Layout():
-    sg.theme('Dark')
-    with open("Jarsettings.json") as f:
-        contents = json.load(f)
-        Outputlngt = contents["Outputlengthsize"]
-        Outputbrth = contents["Outputbreadthsize"]
-        Inputln = contents["Inputbarlength"]
-        Inputbr = contents["Inputbarbreadth"]
-        Titledi = contents["Titledistance"]
-    layout = [[sg.Text('Layout', font='Default 16')],
-              [sg.Text('GUI-Customization:--', font='Default 12')],
-              [sg.Text('Enter only in Numbers to adjust the UI screen size.', font='Default 10')],
-              [sg.T('Output-length:', size=(13, 1)), sg.Input(
-                  Outputlngt, key='-Outle-', size=(34, 1))],
-              [sg.T('Output-breadth:', size=(13, 1)), sg.Input(
-                  Outputbrth, key='-Outbr-', size=(34, 1))],
-              [sg.T('Input-length:', size=(13, 1)), sg.Input(
-                  Inputln, key='-Inln-', size=(34, 1))],
-              [sg.T('Input-breadth:', size=(13, 1)), sg.Input(
-                  Inputbr, key='-Inbr-', size=(34, 1))],
-              [sg.Text('Adjust the distance between J.A.R.V.I.S and (c).', font='Default 10')],
-              [sg.T('Title-Distance:', size=(13, 1)), sg.Input(
-                  Titledi, key='-Outle-', size=(34, 1))],
-              [sg.Button('Save'), sg.Button('Exit')]]
-    window = sg.Window('Settings', layout, no_titlebar=True, keep_on_top=True)
-    while True:  # Event Loop
-        event, values = window.read()
-        if event in (sg.WIN_CLOSED, 'Exit'):
-            break
-        if event == 'Save':
             Outputlngt = values['-Outle-']
             Outputbrth = values['-Outbr-']
             Inputln = values['-Inln-']
@@ -257,6 +198,12 @@ def Layout():
             Titledi = values['-Tidi-']
             dictionary = {
                 "!CAUTION!": "PLEASE REFRAIN from TAMPERING with the BELOW DATA!!!",
+                "User": User,
+                "NewsApiKey": newsapikey,
+                "OpenWeatherKey": weatherkey,
+                "Country": Country,
+                "City": City,
+                "StockPrice": StockPrice,
                 "Outputlengthsize": Outputlngt,
                 "Outputbreadthsize": Outputbrth,
                 "Inputbarlength": Inputln,
@@ -264,6 +211,7 @@ def Layout():
                 "Titledistance": Titledi
             }
             json_object = json.dumps(dictionary, indent=4)
+            Audit("-(User Saved New Settings Parameters.)")
             with open("Jarsettings.json", "w") as outfile:
                 outfile.write(json_object)
             break
@@ -285,19 +233,11 @@ def send_an_email(from_address, to_address, subject, message_text, password):
         s.login(from_address, password)    # Authentication to your account
         s.sendmail(from_address, to_address,
                    email_message)    # sending the email
-        Audfile = open("Jaraudit.txt", "a")
-        querytime = (datetime.datetime.now().ctime())
-        Audfile.writelines(
-            querytime + "-(User Successfully sent An Email To It's Destination.) \n")
-        Audfile.close()
+        Audit("-(User Successfully sent An Email To It's Destination.)")
         s.quit()    # terminating the session
     except:
         sg.popup("Please check your internet connection and turn 'on' Less secure app access in 'security' section in your Google Account Settings.")
-        Audfile = open("Jaraudit.txt", "a")
-        querytime = (datetime.datetime.now().ctime())
-        Audfile.writelines(
-            querytime + "-(ERROR:300, User Failed To Send An Email To It's Destination.) \n")
-        Audfile.close()
+        Audit( "-(ERROR:300, User Failed To Send An Email To It's Destination.)")
 
 def gmail():
     sg.theme('Dark')
@@ -468,7 +408,7 @@ with open("Jarsettings.json") as f:
     Titledi = contents["Titledistance"]
 sg.theme('DarkGrey8')  # gives window a color
 sg.set_options(element_padding=(3, 3))
-menu_def = [['&MENU ', ['&Settings', '&Layout', '&ChatLogs', '&Your Tasks', '&Developer Tools' ,'E&xit']],
+menu_def = [['&MENU ', ['&Settings', '&ChatLogs', '&Your Tasks', '&Developer Tools' ,'E&xit']],
             ['&HELP', ['&Help', '&Error Codes', '&Report Issue', '&Version']],
             ['&ABOUT US', ['&Support Us', '&Our Website']], ]
 layout = [[sg.Menu(menu_def, tearoff=False)],
@@ -483,9 +423,7 @@ window.maximize()
 
 
 hour = int(datetime.datetime.now().hour)
-Audfile = open("Jaraudit.txt", "a")
-querytime = (datetime.datetime.now().ctime())
-Audfile.writelines(querytime + "-(USER ACTIVATED JARVIS AND INITIALIZED RELATED PROCESSES!!!) \n")
+Audit("-(USER ACTIVATED JARVIS AND INITIALIZED RELATED PROCESSES!!!)")
 if hour >= 0 and hour < 12:
     timeing = "JARVIS: Good Morning Sir, here is the current weather in "
     location()
@@ -505,11 +443,7 @@ if __name__ == '__main__':
         event, value = window.read()
 
         if event in (sg.WIN_CLOSED, 'Exit'):   # quit if exit button or X
-            Audfile = open("Jaraudit.txt", "a")
-            querytime = (datetime.datetime.now().ctime())
-            Audfile.writelines(
-                querytime + "-(USER TERMINATED JARVIS AND ALL IT'S RELATED PROCESSES!!!) \n")
-            Audfile.close()
+            Audit("-(USER TERMINATED JARVIS AND ALL IT'S RELATED PROCESSES!!!)")
             print("\nJARVIS: Goodbye sir hope you have a nice day :-)")
             print("\nJ.A.R.V.I.S Copyright (C) 2023 Epicalable LLC. All Rights Reserved.")
             time.sleep(4)
@@ -523,7 +457,7 @@ if __name__ == '__main__':
             querytime = (datetime.datetime.now().ctime())
             str = (querytime + ": " + que.capitalize() + "\n")
             Audfile.write(str)
-            with open("Jarinfo.json") as f:
+            with open("Jarsettings.json") as f:
                 contents = json.load(f)
                 User = contents["User"]
                 print("\n" + User + ": {}".format(que.capitalize()))
@@ -538,22 +472,14 @@ if __name__ == '__main__':
                     else:
                         if "STOCK " in query or "STOCK PRICE" in query:
                             try:
-                                with open("Jarinfo.json") as f:
+                                with open("Jarsettings.json") as f:
                                     contents = json.load(f)
                                     Stocks = contents["StockPrice"]
                                 for symbol in Stocks.split():
                                     print(f"Current {symbol:<4} stock price is {stock_price(symbol):>8}")
-                                Audfile = open("Jaraudit.txt", "a")
-                                querytime = (datetime.datetime.now().ctime())
-                                Audfile.writelines(
-                                    querytime + "-(User Have Recieved Stock-Price.) \n")
-                                Audfile.close()
+                                Audit("-(User Have Recieved Stock-Price.)")
                             except:
-                                Audfile = open("Jaraudit.txt", "a")
-                                querytime = (datetime.datetime.now().ctime())
-                                Audfile.writelines(
-                                    querytime + "-(ERROR:892, Failed To Get Stock-price.) \n")
-                                Audfile.close()
+                                Audit("-(ERROR:892, Failed To Get Stock-price.) \n")
                             continue
 
                         elif "FLIGHT TRACK" in query or "TRACK FLIGHT " in query:
@@ -569,19 +495,11 @@ if __name__ == '__main__':
                                           }
                                 response = requests.request("GET", url, headers=headers)
                                 pprint.pprint(response.json(), indent=2)
-                                Audfile = open("Jaraudit.txt", "a")
-                                querytime = (datetime.datetime.now().ctime())
-                                Audfile.writelines(
-                                    querytime + "-(User Have Recieved Flight-Tracker Data.) \n")
-                                Audfile.close()
+                                Audit("-(User Have Recieved Flight-Tracker Data.)")
                             except:
                                 print("ERROR: Please Type flight number also")
                                 print("Example: Track flight SQ 242")
-                                Audfile = open("Jaraudit.txt", "a")
-                                querytime = (datetime.datetime.now().ctime())
-                                Audfile.writelines(
-                                    querytime + "-(ERROR:325, Failed To Get Flight-Tracker Data.) \n")
-                                Audfile.close()
+                                Audit("-(ERROR:325, Failed To Get Flight-Tracker Data.)")
                             continue
 
 
@@ -602,19 +520,10 @@ if __name__ == '__main__':
                             query = query.replace('WIKIPEDIA', "")
                             try:
                                 print(wikipedia.summary(query))
-                                Audfile = open("Jaraudit.txt", "a")
-                                querytime = (datetime.datetime.now().ctime())
-                                Audfile.writelines(
-                                    querytime + "-(User Established Connection With Wikipedia.) \n")
-                                Audfile.close()
+                                Audit("-(User Established Connection With Wikipedia.)")
                             except:
-                                print(
-                                    "JARVIS: I am having a problem in getting wikipedia please check your internet-connection.")
-                                Audfile = open("Jaraudit.txt", "a")
-                                querytime = (datetime.datetime.now().ctime())
-                                Audfile.writelines(
-                                    querytime + "-(ERROR:500, Failed To Establish Connection With Wikipedia.) \n")
-                                Audfile.close()
+                                print("JARVIS: I am having a problem in getting wikipedia please check your internet-connection.")
+                                Audit("-(ERROR:500, Failed To Establish Connection With Wikipedia.)")
                             continue
 
                         elif "WHAT IS " in query or "WHO IS " in query:
@@ -625,19 +534,11 @@ if __name__ == '__main__':
                             query = query.replace('IS', "")
                             try:
                                 print(wikipedia.summary(query))
-                                Audfile = open("Jaraudit.txt", "a")
-                                querytime = (datetime.datetime.now().ctime())
-                                Audfile.writelines(
-                                    querytime + "-(CONNECTION ESTABLISHED WITH WIKIPEDIA!!!) \n")
-                                Audfile.close()
+                                Audit("-(CONNECTION ESTABLISHED WITH WIKIPEDIA!!!)")
                             except:
                                 print(
                                     "JARVIS: I am having a problem in getting wikipedia please check your internet-connection")
-                                Audfile = open("Jaraudit.txt", "a")
-                                querytime = (datetime.datetime.now().ctime())
-                                Audfile.writelines(
-                                    querytime + "-(ERROR:500, Failed To Establish Connection With Wikipedia.) \n")
-                                Audfile.close()
+                                Audit("-(ERROR:500, Failed To Establish Connection With Wikipedia.)")
                             continue
 
                         elif "NEWS ABOUT " in query or "NEWS ON " in query:
@@ -645,7 +546,7 @@ if __name__ == '__main__':
                             query = query.replace('ABOUT ', "")
                             query = query.replace('ON ', "")
                             try:
-                                with open("Jarinfo.json") as f:
+                                with open("Jarsettings.json") as f:
                                     contents = json.load(f)
                                     JNews = contents["NewsApiKey"]
                                 headers = {'Authorization': JNews}
@@ -656,23 +557,14 @@ if __name__ == '__main__':
                                     url=everything_news_url, headers=headers, params=everything_payload).json()
                                 article = open_news_page["articles"]
                                 results = []
-                                Audfile = open("Jaraudit.txt", "a")
-                                querytime = (datetime.datetime.now().ctime())
-                                Audfile.writelines(
-                                    querytime + "-(User Recieved News From NewsAPI.) \n")
-                                Audfile.close()
+                                Audit("-(User Recieved News From NewsAPI.)")
                                 for ar in article:
                                     results.append(ar["title"])
                                 for i in range(len(results)):
                                     print(i + 1, '.', results[i])
                             except:
-                                print(
-                                    "JARVIS: Something went wrong please check if you have a good internet connection.")
-                                Audfile = open("Jaraudit.txt", "a")
-                                querytime = (datetime.datetime.now().ctime())
-                                Audfile.writelines(
-                                    querytime + "-(ERROR:776, Connection Failed With NewsAPI. Please Check Your Connection.) \n")
-                                Audfile.close()
+                                print("JARVIS: Something went wrong please check if you have a good internet connection.")
+                                Audit("-(ERROR:776, Connection Failed With NewsAPI. Please Check Your Connection.)")
                             continue
 
                         elif "HEADLINES " in query:
@@ -692,45 +584,34 @@ if __name__ == '__main__':
 
                         elif "PLANET TRACKER " in query or "TRACK PLANET " in query:
                             print("JARVIS: Taking you to NASA's Eyes Planet tracker.")
-                            querytime = (datetime.datetime.now().ctime())
-                            Audfile.writelines(querytime + "-(USER went to a NASA website.) \n")
-                            Audfile.close()
+                            Audit("-(USER went to a NASA website.)")
                             time.sleep(3)
                             webbrowser.open("https://eyes.nasa.gov/apps/solar-system/#/home", new=1)
                             continue
 
                         elif "ASTEROID TRACKER " in query or "TRACK ASTEROID " in query:
                             print("JARVIS: Taking you to NASA's Eyes Asteroid tracker.")
-                            querytime = (datetime.datetime.now().ctime())
-                            Audfile.writelines( querytime + "-(USER went to a NASA website.) \n")
-                            Audfile.close()
+                            Audit("-(USER went to a NASA website.)")
                             time.sleep(3)
                             webbrowser.open("https://eyes.nasa.gov/apps/asteroids/#/asteroids", new=1)
                             continue
 
                         elif "SOLAR SYSTEM TRACKER " in query or "TRACK SOLAR SYSTEM " in query:
                             print("JARVIS: Taking you to NASA's Eyes Solar System.")
-                            querytime = (datetime.datetime.now().ctime())
-                            Audfile.writelines(querytime + "-(USER went to a NASA website.) \n")
-                            Audfile.close()
+                            Audit("-(USER went to a NASA website.)")
                             time.sleep(3)
                             webbrowser.open("https://eyes.nasa.gov/apps/orrery/#/home", new=1)
                             continue
 
                         elif "EXOPLANET TRACKER " in query or "TRACK EXOPLANETS " in query:
                             print("JARVIS: Taking you to NASA's Eyes Exoplanets.")
-                            querytime = (datetime.datetime.now().ctime())
-                            Audfile.writelines(querytime + "-(USER went to a NASA website.) \n")
-                            Audfile.close()
+                            Audit("-(USER went to a NASA website.)")
                             time.sleep(3)
                             webbrowser.open("https://eyes.nasa.gov/apps/exo/#/", new=1)
                             continue
 
                         elif query == "GOODBYE ":
-                            Audfile = open("Jaraudit.txt", "a")
-                            querytime = (datetime.datetime.now().ctime())
-                            Audfile.writelines(querytime + "-(USER TERMINATED JARVIS AND ALL IT'S RELATED PROCESSES!!!) \n")
-                            Audfile.close()
+                            Audit("-(USER TERMINATED JARVIS AND ALL IT'S RELATED PROCESSES!!!) \n")
                             print("JARVIS: Goodbye sir hope you have a nice day :-)")
                             print("\nJ.A.R.V.I.S Copyright (C) 2023 Epicalable LLC. All Rights Reserved.")
                             time.sleep(4)
@@ -741,16 +622,11 @@ if __name__ == '__main__':
                             print("Please look up 'Help' on the menu for more info regarding questions and inputs.")
                             print("If you think the question / input is important and might help others:")
                             print("Feel free to head to Epicalable's Github page and create an issue in JARVIS Repository")
-                            Audfile = open("Jaraudit.txt", "a")
-                            Audfile.write("ERROR 404 (FALLBACK)!!! \n")
-                            Audfile.close()
+                            Audit("ERROR 404 (FALLBACK)!!! \n")
 
         #Following functions is on the taskbar/menu panel on top
         elif event == 'Settings':
             Settings()
-
-        elif event == 'Layout':
-            Layout()
 
         elif event == 'ChatLogs':
             ChatLog()
