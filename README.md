@@ -22,38 +22,43 @@ Kindly consider starring this repository if you like the program :-)
 
 
 ## WHAT'S NEW?
-Here at Epicalable we are committed in keeping J.A.R.V.I.S up-to-date and up-to-speed with the growing tech solutions and algorithms. Hence this new commit includes,
+Here at Epicalable we are committed in keeping J.A.R.V.I.S up-to-date and up-to-speed with the growing tech solutions and algorithms. Hence this new commit includes:
 ```
-Highlights:-
+Update Highlights:-
 1. Before, each functions had their own Audit uploading code but now, We have a new centralised Audit function to remove redundant code.  
-   1a. Using the centralised function we can control audits more effectively and will be integrated into the developer tools soon. 
-2. While Jarsetting was introduced in the recent commits, in this commit after careful consideration to remove redundant code we will be Merging Jarinfo into Jarsettings (Rip Jarinfo file (2020-2023)).
-3. Keep a look out for the new upcoming developer tools in the coming days!!!
-   We are currently slowly adding Developer tools in the code which are currently unaccessable.
+   1a. Using the centralised function we can control audit-writing more effectively and will be integrated into the developer tools soon.
+2. Keep a look out for the new upcoming developer tools in the coming days!!!
+   We are currently slowly adding Developer tools in the code which are currently unaccessable to users.
 
-Weekly Maintanance:-
+Weekly Maintanance Updates:-
 1. Updated README.md
 2. Weekly Code checks, updates and Maintanence to continue supporting python 3.11.3.
 
-Code Checks:-
+Code Checks Manifest:-
+All Checks Status: ✅
+-----------------------------------------
 Code Integrity Checks: ✅
 GUI Stability Checks: ✅
+Code-GUI Integration Checks: ✅
+(All evaluations are done by the R&D Department)
 
-Last Updated: 18-April-2023 16:40 HRS
+Last Updated: 25-April-2023 20:50 HRS
 Publisher: Epicalable
-All Checks Status: ✅
 ```
 Keep updated to what's happening on this repository by clicking the 'Star' and 'Watch' button on the top right corner of this webpage.
 
 
 
 ## Screenshots of J.A.R.V.I.S
-<img src="https://user-images.githubusercontent.com/69076784/180637424-8d2737c9-ead7-4d65-a8e8-a2c36d9474e8.png" width="100" height="60">  <img src="https://user-images.githubusercontent.com/69076784/232394556-eff71901-0926-42e3-9161-7469759c3c7c.png" width="100" height="60">
+##### Graphical User Interface :-
 
-<img src="https://user-images.githubusercontent.com/69076784/206891927-da7d86b8-e3df-4922-a887-7be46cc94070.png" width="100" height="60">  
+<img src="https://user-images.githubusercontent.com/69076784/180637424-8d2737c9-ead7-4d65-a8e8-a2c36d9474e8.png" width="100" height="60"> <img src="https://user-images.githubusercontent.com/69076784/232394556-eff71901-0926-42e3-9161-7469759c3c7c.png" width="100" height="60"> <img src="https://user-images.githubusercontent.com/69076784/206891927-da7d86b8-e3df-4922-a887-7be46cc94070.png" width="100" height="60"> <img src="https://user-images.githubusercontent.com/69076784/210161820-44109b56-a2bf-4410-a90d-a3ded829dfb2.png" width="100" height="60">
 
-<img src="https://user-images.githubusercontent.com/69076784/210161820-44109b56-a2bf-4410-a90d-a3ded829dfb2.png" width="100" height="60">
+##### Code Workspace (VSCode + One Dark Pro + Pylance) :-
+<img src="https://user-images.githubusercontent.com/69076784/233782216-154d7e53-fa02-4770-ab9a-dec5f923cbee.png" width="100" height="60"> <img src="https://user-images.githubusercontent.com/69076784/233782218-b09d765c-e7db-4e31-a213-a00b60953b0e.png" width="100" height="60">  
+Take a look at the workspace difference between windows 10 and windows 11.  
 
+###### Note: SOON!!! By 1 May all of Epicalable Systems will have been upgraded to windows 11.
 
 
 ## Introduction to J.A.R.V.I.S?
@@ -147,5 +152,5 @@ Thank you for your kind cooperation :-)
 [![ForTheBadge makes-people-smile](http://ForTheBadge.com/images/badges/makes-people-smile.svg)](https://github.com/Epicalable/)
 
 Version 1.3  
-J.A.R.V.I.S Copyright (C) Epicalable 2023.  
+J.A.R.V.I.S Copyright (C) Epicalable 2023  
 All Rights Reserved.

@@ -10,5 +10,6 @@
     "Outputbreadthsize": "35",
     "Inputbarlength": "128",
     "Inputbarbreadth": "2",
-    "Titledistance": "126"
+    "Titledistance": "126",
+    "DeveloperTools": "off"
 }

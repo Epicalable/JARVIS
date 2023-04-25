@@ -19,10 +19,16 @@ from random import choice
 
 #Centralised Function to write Jaraudit (To be connected to main code soon)
 def Audit(Text_message):
-    Audfile = open("Jaraudit.txt", "a")
-    querytime = (datetime.datetime.now().ctime())
-    Audfile.writelines(querytime + Text_message + "\n")
-    Audfile.close()
+    with open("Jarsettings.json") as f:
+        contents = json.load(f)
+        Dev = contents["DeveloperTools"]
+        Audfile = open("Jaraudit.txt", "a")
+    if Dev == "off":
+        querytime = (datetime.datetime.now().ctime())
+        Audfile.writelines(querytime + Text_message + "\n")
+        Audfile.close()
+    else:
+        Audfile.close()
 
 #Function to get weather when starting jarvis
 def Weather(timeing):
@@ -149,6 +155,7 @@ def Settings():
         Inputln = contents["Inputbarlength"]
         Inputbr = contents["Inputbarbreadth"]
         Titledi = contents["Titledistance"]
+        Dev = contents["DeveloperTools"]
     layout = [[sg.Text('Settings', font='Default 16')],
               [sg.Text('Your-Details:--', font='Default 12')],
               [sg.Text('Enter your information and Api-Keys.', font='Default 10')],
@@ -196,6 +203,7 @@ def Settings():
             Inputln = values['-Inln-']
             Inputbr = values['-Inbr-']
             Titledi = values['-Tidi-']
+            Developer = Dev
             dictionary = {
                 "!CAUTION!": "PLEASE REFRAIN from TAMPERING with the BELOW DATA!!!",
                 "User": User,
@@ -208,7 +216,8 @@ def Settings():
                 "Outputbreadthsize": Outputbrth,
                 "Inputbarlength": Inputln,
                 "Inputbarbreadth": Inputbr,
-                "Titledistance": Titledi
+                "Titledistance": Titledi,
+                "DeveloperTools": Developer
             }
             json_object = json.dumps(dictionary, indent=4)
             Audit("-(User Saved New Settings Parameters.)")
@@ -443,9 +452,9 @@ if __name__ == '__main__':
         event, value = window.read()
 
         if event in (sg.WIN_CLOSED, 'Exit'):   # quit if exit button or X
-            Audit("-(USER TERMINATED JARVIS AND ALL IT'S RELATED PROCESSES!!!)")
             print("\nJARVIS: Goodbye sir hope you have a nice day :-)")
             print("\nJ.A.R.V.I.S Copyright (C) 2023 Epicalable LLC. All Rights Reserved.")
+            Audit("-(USER TERMINATED JARVIS AND ALL IT'S RELATED PROCESSES!!!)")
             time.sleep(4)
             break
 
@@ -611,9 +620,9 @@ if __name__ == '__main__':
                             continue
 
                         elif query == "GOODBYE ":
-                            Audit("-(USER TERMINATED JARVIS AND ALL IT'S RELATED PROCESSES!!!) \n")
                             print("JARVIS: Goodbye sir hope you have a nice day :-)")
                             print("\nJ.A.R.V.I.S Copyright (C) 2023 Epicalable LLC. All Rights Reserved.")
+                            Audit("-(USER TERMINATED JARVIS AND ALL IT'S RELATED PROCESSES!!!) \n")
                             time.sleep(4)
                             window.close()
 
