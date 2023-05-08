@@ -1,6 +1,5 @@
 # J.A.R.V.I.S
-
-Kindly consider starring this repository if you like the program :-)
+###### A Chatbot with a GUI made for you to get News Headlines, Weather, Stocks, Wiki and more....
 
 [![ForTheBadge powered-by-electricity](http://ForTheBadge.com/images/badges/powered-by-electricity.svg)](https://github.com/Epicalable/JARVIS-GUI)
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/) 
@@ -9,6 +8,7 @@ Kindly consider starring this repository if you like the program :-)
 
 ![jaruiv1.0](https://user-images.githubusercontent.com/69076784/180637424-8d2737c9-ead7-4d65-a8e8-a2c36d9474e8.png)
 
+Kindly consider starring this repository if you like the program :-)
 
 ## Table Of Contents
 - [WHAT'S NEW?](#whats-new)
@@ -25,9 +25,7 @@ Kindly consider starring this repository if you like the program :-)
 Here at Epicalable we are committed in keeping J.A.R.V.I.S up-to-date and up-to-speed with the growing tech solutions and algorithms. Hence this new commit includes:
 ```
 Update Highlights:-
-1. Before, each functions had their own Audit uploading code but now, We have a new centralised Audit function to remove redundant code.  
-   1a. Using the centralised function we can control audit-writing more effectively and will be integrated into the developer tools soon.
-2. Keep a look out for the new upcoming developer tools in the coming days!!!
+1. Keep a look out for the new upcoming developer tools in the coming days!!!
    We are currently slowly adding Developer tools in the code which are currently unaccessable to users.
 
 Weekly Maintanance Updates:-
@@ -42,7 +40,7 @@ GUI Stability Checks: ✅
 Code-GUI Integration Checks: ✅
 (All evaluations are done by the R&D Department)
 
-Last Updated: 25-April-2023 20:50 HRS
+Last Updated: 8-May-2023 11:25 HRS
 Publisher: Epicalable
 ```
 Keep updated to what's happening on this repository by clicking the 'Star' and 'Watch' button on the top right corner of this webpage.
@@ -56,9 +54,8 @@ Keep updated to what's happening on this repository by clicking the 'Star' and '
 
 ##### Code Workspace (VSCode + One Dark Pro + Pylance) :-
 <img src="https://user-images.githubusercontent.com/69076784/233782216-154d7e53-fa02-4770-ab9a-dec5f923cbee.png" width="100" height="60"> <img src="https://user-images.githubusercontent.com/69076784/233782218-b09d765c-e7db-4e31-a213-a00b60953b0e.png" width="100" height="60">  
-Take a look at the workspace difference between windows 10 and windows 11.  
 
-###### Note: SOON!!! By 1 May all of Epicalable Systems will have been upgraded to windows 11.
+###### Note: As of 1 May all of Epicalable Systems have been upgraded to windows 11.
 
 
 ## Introduction to J.A.R.V.I.S?
@@ -70,7 +67,7 @@ So what does JARVIS do? Well JARVIS is known as a chatbot it also can get news, 
 
 ## How to run J.A.R.V.I.S?
 To run J.A.R.V.I.S, user are to open up the JarvisGUI.py file and 'pip' download the 3rd party packages so users can run Jarvis successfully without any problems.  
-Users facing any issues can open up an issue at the Issues section of JARVIS Github Page and can expext us to rectify it ASAP.  
+Users facing any issues can open up an issue at the [Issues](https://github.com/Epicalable/JARVIS/issues) section of JARVIS Github Page and can expext us to rectify it ASAP.  
 
 In order for J.A.R.V.I.S to work at full capacity a few 3rd party python packages will be required to be installed:
 1. pip install PySimpleGUI
@@ -139,7 +136,7 @@ IMPORTANT NOTE: Any User who are willing to Share or Re-Distribute JARVIS are ki
 
 1. A reference to us by keeping a "(C) Epicalable" text in the 'Modified program' such as keeping it in the settings menu, about or help page.
 
-2. a link to this repository from the user's 'Modified program' README file. 
+2. A link to this repository from the user's 'Modified program' README file. 
 
 It will be helpful for us as users will know it's original source and about our startup.
 Please also refer to LICENSE file for clarifications.  
