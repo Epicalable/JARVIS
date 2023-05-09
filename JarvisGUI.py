@@ -426,7 +426,7 @@ layout = [[sg.Menu(menu_def, tearoff=False)],
           [sg.Output(size=(Outputlngt, Outputbrth), font=('Helvetica 10'))],
           [sg.Multiline(size=(Inputln, Inputbr), enter_submits=True, key='-QUERY-', do_not_clear=False),
            sg.Button('ENTER', size=(11, 2), bind_return_key=True)]]
-window = sg.Window('J.A.R.V.I.S GUI', layout, location=(0, 0), icon=r'icon/JarvisBot.ico', font=(
+window = sg.Window('J.A.R.V.I.S GUI', layout, location=(0, 0), icon=r'icon/Jarvis.ico', font=(
     'Helvetica', ' 13'), default_button_element_size=(8, 2)).Finalize()
 window.maximize()
 

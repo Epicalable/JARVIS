@@ -1,8 +1,5 @@
-# J.A.R.V.I.S
+# J.A.R.V.I.S <image width="30" height="30" src="https://user-images.githubusercontent.com/69076784/236995719-a3e9e978-f19d-4466-abd9-b8a59c8de0f9.png">
 ###### A Chatbot with a GUI made for you to get News Headlines, Weather, Stocks, Wiki and more....
-
-[![ForTheBadge powered-by-electricity](http://ForTheBadge.com/images/badges/powered-by-electricity.svg)](https://github.com/Epicalable/JARVIS-GUI)
-[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/) 
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Epicalable/JARVIS-GUI) [![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](https://github.com/Epicalable/JARVIS-GUI) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Epicalable/JARVIS-GUI/issues)
 
@@ -40,7 +37,7 @@ GUI Stability Checks: ✅
 Code-GUI Integration Checks: ✅
 (All evaluations are done by the R&D Department)
 
-Last Updated: 8-May-2023 11:25 HRS
+Last Updated: 9-May-2023 12:50 HRS
 Publisher: Epicalable
 ```
 Keep updated to what's happening on this repository by clicking the 'Star' and 'Watch' button on the top right corner of this webpage.
