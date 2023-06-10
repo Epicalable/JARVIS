@@ -49,8 +49,8 @@ def Weather(timeing):
             z = x["weather"]
             weather_description = z[0]["description"]
             print(timeing + Place + ":")
-            print(" Temperature (Celsius) = " + str(current_temp) +
-                  "\n Humidity (Percentage) = " + str(current_humidiy) + "\n Description = " + str(weather_description))
+            print(" Temperature: " + str(current_temp) + "°C"
+                  "\n Humidity: " + str(current_humidiy) + "%" + "\n Description: " + str(weather_description))
             Audit("-(User Successfully Recieved Weather Report Using OpenWeatherMap.)")
         else:
             print("JARVIS: Please check your city in the settings as this is invalid.")
@@ -343,11 +343,11 @@ def Help():
             News will need your country location 
             (only morning briefing)
             so Please enter your country's abbreviation.
-            Example: au, cz, de, in , sg, us, uk
+            Example: sg, us, uk, au, cz, de, in
             Weather will need your city location 
             (when always entering JARVIS)
             so please enter your city's name.
-            Example: Delhi, Dubai, New york, London, Singapore, Sydney
+            Example: Singapore, New york, Delhi, Dubai, London, Sydney
 
             2. Commands to run JARVIS: ------------
             To make JARVIS respond Users will need to enter a Command

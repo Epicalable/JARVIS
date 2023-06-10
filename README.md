@@ -21,9 +21,11 @@ Kindly consider starring this repository if you like the program :-)
 ## WHAT'S NEW?
 Here at Epicalable we are committed in keeping J.A.R.V.I.S up-to-date and up-to-speed with the growing tech solutions and algorithms. Hence this new commit includes:
 ```
+JARVIS Updates In This Commit:-
 Update Highlights:-
 1. Keep a look out for the new upcoming developer tools in the coming days!!!
    We are currently slowly adding Developer tools in the code which are currently unaccessable to users.
+2. Bug fixes and UX enhancements.
 
 Weekly Maintanance Updates:-
 1. Updated README.md
@@ -37,7 +39,7 @@ GUI Stability Checks: ✅
 Code-GUI Integration Checks: ✅
 (All evaluations are done by the R&D Department)
 
-Last Updated: 9-May-2023 12:50 HRS
+Last Updated: 10-June-2023 12:53 HRS
 Publisher: Epicalable
 ```
 Keep updated to what's happening on this repository by clicking the 'Star' and 'Watch' button on the top right corner of this webpage.
