@@ -141,11 +141,6 @@ It will be helpful for us as users will know it's original source and about our 
 Please also refer to LICENSE file for clarifications.  
 Thank you for your kind cooperation :-)
 
-[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://github.com/Epicalable/)
-[![ForTheBadge built-by-developers](http://ForTheBadge.com/images/badges/built-by-developers.svg)](https://github.com/MahaMohan/)
-
-[![ForTheBadge uses-git](http://ForTheBadge.com/images/badges/uses-git.svg)](https://GitHub.com/) 
-[![ForTheBadge makes-people-smile](http://ForTheBadge.com/images/badges/makes-people-smile.svg)](https://github.com/Epicalable/)
 
 Version 1.3  
 J.A.R.V.I.S Copyright (C) Epicalable 2023  
