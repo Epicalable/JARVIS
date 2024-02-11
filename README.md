@@ -28,8 +28,9 @@ Update Highlights:-
 2. Bug fixes and UX enhancements.
 
 Weekly Maintanance Updates:-
-1. Updated README.md
-2. Weekly Code checks, updates and Maintanence to continue supporting python 3.11.3.
+1. Minor updates to README.md
+2. Standardization of different definitions.
+3. Monthly Code checks, updates and Maintanence to continue supporting python 3.11.3.
 
 Code Checks Manifest:-
 All Checks Status: ✅
@@ -39,7 +40,7 @@ GUI Stability Checks: ✅
 Code-GUI Integration Checks: ✅
 (All evaluations are done by the R&D Department)
 
-Last Updated: 10-June-2023 12:53 HRS
+Last Updated: 11-Feburary-2024 16:55 HRS
 Publisher: Epicalable
 ```
 Keep updated to what's happening on this repository by clicking the 'Star' and 'Watch' button on the top right corner of this webpage.
@@ -143,5 +144,5 @@ Thank you for your kind cooperation :-)
 
 
 Version 1.3  
-J.A.R.V.I.S Copyright (C) Epicalable 2023  
+J.A.R.V.I.S Copyright (C) Epicalable 2024 
 All Rights Reserved.

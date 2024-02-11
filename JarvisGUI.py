@@ -51,13 +51,13 @@ def Weather(timeing):
             print(timeing + Place + ":")
             print(" Temperature: " + str(current_temp) + "°C"
                   "\n Humidity: " + str(current_humidiy) + "%" + "\n Description: " + str(weather_description))
-            Audit("-(User Successfully Recieved Weather Report Using OpenWeatherMap.)")
+            Audit("- User Successfully Recieved Weather Report Using OpenWeatherMap.")
         else:
             print("JARVIS: Please check your city in the settings as this is invalid.")
-            Audit("-(ERROR:801, User's City Is Invalid. Please Try Again.)")
+            Audit("--> ERROR 801, User's City Is Invalid. Please Try Again.")
     except:
         print("JARVIS: I am having a problem in getting live weather please check your internet-connection.")
-        Audit("-(ERROR:805, Connection Failed with OpenWeatherMap. Please Check your Connection.)")
+        Audit("--> ERROR 805: Connection Failed with OpenWeatherMap. Please Check your Connection.")
 
 
 #Function to get location when starting jarvis
@@ -71,7 +71,7 @@ def location():
     #getting location
     location = Nomi_locator.reverse(f"{latitude}, {longitude}")
     print("Your Current location is", location)
-    Audit("-(User Recieved His Current Location Using GeoCoder.)")
+    Audit("- User Recieved His Current Location Using GeoCoder.")
 
 
 #Function to get stock price
@@ -111,11 +111,11 @@ def Breifing(title):
                     print(i + 1, '.', results[i])
                     if e == False:
                         break
-            Audit("-(User Recieved Morning Briefing From NewsAPI.)")
+            Audit("- User Recieved Morning Briefing From NewsAPI.")
         except:
             print("JARVIS: Something went wrong!!!" +
                   "\nJARVIS: Please check if you have a good \ninternet connection and have given a valid \ncategory and location.")
-            Audit("-(ERROR:755, Connection Failed with NewsAPI. Please Check Your Connection.) \n")
+            Audit("--> ERROR 755: Connection Failed with NewsAPI. Please Check Your Connection. \n")
     else:
         try:
             headers = {'Authorization': JNews}
@@ -132,11 +132,11 @@ def Breifing(title):
                     results.append(ar["title"])
                 for i in range(len(results)):
                     print(i + 1, '.', results[i])
-            Audit("-(User Recieved News Headlines From NewsAPI.)")
+            Audit("- User Recieved News Headlines From NewsAPI.")
         except:
             print("JARVIS: Something went wrong!!!" +
                   "\nJARVIS: Please check if you have a good \ninternet connection and have given a valid \ncategory and location.")
-            Audit( "-(ERROR:765, Connection Failed With NewsAPI. Please Check Your Connection.)")
+            Audit( "--> ERROR 765: Connection Failed With NewsAPI. Please Check Your Connection.")
 
 
 #Function to change GUI layout and User settings
@@ -220,7 +220,7 @@ def Settings():
                 "DeveloperTools": Developer
             }
             json_object = json.dumps(dictionary, indent=4)
-            Audit("-(User Saved New Settings Parameters.)")
+            Audit("- User Saved New Settings Parameters.")
             with open("Jarsettings.json", "w") as outfile:
                 outfile.write(json_object)
             break
@@ -242,11 +242,11 @@ def send_an_email(from_address, to_address, subject, message_text, password):
         s.login(from_address, password)    # Authentication to your account
         s.sendmail(from_address, to_address,
                    email_message)    # sending the email
-        Audit("-(User Successfully sent An Email To It's Destination.)")
+        Audit("- User Successfully sent An Email To It's Destination.")
         s.quit()    # terminating the session
     except:
         sg.popup("Please check your internet connection and turn 'on' Less secure app access in 'security' section in your Google Account Settings.")
-        Audit( "-(ERROR:300, User Failed To Send An Email To It's Destination.)")
+        Audit( "--> ERROR 300: User Failed To Send An Email To It's Destination.")
 
 def gmail():
     sg.theme('Dark')
@@ -432,7 +432,7 @@ window.maximize()
 
 
 hour = int(datetime.datetime.now().hour)
-Audit("-(USER ACTIVATED JARVIS AND INITIALIZED RELATED PROCESSES!!!)")
+Audit("--> USER ACTIVATED JARVIS AND INITIALIZED RELATED PROCESSES!!!")
 if hour >= 0 and hour < 12:
     timeing = "JARVIS: Good Morning Sir, here is the current weather in "
     location()
@@ -454,7 +454,7 @@ if __name__ == '__main__':
         if event in (sg.WIN_CLOSED, 'Exit'):   # quit if exit button or X
             print("\nJARVIS: Goodbye sir hope you have a nice day :-)")
             print("\nJ.A.R.V.I.S Copyright (C) 2023 Epicalable LLC. All Rights Reserved.")
-            Audit("-(USER TERMINATED JARVIS AND ALL IT'S RELATED PROCESSES!!!)")
+            Audit("--> USER TERMINATED JARVIS AND ALL IT'S RELATED PROCESSES!!!")
             time.sleep(4)
             break
 
@@ -486,9 +486,9 @@ if __name__ == '__main__':
                                     Stocks = contents["StockPrice"]
                                 for symbol in Stocks.split():
                                     print(f"Current {symbol:<4} stock price is {stock_price(symbol):>8}")
-                                Audit("-(User Have Recieved Stock-Price.)")
+                                Audit("- User Have Recieved Stock-Price.")
                             except:
-                                Audit("-(ERROR:892, Failed To Get Stock-price.) \n")
+                                Audit("--> ERROR 892: Failed To Get Stock-price. \n")
                             continue
 
                         elif "FLIGHT TRACK" in query or "TRACK FLIGHT " in query:
@@ -504,11 +504,11 @@ if __name__ == '__main__':
                                           }
                                 response = requests.request("GET", url, headers=headers)
                                 pprint.pprint(response.json(), indent=2)
-                                Audit("-(User Have Recieved Flight-Tracker Data.)")
+                                Audit("- User Have Recieved Flight-Tracker Data.")
                             except:
                                 print("ERROR: Please Type flight number also")
                                 print("Example: Track flight SQ 242")
-                                Audit("-(ERROR:325, Failed To Get Flight-Tracker Data.)")
+                                Audit("--> ERROR 325: Failed To Get Flight-Tracker Data.")
                             continue
 
 
@@ -529,10 +529,10 @@ if __name__ == '__main__':
                             query = query.replace('WIKIPEDIA', "")
                             try:
                                 print(wikipedia.summary(query))
-                                Audit("-(User Established Connection With Wikipedia.)")
+                                Audit("- User Established Connection With Wikipedia.")
                             except:
                                 print("JARVIS: I am having a problem in getting wikipedia please check your internet-connection.")
-                                Audit("-(ERROR:500, Failed To Establish Connection With Wikipedia.)")
+                                Audit("--> ERROR 500: Failed To Establish Connection With Wikipedia.")
                             continue
 
                         elif "WHAT IS " in query or "WHO IS " in query:
@@ -543,11 +543,11 @@ if __name__ == '__main__':
                             query = query.replace('IS', "")
                             try:
                                 print(wikipedia.summary(query))
-                                Audit("-(CONNECTION ESTABLISHED WITH WIKIPEDIA!!!)")
+                                Audit("- User Established Connection With Wikipedia.")
                             except:
                                 print(
                                     "JARVIS: I am having a problem in getting wikipedia please check your internet-connection")
-                                Audit("-(ERROR:500, Failed To Establish Connection With Wikipedia.)")
+                                Audit("--> ERROR 500: Failed To Establish Connection With Wikipedia.")
                             continue
 
                         elif "NEWS ABOUT " in query or "NEWS ON " in query:
@@ -566,14 +566,14 @@ if __name__ == '__main__':
                                     url=everything_news_url, headers=headers, params=everything_payload).json()
                                 article = open_news_page["articles"]
                                 results = []
-                                Audit("-(User Recieved News From NewsAPI.)")
+                                Audit("- User Recieved News From NewsAPI.")
                                 for ar in article:
                                     results.append(ar["title"])
                                 for i in range(len(results)):
                                     print(i + 1, '.', results[i])
                             except:
                                 print("JARVIS: Something went wrong please check if you have a good internet connection.")
-                                Audit("-(ERROR:776, Connection Failed With NewsAPI. Please Check Your Connection.)")
+                                Audit("--> ERROR 776: Connection Failed With NewsAPI. Please Check Your Connection.")
                             continue
 
                         elif "HEADLINES " in query:
@@ -593,28 +593,28 @@ if __name__ == '__main__':
 
                         elif "PLANET TRACKER " in query or "TRACK PLANET " in query:
                             print("JARVIS: Taking you to NASA's Eyes Planet tracker.")
-                            Audit("-(USER went to a NASA website.)")
+                            Audit("- USER went to a NASA website.")
                             time.sleep(3)
                             webbrowser.open("https://eyes.nasa.gov/apps/solar-system/#/home", new=1)
                             continue
 
                         elif "ASTEROID TRACKER " in query or "TRACK ASTEROID " in query:
                             print("JARVIS: Taking you to NASA's Eyes Asteroid tracker.")
-                            Audit("-(USER went to a NASA website.)")
+                            Audit("-USER went to a NASA website.")
                             time.sleep(3)
                             webbrowser.open("https://eyes.nasa.gov/apps/asteroids/#/asteroids", new=1)
                             continue
 
                         elif "SOLAR SYSTEM TRACKER " in query or "TRACK SOLAR SYSTEM " in query:
                             print("JARVIS: Taking you to NASA's Eyes Solar System.")
-                            Audit("-(USER went to a NASA website.)")
+                            Audit("- USER went to a NASA website.")
                             time.sleep(3)
                             webbrowser.open("https://eyes.nasa.gov/apps/orrery/#/home", new=1)
                             continue
 
                         elif "EXOPLANET TRACKER " in query or "TRACK EXOPLANETS " in query:
                             print("JARVIS: Taking you to NASA's Eyes Exoplanets.")
-                            Audit("-(USER went to a NASA website.)")
+                            Audit("- USER went to a NASA website.")
                             time.sleep(3)
                             webbrowser.open("https://eyes.nasa.gov/apps/exo/#/", new=1)
                             continue
@@ -622,7 +622,7 @@ if __name__ == '__main__':
                         elif query == "GOODBYE ":
                             print("JARVIS: Goodbye sir hope you have a nice day :-)")
                             print("\nJ.A.R.V.I.S Copyright (C) 2023 Epicalable LLC. All Rights Reserved.")
-                            Audit("-(USER TERMINATED JARVIS AND ALL IT'S RELATED PROCESSES!!!) \n")
+                            Audit("--> USER TERMINATED JARVIS AND ALL IT'S RELATED PROCESSES!!! \n")
                             time.sleep(4)
                             window.close()
 
@@ -631,7 +631,7 @@ if __name__ == '__main__':
                             print("Please look up 'Help' on the menu for more info regarding questions and inputs.")
                             print("If you think the question / input is important and might help others:")
                             print("Feel free to head to Epicalable's Github page and create an issue in JARVIS Repository")
-                            Audit("ERROR 404 (FALLBACK)!!! \n")
+                            Audit("--> ERROR 404 (FALLBACK)!!! \n")
 
         #Following functions is on the taskbar/menu panel on top
         elif event == 'Settings':
