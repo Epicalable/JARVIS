@@ -115,7 +115,16 @@
                 ]
             },
             {
-                "tags": "I AM SICK ",
+                "tags": "AM SICK ",
+                "response": [
+                    "JARVIS: You should consult a doctor quickly.",
+                    "JARVIS: Well that is bad, hope for a speedy recovery :-)",
+                    "JARVIS: You should go and rest sir.",
+                    "JARVIS: I am sorry to hear that sir hope for a speedy recovery :-)"
+                ]
+            },
+            {
+                "tags": "VERY SICK ",
                 "response": [
                     "JARVIS: You should consult a doctor quickly.",
                     "JARVIS: Well that is bad, hope for a speedy recovery :-)",
@@ -297,7 +306,25 @@
                 ]
             },
             {
-                "tags": "SHOULD I DO TODAY ",
+                "tags": "AM TIRED ",
+                "response": [
+                    "JARVIS: Well you can go outside and take a walk sir.",
+                    "JARVIS: Maybe you can try out a new movie or anime.",
+                    "JARVIS: You can go gym and exercise.",
+                    "JARVIS: You can surf the net, there is a lot of info out there."
+                ]
+            },
+            {
+                "tags": "AM BORED ",
+                "response": [
+                    "JARVIS: Well you can go outside and take a walk sir.",
+                    "JARVIS: Maybe you can try out a new movie or anime.",
+                    "JARVIS: You can go gym and exercise.",
+                    "JARVIS: You can surf the net, there is a lot of info out there."
+                ]
+            },
+            {
+                "tags": "SHOULD I DO ",
                 "response": [
                     "JARVIS: Well you can go outside and take a walk sir.",
                     "JARVIS: Maybe you can try out a new movie or anime.",
@@ -319,10 +346,16 @@
                 ]
             },
             {
+                "tags": "NO PROBLEM ",
+                "response": [
+                    "JARVIS: "
+                ]
+            },
+            {
                 "tags": "CHATGPT ",
                 "response": [
                     "JARVIS: He is extrodinary am I right.",
-                    "JARVIS: He is smart and I look up to him"
+                    "JARVIS: He is smart and I always look up to him"
                 ]
             }
         ]

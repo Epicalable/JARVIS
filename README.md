@@ -23,11 +23,9 @@ Here at Epicalable we are committed in keeping J.A.R.V.I.S up-to-date and up-to-
 ```
 JARVIS Updates In This Commit:-
 Update Highlights:-
-1. Keep a look out for the new upcoming developer tools in the coming days!!!
-   We are currently slowly adding Developer tools in the code which are currently unaccessable to users.
-2. Bug fixes and UX enhancements.
+1. Bug fixes and UX enhancements.
 
-Weekly Maintanance Updates:-
+Monthly Maintanance Updates:-
 1. Minor updates to README.md
 2. Standardization of different definitions.
 3. Monthly Code checks, updates and Maintanence to continue supporting python 3.11.3.
@@ -40,7 +38,7 @@ GUI Stability Checks: ✅
 Code-GUI Integration Checks: ✅
 (All evaluations are done by the R&D Department)
 
-Last Updated: 11-Feburary-2024 16:55 HRS
+Last Updated: 14-Feburary-2024 20:15 HRS
 Publisher: Epicalable
 ```
 Keep updated to what's happening on this repository by clicking the 'Star' and 'Watch' button on the top right corner of this webpage.
