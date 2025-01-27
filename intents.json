@@ -1,0 +1,173 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "Hello",
+        "Is anyone there?",
+        "Konichiwa",
+        "Good morning"
+      ],
+      "responses": [
+        "Hello sir, what do you want to do?",
+        "Hello sir.",
+        "Welcome and hello sir.",
+        "Hi sir, what can I do for you?",
+        "Hi sir, how can I help you?"
+      ]
+    },
+    {
+      "tag": "feelings",
+      "patterns": [
+        "How are you?",
+        "you ok?",
+        "you fine"
+      ],
+      "responses":[
+        "I am fine, how about you sir?",
+        "I'm doing fine sir.",
+        "I am fine as always sir.",
+        "I'm doing well sir and how about you?",
+        "My processes are current nominal."
+      ]
+    },
+    {
+      "tag": "validation",
+      "patterns":[
+        "I am fine",
+        "I am healthy",
+        "is fine",
+        "doing ok",
+        "doing fine"
+      ],
+      "responses":[
+        "Well good to know sir.",
+        "I am glad to hear about you, Keep Exercising.",
+        "So you are in good shape.",
+        "Well that is happy to know sir."
+      ]
+    },
+    {
+      "tag": "notok",
+      "patterns":[
+        "I am sick",
+        "I am very sick",
+        "Not doing well"
+      ],
+      "responses":[
+        "You should consult a doctor quickly.",
+        "Well that is bad, hope for a speedy recovery :-)",
+        "You should go and take some rest sir.",
+        "I am sorry to hear that sir hope for a speedy recovery :-)"
+      ]
+    },
+    {
+      "tag": "adviceaccepted",
+      "patterns":[
+        "Yes I am",
+        "Yes I will",
+        "Sure I will"
+      ],
+      "responses":[
+        "Great sir.",
+        "Good to know sir.",
+        "Happy to know sir.",
+        "Great to know sir."
+      ]
+    },
+    {
+      "tag": "goodmorning",
+      "patterns":[
+        "Good morning"
+      ],
+      "responses":[
+        "Good morning and hello sir.",
+        "Well good morning sir have a good day today.",
+        "Good morning sir.",
+        "Good morning and have a great day sir."
+      ]
+    },
+    {
+      "tag": "goodnight",
+      "patterns":[
+        "Good night"
+      ],
+      "responses":[
+        "Good night sir.",
+        "Well Good night sir.",
+        "Good night sir have a good sleep tonight.",
+        "Good night and have a good sleep sir."
+      ]
+    },
+    {
+      "tag": "glaze",
+      "patterns":[
+        "thats so cool",
+        "good to know"
+      ],
+      "responses":[
+        "Glad that you are impressed sir.",
+        "It seems that my service is satisfactory.",
+        "Thanks for the feedback looks like you're enjoying my service."
+    ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+          "Bye",
+          "See you later", 
+          "Goodbye"
+        ],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thanks", 
+        "Thank you", 
+        "Harigatho",
+        "That's helpful", 
+        "Thank's a lot!"],
+      "responses": [
+        "Happy to help you sir.",
+        "Your welcome sir it is my duty.",
+        "Anytime sir.", 
+        "My pleasure sir."
+      ]
+    },
+    {
+      "tag": "exhausted",
+      "patterns":[
+        "I am tired",
+        "I am bored",
+        "I done nothing today",
+        "Achieved zero goals today",
+        "What shall I do today"
+      ],
+      "responses":[
+        "Well you can go outside and take a walk sir.",
+        "Maybe you can try out a new movie or anime.",
+        "You can go gym and exercise.",
+        "You can surf the net, there is a lot of info out there."
+      ]
+    },
+    {
+      "tag": "funny",
+      "patterns": [
+        "Tell me a joke!",
+        "Tell me something funny!",
+        "Do you know a joke?"
+      ],
+      "responses": [
+        "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
+        "What did the buffalo say when his son left for college? Bison."
+      ]
+    }
+  ]
+}
