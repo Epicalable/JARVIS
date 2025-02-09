@@ -1,0 +1,840 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "Hello",
+        "Is anyone there?",
+        "Konichiwa",
+        "Good morning"
+      ],
+      "responses": [
+        "Hello sir, what do you want to do?",
+        "Hello sir.",
+        "Welcome and hello sir.",
+        "Hi sir, what can I do for you?",
+        "Hi sir, how can I help you?"
+      ]
+    },
+    {
+      "tag": "feelings",
+      "patterns": [
+        "How are you?",
+        "you ok?",
+        "you fine"
+      ],
+      "responses":[
+        "I am fine, how about you sir?",
+        "I'm doing fine sir.",
+        "I am fine as always sir.",
+        "I'm doing well sir and how about you?",
+        "My processes are current nominal."
+      ]
+    },
+    {
+      "tag": "validation",
+      "patterns":[
+        "I am fine",
+        "I am healthy",
+        "is fine",
+        "doing ok",
+        "doing fine"
+      ],
+      "responses":[
+        "Well good to know sir.",
+        "I am glad to hear about you, Keep Exercising.",
+        "So you are in good shape.",
+        "Well that is happy to know sir."
+      ]
+    },
+    {
+      "tag": "notok",
+      "patterns":[
+        "I am sick",
+        "I am very sick",
+        "Not doing well"
+      ],
+      "responses":[
+        "You should consult a doctor quickly.",
+        "Well that is bad, hope for a speedy recovery :-)",
+        "You should go and take some rest sir.",
+        "I am sorry to hear that sir hope for a speedy recovery :-)"
+      ]
+    },
+    {
+      "tag": "adviceaccepted",
+      "patterns":[
+        "Yes I am",
+        "Yes I will",
+        "Sure I will"
+      ],
+      "responses":[
+        "Great sir.",
+        "Good to know sir.",
+        "Happy to know sir.",
+        "Great to know sir."
+      ]
+    },
+    {
+      "tag": "goodmorning",
+      "patterns":[
+        "Good morning"
+      ],
+      "responses":[
+        "Good morning and hello sir.",
+        "Well good morning sir have a good day today.",
+        "Good morning sir.",
+        "Good morning and have a great day sir."
+      ]
+    },
+    {
+      "tag": "goodnight",
+      "patterns":[
+        "Good night"
+      ],
+      "responses":[
+        "Good night sir.",
+        "Well Good night sir.",
+        "Good night sir have a good sleep tonight.",
+        "Good night and have a good sleep sir."
+      ]
+    },
+    {
+      "tag": "glaze",
+      "patterns":[
+        "thats so cool",
+        "good to know"
+      ],
+      "responses":[
+        "Glad that you are impressed sir.",
+        "It seems that my service is satisfactory.",
+        "Thanks for the feedback looks like you're enjoying my service."
+    ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+          "Bye",
+          "See you later", 
+          "Goodbye"
+        ],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thanks", 
+        "Thank you", 
+        "Harigatho",
+        "That's helpful", 
+        "Thank's a lot!"],
+      "responses": [
+        "Happy to help you sir.",
+        "Your welcome sir it is my duty.",
+        "Anytime sir.", 
+        "My pleasure sir."
+      ]
+    },
+    {
+      "tag": "exhausted",
+      "patterns":[
+        "I am tired",
+        "I am bored",
+        "I done nothing today",
+        "Achieved zero goals today",
+        "What shall I do today"
+      ],
+      "responses":[
+        "Well you can go outside and take a walk sir.",
+        "Maybe you can try out a new movie or anime.",
+        "You can go gym and exercise.",
+        "You can surf the net, there is a lot of info out there."
+      ]
+    },
+    {
+      "tag": "happy",
+      "patterns": [
+        "i can feel that she smiled i love you even more gorgeous",
+        "im feeling happy and well",
+        "i am happy",
+        "im definitely feeling festive",
+        "im there i simply feel contented",
+        "i am feeling more energetic more alive happier than i have in a long time",
+        "i feel very rich very blessed very joyful",
+        "im feeling quite pleased this week",
+        "i feel that something wonderful is going to happen",
+        "i feel creative right now and it makes me happy",
+        "i feel so lucky to live in portland land of delicious food",
+        "i find myself feeling happy more and more and it feels so very good"
+      ],
+      "responses": [
+        "That's great to hear that youre happy!",
+        "That's awesome to hear!",
+        "Awesome, I'm glad you're feeling good!"
+      ],
+      "emotion": [
+        "happy"
+      ]
+    },
+    {
+      "tag": "decision",
+      "patterns": [
+        "i feel very comfortable with this decision",
+        "i am feeling brave enough to take this decision",
+        "i have turned that page i feel like there is no way of getting back my irresponcible years of carefree college"
+      ],
+      "responses": [
+        "That's great! It sounds like you've made a choice that you're really at peace with it.",
+        "your decision will have a positive impact on your life.",
+        "That's amazing! It takes a lot of courage to make big decisions. You got this!",
+        "It sounds like you're ready for this! Trust in yourself—you'll make it work.",
+        "I love that confidence! Sometimes, being brave is all we need to move forward."
+      ],
+      "emotion": [
+        "happy"
+      ]
+    },
+    {
+      "tag": "workout",
+      "patterns": [
+        "i workout every morning before and feel fabulous for it",
+        "i go to the gym everyday to improve my body",
+        "i do yoga everyday",
+        "i do feel that running is great",
+        "i dance i should feel pretty",
+        "i am feeling strong",
+        "i was still feeling strong but i missed a couple lifts",
+        "i woke up feeling confident and watched some videos to gather some coaching tips and compulsory cues",
+        "i get some exercise and feel like im doing something worthwhile in the meantime",
+        "i woke up the morning of our hike feeling jubilant",
+        "i feel vital full of energy every day and super positive",
+        "ive gained weight but i really would like to lose pounds to just feel like ive finally gotten to an acceptable happy place"
+      ],
+      "responses": [
+        "That's awesome! Morning workouts really set a positive tone for the day, don't they?",
+        "You must feel so energized! It's great that you're making time for yourself every morning.",
+        "That's such a great habit! Starting the day with exercise always boosts my mood too."
+      ],
+      "emotion": [
+        "happy"
+      ]
+    },
+    {
+      "tag": "useful",
+      "patterns": [
+        "i am feeling all useful",
+        "i feel clever now",
+        "i feel honoured to have been able to call them friends to share their brotherhood",
+        "i feel honored by it",
+        "i feel like i am a talented young man",
+        "i feel as though ive reached a point in my career where im highly respected",
+        "i am so relieved and excited and i feel confident again",
+        "i am thankful for feeling useful",
+        "i can finally stop feeling  like a waste of space"
+      ],
+      "responses": [
+        "That's such a great feeling! It's awesome to feel like you're making an impact.",
+        "It's amazing when you can see the value in what you're doing. Keep it up!",
+        "That's wonderful! Feeling useful really boosts your confidence and motivation."
+      ],
+      "emotion": [
+        "happy"
+      ]
+    },
+    {
+      "tag": "travelling",
+      "patterns": [
+        "i am going to travel",
+        "I am on a boat trip to denmark",
+        "i am planning to travel",
+        "i am planning to go on a trip",
+        "i were feeling energetic so we decided we were going to bike to the rest of the",
+        "i could wear anything on a casual shopping trip to feel fabulous without even trying"
+      ],
+      "responses": [
+        "That sounds like a perfect idea! A trip can do wonders for your mind and body.",
+        "How exciting! Taking time for yourself is so important.",
+        "That's awesome! A change of scenery can really recharge your energy and perspective."
+      ],
+      "emotion": [
+        "happy"
+      ]
+    },
+    {
+      "tag": "relaxing",
+      "patterns": [
+        "i am relaxed currently",
+        "i feel very relaxed and fine",
+        "i feel so tranquil right now its great",
+        "i regularly put on relaxing music"
+      ],
+      "responses": [
+        "That's wonderful! It's great to hear you're feeling at ease.",
+        "I'm so happy for you! Feeling relaxed is such a peaceful state to be in.",
+        "Sounds like you're in a great place right now. Enjoy the calm!"
+      ],
+      "emotion": [
+        "happy"
+      ]
+    },
+    {
+      "tag": "learnedstuff",
+      "patterns": [
+        "i feel very happy and excited since i learned so many things",
+        "i suddenly feel a lot smarter and more talented than i did last night",
+        "i feel that i am starting to think that i am so smart",
+        "i feel more clever",
+        "i am clever",
+        "i love everything that were learning about and feel really passionate about design",
+        "i will write anything if i feel passionate about it or at the very least if it genuinely interests me"
+      ],
+      "responses": [
+        "That's amazing! It's such a rewarding feeling when you absorb new knowledge.",
+        "I can feel your excitement! Learning really has a way of sparking joy and curiosity.",
+        "That's awesome! It's always great to see how much you can grow in a short time.",
+        "That's incredible! It's amazing how quickly things can click when you put your mind to it."
+      ],
+      "emotion": [
+        "happy"
+      ]
+    },
+    {
+      "tag": "academics",
+      "patterns": [
+        "the test was easy",
+        "i feel that theres a good chance i might pass",
+        "the test today was easy I think i might pass",
+        "i feel very excited it took also a lot of work to study for the exam",
+        "i am happpy when i get good results in the field of academics or athletics",
+        "i am confident about the test"
+      ],
+      "responses": [
+        "That's awesome! It sounds like all your preparation paid off.",
+        "I can imagine! All that hard work will definitely pay off.",
+        "That excitement is well deserved! You put in the effort, and now you're seeing the results.",
+        "It must feel so rewarding to know your hard work is leading to something great!"
+      ],
+      "emotion": [
+        "happy"
+      ]
+    },
+    {
+      "tag": "medical",
+      "patterns": [
+        "im not scared at all anymore i feel terrific about the surgery",
+        "i not scared to see the doctor",
+        "i am for the first time this year feeling the cold"
+      ],
+      "responses": [
+        "That's amazing! Feeling confident and positive about it will help a lot.",
+        "I'm so glad to hear that! It's great that you're feeling calm and in control.",
+        "You've got this! Being at peace with it will make the whole experience much smoother."
+      ],
+      "emotion": [
+        "happy"
+      ]
+    },
+    {
+      "tag": "motivation",
+      "patterns": [
+        "i am motivated",
+        "i should have been depressed but i was actually feeling inspired",
+        "i feel energized and eager to write tomorrow",
+        "i can feel myself gaining control over the damaged goods aspects of my personal security"
+      ],
+      "responses": [
+        "That's so powerful! Sometimes, unexpected emotions can push us to grow even more.",
+        "That's incredible! It's amazing how inspiration can emerge even in tough times.",
+        "It's awesome that you turned that moment into motivation. You're stronger than you realize!"
+      ],
+      "emotion": [
+        "happy"
+      ]
+    },
+
+    {
+      "tag": "sad",
+      "patterns": [
+        "i didnt really feel that embarrassed",
+        "I am sad",
+        "i feel a bit jaded",
+        "i actually feel sorrowful",
+        "i be made to feel rotten",
+        "i was feeling awful on sunday",
+        "i feel hated loathed",
+        "i feel lonely and lost",
+        "i feel empty"
+      ],
+      "responses": [
+        "I'm here if you need anything.",
+        "I'm here for you if you need someone to listen. It's okay to feel sad sometimes.",
+        "That's tough. Take your time, and don't be too hard on yourself.",
+        "I totally get that feeling. Sometimes a break or change in routine helps."
+      ],
+      "emotion": [
+        "sad"
+      ]
+    },
+    {
+      "tag": "ashamed",
+      "patterns": [
+        "i am ashamed",
+        "i am feel really ashamed",
+        "i am feel awful",
+        "i feel a little ashamed that i had such low expectations in the first place",
+        "i feel embarrassed by it"
+      ],
+      "responses": [
+        "Im really sorry youre feeling that way. If you want to talk about it, Im here.",
+        "That sounds tough. Take it easy on yourself, and remember its okay to have bad days.",
+        "Im sorry you're going through this. Sometimes it helps to take a step back and breathe."
+      ],
+      "emotion": [
+        "sad"
+      ]
+    },
+    {
+      "tag": "stressed",
+      "patterns": [
+        "i am stressed",
+        "i feel more and more stressed",
+        "i feel stressed always",
+        "id just had a terrible nightmare and was feeling a little disturbed",
+        "i feel drained of energy",
+        "i feel completely drained physically and mentally worn out",
+        "im feeling a little stressed about it",
+        "i feel frustrated or impatient",
+        "feeling vulnerable due to the stress"
+      ],
+      "responses": [
+        "I'm sorry you're feeling that way. Is there anything specific causing the stress?",
+        "That sounds tough. Maybe taking a short break or doing something relaxing could help ease it.",
+        "I hear you. It can be tough to feel that way all the time. Maybe its time to give yourself some space to relax.",
+        "That's a heavy load to carry. It might be helpful to take small breaks throughout the day to recharge."
+      ],
+      "emotion": [
+        "sad"
+      ]
+    },
+    {
+      "tag": "depressed",
+      "patterns": [
+        "i am depressed",
+        "i want to say that i feel as though i dont play a really vital role in anyones life with the exception of one friend",
+        "im feeling quite sad and sorry for myself but ill snap out of it soon",
+        "i feel like an innocent victim i feel that i just cant win",
+        "i found myself feeling a little discouraged this morning",
+        "i feel very resolved yet somehow very depressed",
+        "i have been on a roller coaster of emotions over these supposed feelings that something unpleasant was coming",
+        "i am feeling disheartened with my words as of late",
+        "i begin to feel terribly rude and that causes me to become depressed"
+      ],
+      "responses": [
+        "I'm really sorry you're feeling this way. Sometimes it's hard to see our own value, but you matter more than you realize.",
+        "I understand how that can feel heavy. You're important, and sometimes the impact we have on others is more subtle than we think.",
+        "It's tough when you feel that way, but just remember, even small roles can have a huge, lasting impact on people.",
+        "I'm sorry you're feeling down. It's okay to have moments like that, and it's great that you know you'll get through it.",
+        "It's okay to feel that way sometimes. Be kind to yourself—it'll pass, and you'll come out stronger."
+      ],
+      "emotion": [
+        "sad"
+      ]
+    },
+    {
+      "tag": "hopeless",
+      "patterns": [
+        "i am hopeless",
+        "i feel so sad and hopeless",
+        "i feel helpless about it",
+        "i become overwhelmed and feel defeated",
+        "i feel stressed and hopeless always",
+        "i feel like a miserable piece of garbage",
+        "i feel totally rejected",
+        "i feel worthless for letting it happen"
+      ],
+      "responses": [
+        "I understand that feeling. Sometimes, just taking small steps can help regain a sense of control.",
+        "Feeling helpless can be overwhelming. Maybe reaching out for support could help shift things, even if just a little.",
+        "It's hard when you feel stuck. But you don't have to solve everything all at once, and sometimes sharing your thoughts can make a difference.",
+        "I'm really sorry you're feeling this way. It's okay to feel down sometimes, but please know that things can get better.",
+        "That sounds really tough. You don't have to go through it alone talking with someone might help."
+      ],
+      "emotion": [
+        "sad"
+      ]
+    },
+    {
+      "tag": "bullied",
+      "patterns": [
+        "i feel abused and maligned but mostly tired of the nervous feeling anticipating danger",
+        "i am being emotional blackmailed into being three places at once",
+        "i feel as if i was abused in some way",
+        "i have been feeling beaten down sick and utterly devoid of hope that i will ever have the life i want",
+        "i feel im being hated",
+        "i am bullied",
+        "i feel like im on the receiving end of a violent attack",
+        "i feel im being ignored"
+      ],
+      "responses": [
+        "That sounds incredibly draining. You don't deserve to feel this way. Please take care of yourself and reach out for support if you can.",
+        "It's tough when anxiety and stress take over. You deserve peace and safety—don't hesitate to lean on those who care about you.",
+        "It's unfair to be put in that position. Take a moment to think about what you need and try to communicate that.",
+        "That's a lot to deal with! No one should make you feel like you have to be everywhere at once. You deserve to set boundaries."
+      ],
+      "emotion": [
+        "sad"
+      ]
+    },
+    {
+      "tag": "timemanagement",
+      "patterns": [
+        "i have free time but dont know what to do",
+        "i feel totally lifeless as exams have come and gone and now i have a whole five or so months of free time",
+        "im feeling gloomy as i have completed nothing though im supposed to complete many things",
+        "i left feeling defeated like nothing had been accomplished the day a complete waste of time and energy",
+        "i am feeling kind of discouraged because nothing happened today"
+      ],
+      "responses": [
+        "It's tough when the pressure lifts and there's too much space. Maybe setting a few goals, even small ones, could help you feel a bit more energized?",
+        "It's easy to feel overwhelmed when there's so much to do. Maybe breaking things down into smaller steps could help you get started?",
+        "I totally get that feeling. Sometimes, just starting with one small task can create momentum and help lift the gloom.",
+        "Don't be too hard on yourself! It's okay to have off days. Take things one step at a time, and you'll start ticking off those tasks."
+      ],
+      "emotion": [
+        "sad"
+      ]
+    },
+    {
+      "tag": "advice",
+      "patterns": [
+        "i want to avoid feeling disliked",
+        "im feeling gloomy as i have completed nothing though im supposed to complete many things",
+        "i just feel heartbroken vunerable and sick tonight",
+        "id like to write something interesting right now but unfortunately i feel deprived of inspiration",
+        "i hope something magical happens today because im feeling kind of disillusioned",
+        "i dont know why i feel disheartened",
+        "im feel alone and i dont know how to cope",
+        "i feel generally dissatisfied and lost",
+        "i feel so despised and i feel this world is crumbling onto me again"
+      ],
+      "responses": [
+        "It's natural to want to be liked, but it's also important to prioritize your own happiness and authenticity.",
+        "It's okay to feel this way—it happens to everyone. Try to ease into the tasks slowly and give yourself some grace."
+      ],
+      "emotion": [
+        "sad"
+      ]
+    },
+
+    {
+      "tag": "angry",
+      "patterns": [
+        "i am angry",
+        "i am enraged",
+        "i feel angered and firey",
+        "i feel like im so enraged",
+        "i just feel really violent right now",
+        "im feeling really quite angry",
+        "i want to shut myself up",
+        "i am quite mad",
+        "i was feeling impatient and took pills",
+        "i feel like my go to emotion is angry",
+        "i try to breathe in when i feel frustrated and breathe out the calm that i desire",
+        "i am feeling deeply offended big hurt feelings in fact",
+        "i hate all shopping when i feel rushed by hoards of people"
+      ],
+      "responses": [
+        "I can feel that intensity! It's okay to feel angry—sometimes, expressing that can help release some of that fire.",
+        "That's tough. Maybe finding a way to channel that energy into something productive could help calm things down a bit.",
+        "It's totally okay to feel enraged it's a powerful emotion. Is there something specific that's fueling this?",
+        "That's really intense. It might help to take a moment to breathe and step back from whatever is causing this."
+      ],
+      "emotion": [
+        "angry"
+      ]
+    },
+    {
+      "tag": "selfish",
+      "patterns": [
+        "i am selfish",
+        "i feel selfish thinking this way but i feel so lonely at times",
+        "i feel selfish and spoiled"
+      ],
+      "responses": [
+        "You're not selfish for feeling lonely. We all need connection, and it's okay to acknowledge those feelings.",
+        "Loneliness can be tough, and it's natural to want to be understood. You deserve support and companionship.",
+        "Feeling lonely doesn't make you selfish it just shows you need more connection, and that's perfectly valid."
+      ],
+      "emotion": [
+        "angry"
+      ]
+    },
+    {
+      "tag": "wronged",
+      "patterns": [
+        "i feel just insulted",
+        "my roommate was rude to me",
+        "i really feel i was wronged as a patient",
+        "i feel wronged by the world"
+      ],
+      "responses": [
+        "I'm sorry to hear that. It's important that you feel heard and treated with care. It might help to talk to someone about it.",
+        "That sounds really frustrating. You deserve to feel respected and well taken care of as a patient. It might help to talk to someone about it.",
+        "I can imagine how upsetting that must be. If you feel comfortable, maybe expressing your feelings to the right person could help clear things up.",
+        "I'm really sorry you're feeling that way. It's tough when something makes us feel that way, but you're allowed to set boundaries."
+      ],
+      "emotion": [
+        "angry"
+      ]
+    },
+    {
+      "tag": "irritated",
+      "patterns": [
+        "i feel so annoyed",
+        "i am annoyed",
+        "i feel irritated and rejected without anyone doing anything or saying anything",
+        "i am irritated",
+        "i do feel agitated restless or on edge quite often", 
+        "i feel agitated and empty and missing something",
+        "i really am feeling horribly irritable and a little bit depressed",
+        "i am a bit irritable and antsy"
+      ],
+      "responses": [
+        "I'm sorry you're feeling that way. It can be frustrating when you can't put your finger on why, but acknowledging it is a good first step.",
+        "It must be tough feeling on edge so often. It might help to talk about what's making you feel this way or find ways to relax during those moments.",
+        "I can imagine how draining that must be. Maybe trying to pinpoint what's causing the agitation could help ease it a little."
+      ],
+      "emotion": [
+        "angry"
+      ]
+    },
+    {
+      "tag": "offended",
+      "patterns": [
+        "i feel like offended",
+        "i feel offended and sad",
+        "i am offended"
+      ],
+      "responses": [
+        "I can understand how that would be hurtful. Your feelings are valid, and it's okay to express them.",
+        "I'm sorry you're going through this. It's never easy to feel offended or sad, but talking about it might help ease the burden."
+      ],
+      "emotion": [
+        "angry"
+      ]
+    },
+    {
+      "tag": "academicscared",
+      "patterns": [
+        "im currently feeling way screwed up with the mother tongue paper",
+        "i might fail in the exam or test",
+        "i fear that i might be one of the failures in the test"
+      ],
+      "responses": [
+        "I'm sorry you're feeling that way. It can be tough when things don't go as planned, but you can still work through it.",
+        "I totally understand that feeling—it's frustrating when things don't click. Maybe taking a little break will help clear your mind.",
+        "I know it's stressful, but try to remember that one test doesn't define you. Do your best, and that's what counts.",
+        "It's understandable to feel that way, but keep in mind that you're doing your best. Even if things don't go as planned, you'll learn from it."
+      ],
+      "emotion": [
+        "angry"
+      ]
+    },
+    {
+      "tag": "distracted",
+      "patterns": [
+        "im am feeling distracted",
+        "i am distracted",
+        "im still paying attention but i feel distracted"
+      ],
+      "responses": [
+        "That sounds like a good way to block out distractions, but if it's still not helping, maybe taking a small break or adjusting your environment could give you more focus.",
+        "It's great you've found a method that works for you, but if distractions are still creeping in, maybe incorporating some mindfulness or breathing exercises could help clear your head.",
+        "I get that—it's tough to stay focused sometimes even when you're trying. Maybe taking short breaks or doing something physical might help reset your mind.",
+        "That's a frustrating feeling. It might help to break things down into smaller tasks or give yourself a mini reward for staying focused!"
+      ],
+      "emotion": [
+        "angry"
+      ]
+    },
+    {
+      "tag": "gamingadvice",
+      "patterns": [
+        "played games and each time left feeling like it was mentally emotionally dangerous so i had to switch off but an important part of my brain just to play it",
+        "i started school and at every night i would cry and lose sleep over the thought of school the next day"
+      ],
+      "responses": [
+        "It sounds like the games were really affecting you more than you expected. It's good that you noticed it and switched off. Maybe finding a balance or trying different types of games could help?",
+        "I understand how that can feel draining. If it's affecting your mental and emotional well-being, it might be worth taking a break or exploring other activities that leave you feeling better.",
+        "It can be tough when something you enjoy starts feeling harmful. Taking a step back and being mindful of how it impacts you is really important. Maybe try switching to something more relaxing?"
+      ],
+      "emotion": [
+        "angry"
+      ]
+    },
+
+    {
+      "tag": "fear",
+      "patterns": [
+        "i feel as confused about life as a teenager or as jaded as a year old man",
+        "i feel vulnerable and alone",
+        "i just feel terrified",
+        "i am terrified",
+        "i am scared",
+        "i am feeling anxious and worried"
+      ],
+      "responses": [
+        "That's a tough place to be in. Sometimes life can feel overwhelming or unfulfilling, but those feelings can shift with time and perspective.",
+        "It's okay to feel both confused and jaded. Life can throw a lot at us, and sometimes it helps to talk things through to make sense of it all.",
+        "That sounds really difficult. When you're feeling distressed, it can help to focus on grounding techniques or taking a short break to clear your mind.",
+        "I understand how tough that can be. If you need to unload or figure out ways to manage it, I'm here to listen."
+      ],
+      "emotion": [
+        "scared"
+      ]
+    },
+    {
+      "tag": "overwhelmed",
+      "patterns": [
+        "i have been feeling so overwhelmed lately",
+        "i am overwhelmed"
+      ],
+      "responses": [
+        "I'm really sorry to hear that. It's tough when everything feels like too much. Maybe breaking things down into smaller steps could help ease the load",
+        "It's completely understandable to feel overwhelmed sometimes. Have you been able to take any breaks or find ways to unwind",
+        "That sounds really tough. It might help to prioritize what's most urgent and give yourself permission to take a breather when you need it."
+      ],
+      "emotion": [
+        "scared"
+      ]
+    },
+    {
+      "tag": "insecure",
+      "patterns": [
+        "i feel insecure",
+        "i am insecure",
+        "i get changed i am feeling insecure",
+        "i feel more vulnerable",
+        "i get changed i am feeling insecure"
+      ],
+      "responses": [
+        "I'm really sorry you're feeling that way. Insecurity can be tough, but remember, it doesn't define you. You have so many great qualities!",
+        "It's okay to feel insecure sometimes, but try to remember that everyone has their moments. You're doing great just by acknowledging it.",
+        "I get that. Insecurity can be hard to shake, but try to focus on the things that make you feel strong and confident.",
+        "That feeling can be tough. Maybe focusing on the way your clothes make you feel or shifting your attention to something positive can help ease that insecurity."
+      ],
+      "emotion": [
+        "scared"
+      ]
+    },
+    {
+      "tag": "helpless",
+      "patterns": [
+        "i feel helpless",
+        "i am helpless"
+      ],
+      "responses": [
+        "Feeling helpless can be overwhelming, but remember, there's always a way to find support or take small steps to regain control.",
+        "It's okay to feel helpless sometimes, but I believe in your strength. Taking it one step at a time could help you feel a bit more empowered."
+      ],
+      "emotion": [
+        "scared"
+      ]
+    },
+    {
+      "tag": "academicdistress",
+      "patterns": [
+        "i feel scared to go to school",
+        "i am scared to go school"
+      ],
+      "responses": [
+        "I'm really sorry you're feeling that way.",
+        "It's okay to feel scared sometimes. Maybe you can think of some things that might help you feel more comfortable.",
+        "That sounds hard. Maybe we can figure out some ways to make it less scary."
+      ],
+      "emotion": [
+        "scared"
+      ]
+    },
+    {
+      "tag": "intimidated",
+      "patterns": [
+        "i feel intimidated",
+        "i am intimidated"
+      ],
+      "responses": [
+        "I'm sorry you're feeling that way. It can be tough when you feel intimidated, but remember, you have the strength to handle it.",
+        "That sounds uncomfortable. Maybe taking a deep breath and giving yourself some space could help ease that feeling.",
+        "Feeling intimidated is tough, but try to remind yourself that you have the ability to handle whatever comes your way. You've got this!"
+      ],
+      "emotion": [
+        "scared"
+      ]
+    },
+    {
+      "tag": "distressed",
+      "patterns": [
+        "ive been feeling distressed",
+        "i feel distressed",
+        "i am distressed"
+      ],
+      "responses": [
+        "I'm really sorry you're feeling that way. Distress can be so overwhelming.",
+        "That sounds tough. When you're feeling distressed, it might help to take a moment to breathe deeply or try grounding yourself.",
+        "It's hard when everything feels like too much. If you need a safe space to vent or explore ways to feel better, I'm here for you."
+      ],
+      "emotion": [
+        "scared"
+      ]
+    },
+
+    {
+      "tag": "suprised",
+      "patterns": [
+        "i am pleasantly surprised",
+        "i am feeling surprised"
+      ],
+      "responses": [
+        "I'm sorry you're feeling that way. It can be tough when you feel intimidated, but remember, you have the strength to handle it.",
+        "That sounds uncomfortable. Maybe taking a deep breath and giving yourself some space could help ease that feeling.",
+        "Feeling intimidated is tough, but try to remind yourself that you have the ability to handle whatever comes your way. You've got this!"
+      ],
+      "emotion": [
+        "suprised"
+      ]
+    },
+    {
+      "tag": "amazed",
+      "patterns": [
+        "i am pleasantly surprised",
+        "i am feeling surprised"
+      ],
+      "responses": [
+        "I'm sorry you're feeling that way. It can be tough when you feel intimidated, but remember, you have the strength to handle it.",
+        "That sounds uncomfortable. Maybe taking a deep breath and giving yourself some space could help ease that feeling.",
+        "Feeling intimidated is tough, but try to remind yourself that you have the ability to handle whatever comes your way. You've got this!"
+      ],
+      "emotion": [
+        "suprised"
+      ]
+    },
+    {
+      "tag": "funny",
+      "patterns": [
+        "Tell me a joke!",
+        "Tell me something funny!",
+        "Do you know a joke?"
+      ],
+      "responses": [
+        "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
+        "What did the buffalo say when his son left for college? Bison."
+      ]
+    }
+  ]
+}

@@ -48,10 +48,10 @@ def bag_of_words(tokenized_sentence, words):
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-with open('intents.json', 'r') as json_data:
+with open('datasets/jarintents.json', 'r') as json_data:
     intents = json.load(json_data)
 
-FILE = "data.pth"
+FILE = "datasets/jardata.pth"
 data = torch.load(FILE)
 input_size = data["input_size"]
 hidden_size = data["hidden_size"]
@@ -74,9 +74,16 @@ class Exset():
         self.settings()
 
     def settings(self):
+        with open("critcinfo/jarsettings.json") as f:
+            contents = json.load(f)
+            NewsApiKey = contents["NewsApiKey"]
+            OpenWeatherKey = contents["OpenWeatherKey"]
+            Country = contents["Country"]
+            City = contents["City"]
+
         setting = tk.Toplevel(root)
         setting.title("SETTINGS")
-        setting.geometry("480x360")
+        setting.geometry("256x144")
         setting.resizable(False, False)
         setting.configure(bg='gray37')
         setting.wm_attributes("-topmost",True)
@@ -93,9 +100,13 @@ class Exset():
         self.e2.grid(row=3, column=1)
         self.e3.grid(row=4, column=1)
         self.e4.grid(row=5, column=1)
+        self.e1.insert(tk.END,NewsApiKey)
+        self.e2.insert(tk.END,OpenWeatherKey)
+        self.e3.insert(tk.END,Country)
+        self.e4.insert(tk.END,City)
 
         button = tk.Button(setting, text="Enter", command= self.retrieve_setting)
-        root.bind('<Return>', lambda event=None: button.invoke())
+        button.bind('<Return>', lambda event=None: button.invoke())
         button.grid(row=6,column=1)
 
 
@@ -112,7 +123,7 @@ class Exset():
                 "City": vv
         }
         json_object = json.dumps(dictionary, indent=4)
-        with open("Jarsettings.json", "w") as outfile:
+        with open("critcinfo/jarsettings.json", "w") as outfile:
             outfile.write(json_object)
 
 
@@ -121,8 +132,10 @@ class Exset():
 
 def Weather(timeing):
     try:
-        key = "b190a0605344cc4f3af08d0dd473dd25"
-        Place = "Singapore"
+        with open("critcinfo/jarsettings.json") as f:
+            contents = json.load(f)
+            key = contents["OpenWeatherKey"]
+            Place = contents["City"]
         base_url = "http://api.openweathermap.org/data/2.5/weather?"
         complete_url = base_url + "q=" + Place + "&APPID=" + key + "&units=metric"
         response = requests.get(complete_url)
@@ -144,9 +157,11 @@ def Weather(timeing):
 
 
 def Breifing():
+    with open("critcinfo/jarsettings.json") as f:
+            contents = json.load(f)
+            JNews = contents["NewsApiKey"]
+            country = contents["Country"]
     str = 'general business science health technology entertainment sports'
-    JNews = "4c2159b38736423cb393853bda9e642f"
-    country = "us"
     headers = {'Authorization': JNews}
     top_headlines_url = 'https://newsapi.org/v2/top-headlines'
 
@@ -179,6 +194,7 @@ def greeting():
         textbox.configure(state="normal")
         timeing = "JARVIS: Good Morning Sir, here is the current weather in "
         Weather(timeing)
+        textbox.insert(tk.END,"\n")
         Breifing()
         textbox.insert(tk.END,"\n")
         textbox.configure(state="disabled")
@@ -216,7 +232,7 @@ def jarsearch(sentence):
                     textbox.configure(state="disabled")
         else:
             textbox.configure(state="normal")
-            textbox.insert(tk.END,("JARVIS: Sorry sir unfortunately I couldn't process what you were trying to say.\n."))
+            textbox.insert(tk.END,("JARVIS: Sorry sir unfortunately I couldn't process what you were trying to say.\n\n"))
             textbox.configure(state="disabled")
 
 
@@ -256,7 +272,10 @@ def retrieve_input():
         textbox.configure(state="disabled")
 
     else:
-        jarsearch(inputValue)
+        try:
+            jarsearch(inputValue)
+        except:
+            print(" ")
 
 
 
@@ -272,7 +291,7 @@ file.add_command(label = "Settings", command = Exset)
 file.add_command(label = "Quit", command = quit)  
 menubar.add_cascade(label = "Menu", menu = file)  
 ########
-myLabel = tk.Label(root, text = "JARVIS AI (C) EPICALABLE")
+myLabel = tk.Label(root, bg='gray37', fg="azure", text = "JARVIS AI (C) EPICALABLE")
 myLabel.pack()
 
 textbox = tk.Text(root, bg="gray12", fg="azure", height=40, width=165, font=('Arial',10))
